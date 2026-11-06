@@ -1,0 +1,30 @@
+﻿# Country scope. Re-applies the oversized-legion penalty to every legion army.
+mlft_refresh_legion_size_effect = {
+	# Clear old penalties first (also cleans armies that left a legion).
+	every_unit = {
+		limit = {
+			OR = {
+				has_unit_modifier = mlft_legion_oversized_1
+				has_unit_modifier = mlft_legion_oversized_2
+				has_unit_modifier = mlft_legion_oversized_3
+			}
+		}
+		remove_unit_modifier = mlft_legion_oversized_1
+		remove_unit_modifier = mlft_legion_oversized_2
+		remove_unit_modifier = mlft_legion_oversized_3
+	}
+	every_legion = {
+		if = {
+			limit = { mlft_legion_excess_cohorts_svalue >= 5 }
+			every_legion_unit = { add_unit_modifier = { name = mlft_legion_oversized_3 duration = -1 } }
+		}
+		else_if = {
+			limit = { mlft_legion_excess_cohorts_svalue >= 3 }
+			every_legion_unit = { add_unit_modifier = { name = mlft_legion_oversized_2 duration = -1 } }
+		}
+		else_if = {
+			limit = { mlft_legion_excess_cohorts_svalue >= 1 }
+			every_legion_unit = { add_unit_modifier = { name = mlft_legion_oversized_1 duration = -1 } }
+		}
+	}
+}

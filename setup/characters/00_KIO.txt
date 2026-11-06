@@ -1,0 +1,2 @@
+﻿# MLFT: emptied. Invictus keeps an empty character stub for KIO, a tag it no longer defines,
+# which triggers "Assertion failed: TagID < TAG_LIMIT" at game start.

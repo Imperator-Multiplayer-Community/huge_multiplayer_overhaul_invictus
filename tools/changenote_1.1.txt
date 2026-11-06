@@ -1,0 +1,5 @@
+Version 1.1
+- Raised levies can now drill like legions (same experience gain and +33% maintenance; commander loyalty above 33 still required).
+- Military tech no longer gives land or naval morale.
+- "Study ... Ways of War" costs halved: -13 stability, -90 military experience, -100 political influence (90 military experience needed).
+- Fixed: the reworked culture decisions were being overridden by Invictus's own file and did not take effect.

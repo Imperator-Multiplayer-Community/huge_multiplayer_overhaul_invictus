@@ -1,0 +1,4 @@
+﻿color = rgb { 110 114 63 }
+color2 = rgb { 105 114 63 }
+
+gender_equality = yes

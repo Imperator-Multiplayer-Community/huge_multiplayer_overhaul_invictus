@@ -1,0 +1,8 @@
+﻿# Replaces the base-game file of the same name (Invictus does not change it).
+# Base game gave land_morale = 0.075 and naval_morale = 0.075 per military tech level.
+# Both removed: advancing military tech no longer raises morale.
+military_tech = {
+	icon = military_icon
+
+	skill = martial
+}

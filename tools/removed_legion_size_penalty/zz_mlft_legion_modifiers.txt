@@ -1,0 +1,21 @@
+﻿# Unit modifiers for legions above the size cap. Applied to every army in the legion.
+# Tier 1: 1-2 cohorts over the cap (7,000-8,000 men)
+mlft_legion_oversized_1 = {
+	land_morale_modifier = -0.10
+	land_morale_recovery = -0.10
+	land_unit_attrition = 0.25
+}
+# Tier 2: 3-4 cohorts over the cap (9,000-10,000 men)
+mlft_legion_oversized_2 = {
+	land_morale_modifier = -0.20
+	land_morale_recovery = -0.20
+	land_unit_attrition = 0.5
+	army_movement_speed = -0.10
+}
+# Tier 3: 5+ cohorts over the cap (11,000+ men)
+mlft_legion_oversized_3 = {
+	land_morale_modifier = -0.35
+	land_morale_recovery = -0.30
+	land_unit_attrition = 1
+	army_movement_speed = -0.20
+}

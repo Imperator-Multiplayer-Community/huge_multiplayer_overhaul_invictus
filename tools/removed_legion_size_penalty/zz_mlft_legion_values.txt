@@ -1,0 +1,16 @@
+﻿# Legion size cap. 1 cohort = 1,000 men, so 6 cohorts = 6,000 men.
+mlft_legion_cohort_cap = 6
+
+# Legion scope: total cohorts across all the legion's armies.
+mlft_legion_cohorts_svalue = {
+	value = 0
+	every_legion_unit = {
+		add = unit_size
+	}
+}
+
+# Legion scope: cohorts above the cap (0 or less = within the cap).
+mlft_legion_excess_cohorts_svalue = {
+	value = mlft_legion_cohorts_svalue
+	subtract = mlft_legion_cohort_cap
+}

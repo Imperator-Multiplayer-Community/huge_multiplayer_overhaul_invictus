@@ -1,0 +1,71 @@
+﻿# Open granaries for allies - ported from HMO: Huge Multiplayer Overhaul (food_share.1).
+# While at war, armies of your allies, your subjects and your overlord that stand in
+# your provinces are fed from your province food stores every month.
+# AI armies are skipped (as in HMO) to keep it cheap with ~1,500 nations.
+# MLFT fixes vs HMO: the overlord check compared you with yourself, and the province
+# scope was cleared after the first army, so only one army per province got food.
+namespace = mlft_food_share
+
+mlft_food_share.1 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		war = yes
+	}
+
+	immediate = {
+		every_owned_province = {
+			limit = {
+				state = {
+					has_state_food >= 10
+				}
+			}
+			save_scope_as = current_province
+
+			every_unit_in_province = {
+				limit = {
+					is_army = yes
+					exists = unit_owner
+					NOT = { unit_owner = scope:current_province.owner }
+					unit_owner = {
+						is_ai = no
+						OR = {
+							alliance_with = scope:current_province.owner
+							is_subject_of = scope:current_province.owner
+							scope:current_province.owner = { is_subject_of = prev }
+						}
+					}
+					food_percentage < 100
+					in_combat = no
+				}
+				save_scope_as = current_unit
+
+				set_variable = {
+					name = food
+					value = mlft_unit_food_share_svalue
+				}
+
+				if = {
+					limit = {
+						scope:current_province.state = {
+							has_state_food >= scope:current_unit.var:food
+						}
+					}
+					add_food = scope:current_unit.var:food
+					change_variable = {
+						name = food
+						multiply = -1
+					}
+					scope:current_province.state = {
+						add_state_food = scope:current_unit.var:food
+					}
+				}
+
+				remove_variable = food
+				clear_saved_scope = current_unit
+			}
+			clear_saved_scope = current_province
+		}
+	}
+}

@@ -1,0 +1,274 @@
+﻿# Unify Your Home Lands (MLHU) - requested by Nabber.
+# Generic tree for every nation: unite the territories where your primary culture is the majority.
+# The homeland is fixed when the mission starts (variable list mlhu_homeland on the country).
+
+mlhu_unify_homeland = {
+	header = "mission_image_general"
+	icon = "general_1"
+
+	repeatable = no
+
+	# Weight 1, same as Invictus's generic conquest mission, so historical trees
+	# (Rome 3, Sparta 5, Carthage 10/50, ...) are preferred when available.
+	chance = {
+		factor = 1
+	}
+
+	ai_chance = {
+		factor = 1
+	}
+
+	potential = {
+		NOT = { has_variable = mlhu_cooldown }
+		NOT = { has_variable = mlhu_homeland_done }
+		is_subject = no
+		has_civil_war = no
+		invictus_mission_block_trigger = yes # respects Invictus's scripted openings (Rome, Carthage, Athens, Sparta...)
+		any_owned_province = {
+			any_neighbor_province = {
+				is_sea = no
+				has_owner = yes
+				NOT = { owner = root }
+				dominant_province_culture = root.culture
+			}
+		}
+	}
+
+	abort = {
+		ai_mission_back_out_trigger = yes
+	}
+
+	on_start = {
+		start_mission_ai_effect = yes
+		clear_variable_list = mlhu_homeland
+		every_province = {
+			limit = {
+				is_sea = no
+				has_owner = yes
+				dominant_province_culture = root.culture
+			}
+			root = {
+				add_to_variable_list = { name = mlhu_homeland target = prev }
+			}
+		}
+	}
+
+	on_abort = {
+		custom_tooltip = mlhu_cooldown_tt
+		clear_variable_list = mlhu_homeland
+		set_variable = {
+			name = mlhu_cooldown
+			days = 7300
+		}
+	}
+
+	on_completion = {
+		complete_mission_effect = yes
+		clear_variable_list = mlhu_homeland
+	}
+
+	# 1. Call of Kinship - claim every homeland territory we don't hold
+	mlhu_task_1 = {
+		icon = task_political
+
+		allow = {
+			political_influence >= 40
+		}
+
+		on_completion = {
+			add_political_influence = -40
+			custom_tooltip = mlhu_task_1_tt
+			hidden_effect = {
+				every_in_list = {
+					variable = mlhu_homeland
+					limit = { NOT = { owner = root } }
+					add_claim = root
+				}
+			}
+		}
+	}
+
+	# 2. Secure the Heartland - own a quarter of the homeland
+	mlhu_task_2 = {
+		icon = "task_battle"
+		requires = { mlhu_task_1 }
+
+		highlight = {
+			scope:province = {
+				NOT = { owner = root }
+			}
+			root = { is_target_in_variable_list = { name = mlhu_homeland target = scope:province } }
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = mlhu_task_2_req_tt
+				any_in_list = {
+					variable = mlhu_homeland
+					percent >= 0.25
+					owner = root
+				}
+			}
+		}
+
+		on_completion = {
+			add_stability = 5
+			add_country_modifier = {
+				name = mlhu_rallied_kin
+				duration = 3650
+			}
+		}
+	}
+
+	# 3. Bonds of Blood - a kin nation as ally or subject
+	mlhu_task_3 = {
+		icon = task_diplomatic
+		requires = { mlhu_task_1 }
+
+		allow = {
+			custom_tooltip = {
+				text = mlhu_task_3_req_tt
+				any_country = {
+					NOT = { this = root }
+					has_land = yes
+					primary_culture = root.culture
+					OR = {
+						is_subject_of = root
+						alliance_with = root
+					}
+				}
+			}
+		}
+
+		on_completion = {
+			add_country_modifier = {
+				name = mlhu_bonds_of_blood
+				duration = 3650
+			}
+		}
+	}
+
+	# 4. Heart of Our People - a populous capital
+	mlhu_task_4 = {
+		icon = "task_economical"
+		requires = { mlhu_task_1 }
+
+		allow = {
+			capital_scope = {
+				total_population >= 20
+			}
+		}
+
+		on_completion = {
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = mlhu_heart_of_the_people
+					duration = -1
+				}
+			}
+		}
+	}
+
+	# 5. Half the Homeland - own half, renew claims
+	mlhu_task_5 = {
+		icon = "task_battle"
+		requires = { mlhu_task_2 }
+
+		highlight = {
+			scope:province = {
+				NOT = { owner = root }
+			}
+			root = { is_target_in_variable_list = { name = mlhu_homeland target = scope:province } }
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = mlhu_task_5_req_tt
+				any_in_list = {
+					variable = mlhu_homeland
+					percent >= 0.5
+					owner = root
+				}
+			}
+		}
+
+		on_completion = {
+			add_stability = 5
+			add_political_influence = 50
+			custom_tooltip = mlhu_task_1_tt
+			hidden_effect = {
+				every_in_list = {
+					variable = mlhu_homeland
+					limit = { NOT = { owner = root } }
+					add_claim = root
+				}
+			}
+		}
+	}
+
+	# 6. Kin Under One Roof - own three quarters
+	mlhu_task_6 = {
+		icon = "task_battle"
+		requires = { mlhu_task_5 mlhu_task_3 }
+
+		highlight = {
+			scope:province = {
+				NOT = { owner = root }
+			}
+			root = { is_target_in_variable_list = { name = mlhu_homeland target = scope:province } }
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = mlhu_task_6_req_tt
+				any_in_list = {
+					variable = mlhu_homeland
+					percent >= 0.75
+					owner = root
+				}
+			}
+		}
+
+		on_completion = {
+			add_country_modifier = {
+				name = mlhu_kin_under_one_roof
+				duration = 3650
+			}
+		}
+	}
+
+	# 7. The Homeland United - own 90% (final)
+	mlhu_task_7 = {
+		icon = task_heracles
+		final = yes
+		requires = { mlhu_task_6 mlhu_task_4 }
+
+		highlight = {
+			scope:province = {
+				NOT = { owner = root }
+			}
+			root = { is_target_in_variable_list = { name = mlhu_homeland target = scope:province } }
+		}
+
+		allow = {
+			stability >= 40
+			custom_tooltip = {
+				text = mlhu_task_7_req_tt
+				any_in_list = {
+					variable = mlhu_homeland
+					percent >= 0.9
+					owner = root
+				}
+			}
+		}
+
+		on_completion = {
+			add_stability = 10
+			set_variable = mlhu_homeland_done
+			add_country_modifier = {
+				name = mlhu_homeland_united
+				duration = -1
+			}
+		}
+	}
+}

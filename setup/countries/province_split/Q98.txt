@@ -1,0 +1,9 @@
+﻿color = rgb { 208 103 229 }
+color2 = rgb { 221 103 229 }
+
+#color = rgb { 130 0 130 } Purple
+
+
+
+ship_names = {
+}

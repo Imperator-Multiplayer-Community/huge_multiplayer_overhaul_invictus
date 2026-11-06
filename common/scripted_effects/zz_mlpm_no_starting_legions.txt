@@ -1,0 +1,15 @@
+﻿# MP balance (Pope): no nation starts with a legion.
+# These override Invictus's game-start legion setups (common/scripted_effects/00_event_effects_inv_1_0.txt),
+# which raised a legion for the six Diadochi kingdoms. Legions now need the right military law first.
+antigonid_legion_setup_effect = {
+}
+seleukid_legion_setup_effect = {
+}
+egypt_legion_setup_effect = {
+}
+macedon_legion_setup_effect = {
+}
+thrace_legion_setup_effect = {
+}
+epirus_legion_setup_effect = {
+}

@@ -1,0 +1,5 @@
+﻿color = rgb { 105 191 178 }
+color2 = rgb { 105 191 187 }
+
+ship_names = {
+}

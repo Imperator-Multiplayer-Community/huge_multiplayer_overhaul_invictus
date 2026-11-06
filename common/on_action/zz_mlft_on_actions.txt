@@ -1,0 +1,25 @@
+﻿# Foreign-tradition malus: keeps one -75% counter-modifier on every owned
+# tradition that does not belong to the country's primary-culture tree.
+# There is no engine hook for "primary culture changed" or "tradition picked",
+# so this monthly refresh catches both (and fixes anything else that drifts).
+
+monthly_country_pulse = {
+	on_actions = {
+		mlft_tradition_malus_pulse
+		mlft_food_share_pulse
+	}
+}
+
+mlft_tradition_malus_pulse = {
+	effect = {
+		mlft_refresh_tradition_malus_effect = yes
+	}
+}
+
+
+# Open granaries for allies (ported from HMO: Huge Multiplayer Overhaul).
+mlft_food_share_pulse = {
+	events = {
+		mlft_food_share.1
+	}
+}

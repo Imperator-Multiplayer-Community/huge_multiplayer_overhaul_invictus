@@ -1,0 +1,800 @@
+793 new nations
+NMI: capital 3697 -> 3822
+MIT: capital 278 -> 214
+ALZ: capital 6086 -> 7185
+ARO: capital 7299 -> 6073
+removed 119 starting subject relations; military law reset for ['EGY', 'TRE', 'MAC', 'EPI', 'PRY', 'SEL']
+
+Q00	Capua	ROM	neapolis_area
+Q01	Nepete	ROM	south_etruria_area
+Q02	Luceria	ROM	cannae_area
+Q03	Aternum	ROM	aternum_area
+Q04	Ausculum	SAM	cannae_area
+Q05	Compsa	SAM	heraclea_area
+Q06	Populonia	ETR	north_etruria_area
+Q07	Arretium	ETR	ariminum_area
+Q08	Pisae	ETR	pisae_area
+Q09	Aleria	ETR	corsica_area
+Q0A	Narnia	SAB	south_etruria_area
+Q0B	Amiternum	UMB	asculum_area
+Q0C	Iguvium	UMB	ariminum_area
+Q0D	Bantia	APU	cannae_area
+Q0E	Portus Veneris	GUN	pisae_area
+Q0F	Dertona	EPA	west_insubria_area
+Q0G	Scingomagus	TAU	alpes_maritimae_two_area
+Q0H	Vercellae	TAU	west_insubria_area
+Q0I	Lambrum	INS	east_insubria_area
+Q0J	Placentia	INS	aemilla_area
+Q0K	Forum Novum	BOI	pisae_area
+Q0L	Hatria	LGN	ferraria_area
+Q0M	Spina	LGN	aemilla_area
+Q0N	Altinum	VNT	venetia_area
+Q0O	Tridentium	RAE	east_insubria_area
+Q0P	Mastiacum	RAE	alpes_raetiae_orientalis
+Q0Q	Bennafa	EMP	africa_meridionalis_area
+Q0R	Pisida	TRP	tripolitania_occidentalis_area
+Q0S	Missua	KUA	carthage_area
+Q0T	Panorumus	CAR	west_sicily_area
+Q0U	Curubis	CAR	africa_septentrionalis_area
+Q0V	Macomades Minores	CAR	africa_meridionalis_area
+Q0W	Karali	CAR	sardinia_meridionalis
+Q0X	Tingis	CAR	mauretania_tingitana_septentrionalis_area
+Q0Y	Septimia	CAR	numidia_maioris_area
+Q0Z	Hippo Regius	CAR	numidia_centralis_area
+Q10	Rusuccuru	CAR	mauretania_caesariensis_maioris_area
+Q11	Choba	CAR	mauretania_caesariensis_orientalis_area
+Q12	Igilgili	CAR	numidia_occidentalis_area
+Q13	Uzappa	CAR	numidia_minoris_area
+Q14	Oviscae	CAR	gaetulia_orientalis_area
+Q15	Sanaphar	CAR	sardinia_septentrionalis
+Q16	Cartennae	CAR	mauretania_caesariensis_centralis_area
+Q17	Melita	CAR	syracuse_area
+Q18	Malaca	CAR	malacita_area
+Q19	Urci	CAR	bastetania_area
+Q1A	Baelo	CAR	gaditanus_area
+Q1B	Portus Divinus	CAR	mauretania_caesariensis_occidentalis_area
+Q1C	Rutubis	CAR	rutubis_area
+Q1D	Tremulae	MAU	mauretania_tingitana_septentrionalis_area
+Q1E	Oufriden	MAU	lower_moulouya_area
+Q1F	Agourai	MAU	tadla_area
+Q1G	Ziaida	MAU	rutubis_area
+Q1H	Laatamna	MAU	rif_area
+Q1I	Cartili	MSS	mauretania_caesariensis_centralis_area
+Q1J	Gunugu	MSS	mauretania_caesariensis_maioris_area
+Q1K	Vanisnesi	MSS	mauretania_caesariensis_orientalis_area
+Q1L	Tubusuctu	MSS	mauretania_caesariensis_minoris_area
+Q1M	Satafis	MSY	mauretania_caesariensis_orientalis_area
+Q1N	Nicivibus	MSY	gaetulia_occidentalis_area
+Q1O	Calama	MSY	numidia_centralis_area
+Q1P	Nattabutum	MSY	gaetulia_septentrionalis_area
+Q1Q	Vatari	MSY	gaetulia_centralis_area
+Q1R	Sicca Veneria	MSY	numidia_maioris_area
+Q1S	Ammaedara	MSL	gaetulia_septentrionalis_area
+Q1T	Tabira	MSL	gaetulia_orientalis_area
+Q1U	Lares	MSL	numidia_maioris_area
+Q1V	Funda Thavagalensis	MSL	numidia_centralis_area
+Q1W	Messana	SYR	east_sicily_area
+Q1X	Boron	DOD	khargana_area
+Q1Y	Hudi	DOD	eastern_desert_area
+Q1Z	Contra Pselchis	DOD	allaqi_area
+Q20	Memphis	EGY	memphis_area
+Q21	Pelusium	EGY	eastern_delta_area
+Q22	Leontopolis	EGY	central_delta_area
+Q23	Krokodilopolis	EGY	heptanomis_area
+Q24	Thynis	EGY	parva_area
+Q25	Paraetonium	EGY	marmarica_orientalis_area
+Q26	Catabathmus Maior	EGY	marmarica_occidentalis_area
+Q27	Gaza	EGY	philistia_area
+Q28	Apollinopolis Megale	EGY	aswan_area
+Q29	Berenike	EGY	troglodytica_area
+Q2A	Myos Hormos	EGY	myos_hormos_area
+Q2B	Klysma	EGY	sinai_area
+Q2C	Koussai	EGY	hema_nome_area
+Q2D	Diospolis Magna	EGY	luxor_area
+Q2E	Erebe	EGY	kharga_area
+Q2F	Parammon	EGY	khargana_area
+Q2G	Ammon	EGY	ammon_area
+Q2H	Farafra	EGY	farfara_area
+Q2I	Thera	EGY	aegean_islands_area
+Q2J	Abraq	EGY	eastern_desert_area
+Q2K	Astrochonda	CYR	tripolitania_orientalis_area
+Q2L	Barke	CYR	cyrenaica_inferioris_area
+Q2M	Petras Mikros	CYR	marmarica_occidentalis_area
+Q2N	Tagrifet	NAS	syrtis_area
+Q2O	Nagdiyah	PSY	psyllia_area
+Q2P	Gholaia	MKA	psyllia_area
+Q2Q	Gharbya	MKA	zamzam_area
+Q2R	Sdada	MKA	soffegin_area
+Q2S	Capsa Iustiniana	GYZ	gaetulia_orientalis_area
+Q2T	Brak	GAR	shatti_area
+Q2U	Murzuq	GAR	murzuq_area
+Q2V	Majdul	GAR	himka_area
+Q2W	Frej	ATO	rutubis_area
+Q2X	Mascula Tiberia	GAE	gaetulia_centralis_area
+Q2Y	Agatha	MAS	narbonensis_centralis_area
+Q2Z	Rhodanousia	MAS	narbonensis_occidentalis_area
+Q30	Portus Sucronis	HMK	contestania_septentrionalis_area
+Q31	Vacomagi	CAL	caledonia_septentrionalis_area
+Q32	Veluniate	VTD	caledonia_septentrionalis_area
+Q33	Epidii	DNN	caledonia_septentrionalis_area
+Q34	Venta	DUR	durotrigia_area
+Q35	Dictium	PAS	brigantia_area
+Q36	Causennae	COI	coritania_area
+Q37	Derbentio	COI	cornovia_area
+Q38	Aquae Sulis	DOB	dumnonia_area
+Q39	Cunetio	DOB	durotrigia_area
+Q3A	Vertis	DOB	britannia_secunda_meridionalis_area
+Q3B	Condate Ordovicia	DOB	britannia_secunda_septentrionalis_area
+Q3C	Deva	COV	cornovia_area
+Q3D	Letocetum	COV	dobunnia_area
+Q3E	Magnis	ORD	britannia_secunda_meridionalis_area
+Q3F	Galava	BRI	brigantia_area
+Q3G	Calunium	BRI	cornovia_area
+Q3H	Combretovium	TRI	icenia_area
+Q3I	Zoelia	GGR	aebocosia_area
+Q3J	Legio Gemina	LCN	asturia_septentrionalis_area
+Q3K	Comeniaca	LCN	vaccaeia_septentrionalis_area
+Q3L	Sigarra	AUI	cessetania_area
+Q3M	Aeso	AUI	ilergetia_area
+Q3N	Vergilia	EBI	oretania_area
+Q3O	Ad Gemellas	EBI	malacita_area
+Q3P	Edeba	GRM	lobetania_area
+Q3Q	Marianus Mons	GRM	baetica_cordubensis_area
+Q3R	Isiturgis	ORT	baetica_cordubensis_area
+Q3S	Ituci	ORT	malacita_area
+Q3T	Baedia	COP	callaecia_meridionalis_area
+Q3U	Lougia	SUR	callaecia_meridionalis_area
+Q3V	Segontia Paramika	BLN	autrigonia_area
+Q3W	Segisama Iulia	MRC	cantabria_area
+Q3X	Ad Palem	CNT	contestania_septentrionalis_area
+Q3Y	Oleastrum	ICV	cessetania_area
+Q3Z	Kallipolis Iberias	EPO	cessetania_area
+Q40	Ilici	MAT	contestania_meridionalis_area
+Q41	Ad Periam	BOA	marcomannia_minores_area
+Q42	Setuacatum	BOA	marcomannia_maiores_area
+Q43	Pisavi	SLV	narbonensis_occidentalis_area
+Q44	Arausio	VOC	narbonensis_occidentalis_area
+Q45	Valentia	HVI	allobrogia_area
+Q46	Nemausus	ELY	narbonensis_occidentalis_area
+Q47	Ad Vicensi	SRB	narbonensis_orientalis_area
+Q48	Calagorris	CNS	biggeronia_area
+Q49	Genava	ALL	tigurinia_area
+Q4A	Rodumna	SGL	celtica_orientalis_area
+Q4B	Gergovia	AVN	central_massif_area
+Q4C	Aquae Segetae	AVN	celtica_orientalis_area
+Q4D	Carantomagus	NTB	central_massif_area
+Q4E	Marinavas	NTB	narbonensis_orientalis_area
+Q4F	Lapurdum	TRB	aquitania_occidentalis_area
+Q4G	Lucaniacum	VCT	cadurcia_area
+Q4H	Coequosa	TRS	aquitania_occidentalis_area
+Q4I	Eustriacum	PTC	cadurcia_area
+Q4J	Briva	PTC	lemovicia_area
+Q4K	Uxellodunum	PTC	central_massif_area
+Q4L	Finis Secundus	LMV	celtica_centralis_area
+Q4M	Salviacum	LMV	celtica_occidentalis_area
+Q4N	Negiacum	LMV	sentonia_maioris_area
+Q4O	Burgus	SNT	cadurcia_area
+Q4P	Voludnia	CUT	alpes_graiae_area
+Q4Q	Eporedia	SLS	transpadana_area
+Q4R	Curia	LPO	alpes_graiae_area
+Q4S	Raetia Orientalis	TIG	helvetia_inferioris_area
+Q4T	Arae Flaviae	TIG	latobrigia_area
+Q4U	Vernania	BRG	helvetia_inferioris_area
+Q4V	Summuntorium	ESO	tulingia_area
+Q4W	Rostrum Nemaviae	CTN	helvetia_superioris_area
+Q4X	Brigobannis	TLG	raurica_area
+Q4Y	Rubiacum	RAU	tribocia_area
+Q4Z	Grinario	LTG	latobrigia_area
+Q50	Saletio	LTG	vangionia_area
+Q51	Armalausia	LTG	chattia_occidentalis_area
+Q52	Ernodurum	BGT	celtica_centralis_area
+Q53	Decetia	BGT	celtica_orientalis_area
+Q54	Claudiomagus	TRO	celtica_occidentalis_area
+Q55	Cassinomagum	ADC	pictonia_meridionalis_area
+Q56	Duretie	NMN	armorica_centralis_area
+Q57	Blesum	CRN	bituriga_occidentalis_area
+Q58	Noviliacus	CMI	bituriga_occidentalis_area
+Q59	Bricca	CMI	pictonia_septentrionalis_area
+Q5A	Dariorigum	VTN	armorica_centralis_area
+Q5B	Foricum	RDO	armorica_maioris_area
+Q5C	Sipia	RDO	pictonia_septentrionalis_area
+Q5D	Noviodunum	EBV	cenomannia_area
+Q5E	Esuvia Borealis	ESV	cenomannia_area
+Q5F	Avalocum	VCL	parisia_area
+Q5G	Larga	SQI	tribocia_area
+Q5H	Vidubia	AED	lingonia_area
+Q5I	Bibracte	AED	senonia_area
+Q5J	Castrum Divionense	AED	sequania_area
+Q5K	Magetobria	LNG	sequania_area
+Q5L	Solicia	LNG	leucia_area
+Q5M	Tornodurum	MDB	senonia_area
+Q5N	Agedincum	SNN	parisia_area
+Q5O	Lucia	SNN	suaeuconia_area
+Q5P	Artiaca	SNN	lingonia_area
+Q5Q	Bandritum	SNN	bituriga_orientalis_area
+Q5R	Grannum	TRC	leucia_area
+Q5S	Caturicis	TRC	remia_area
+Q5T	Tanomia	CTL	remia_area
+Q5U	Mattiacia	TBC	turonia_area
+Q5V	Lopodunum	TBC	vangionia_area
+Q5W	Locoritum	TBC	chattia_occidentalis_area
+Q5X	Sauriciacum	LCI	remia_area
+Q5Y	Concordia	MDM	mediomatricia_area
+Q5Z	Brocomagus	MDM	tribocia_area
+Q60	Aurelia Aquensis	MDM	raurica_area
+Q61	Bergium	NMI	chattia_occidentalis_area
+Q62	Salinae Chattuariorum	NMI	turonia_area
+Q63	Belginum	TVI	treveria_area
+Q64	Borbetomagus	TVI	mediomatricia_area
+Q65	Manaritum	EBS	ganuenta_area
+Q66	Teudurum	EBS	nervia_area
+Q67	Asse	MNP	ganuenta_area
+Q68	Turnacum	MNP	nervia_area
+Q69	Durocoregum	MRN	veliocassia_area
+Q6A	Iatinon	SSS	parisia_area
+Q6B	Teucera	VMD	bellovacia_area
+Q6C	Duronum	NRV	suaeuconia_area
+Q6D	Tienen	NRV	nervia_area
+Q6E	Condacum	NRV	ganuenta_area
+Q6F	Mosomagus	RMI	remia_area
+Q6G	Visseria	PAE	oppidania_area
+Q6H	Caellonico	IGD	lusitania_meridionalis_area
+Q6I	Herminium	TLS	lusitania_meridionalis_area
+Q6J	Calanta	SFI	celticia_maoioris_area
+Q6K	Augusta Emerita	CLC	celticia_maoioris_area
+Q6L	Vicus Battalius	CLC	turdulia_occidentalis_area
+Q6M	Regina	TDL	turdetania_occidentalis_area
+Q6N	Phornakis	TDL	turdulia_occidentalis_area
+Q6O	Sattalicia	TDL	turdulia_orientalis_area
+Q6P	Autraca	TDI	autrigonia_area
+Q6Q	Vaccaeia Deserta	VCI	vaccaeia_meridionalis_area
+Q6R	Clunia	AVC	vaccaeia_meridionalis_area
+Q6S	Vettonia Relicta	BLT	vettonia_septentrionalis_area
+Q6T	Vaddua	CLU	vettonia_meridionalis_area
+Q6U	Bellia Relicta	BOL	celtiberia_septentrionalis_area
+Q6V	Solorbes	DOA	turdulia_orientalis_area
+Q6W	Dunites	SLC	turdulia_orientalis_area
+Q6X	Ilounon	DEI	contestania_septentrionalis_area
+Q6Y	Ilorci	DEI	mastiania_area
+Q6Z	Tarsatica	DIT	histria_area
+Q70	Metulum	DIT	savia_orientalis_area
+Q71	Angeliai	DLM	dalmatia_centralis_area
+Q72	Bournion	DLM	dalmatia_occidentalis_area
+Q73	Leusinium	DRI	dalmatia_orientalis_area
+Q74	Grabaion	ABI	dardania_superioris_area
+Q75	Skodra	CVI	dalmatia_centralis_area
+Q76	Servitium	BCI	savia_orientalis_area
+Q77	Leusaba	DUI	savia_orientalis_area
+Q78	Altina	SCD	pannonia_secunda_area
+Q79	Ad Sextum	SCD	iazygia_minoris_area
+Q7A	Bannea	SCD	moesia_prima_orientalis_area
+Q7B	Praesidium Illyricum	SCD	dardania_superioris_area
+Q7C	Malvesia	DND	dardania_superioris_area
+Q7D	Salinae	DND	marsonia_area
+Q7E	Ibadura	OTN	ciscarpathia_area
+Q7F	Iovia	HCN	pannonia_prima_orientalis_area
+Q7G	Pelsodis	EVS	pannonia_prima_orientalis_area
+Q7H	Quadriburgium	EVS	carnuntia_area
+Q7I	Bassena	EVS	pannonia_prima_occidentalis_area
+Q7J	Byllis	TLN	epirus_area
+Q7K	Horreum Margi	TLT	moesia_prima_orientalis_area
+Q7L	Hammeum	TLT	dardania_inferioris_area
+Q7M	Castra Martis	TLT	dacia_inferioris_area
+Q7N	Gramrianae	TLT	dardania_superioris_area
+Q7O	Siparantum	DRD	dardania_inferioris_area
+Q7P	Municipium Dardanorum	DRD	dardania_superioris_area
+Q7Q	Spinopara	SDI	macedonia_salutaris_area
+Q7R	Combustica	TBL	dacia_inferioris_area
+Q7S	Remesiana	TBL	dacia_mediterranea_area
+Q7T	Transmarisca	MOE	moesia_orientalis_area
+Q7U	Rhamidava	GTE	getia_orientalis_area
+Q7V	Polondava	GTE	zargidava_area
+Q7W	Tamasidava	GTE	apulensis_area
+Q7X	Dortium	POT	dacia_inferioris_area
+Q7Y	Ad Scorfulas	SLD	porolissensis_inferioris_area
+Q7Z	Lederata	ABN	iazygia_minoris_area
+Q80	Caput Stenarum	BUD	apulensis_area
+Q81	Bucium	APP	porolissensis_inferioris_area
+Q82	Sandava	RAT	porolissensis_area
+Q83	Luena	NRC	noricum_mediterranum_area
+Q84	Lauriacum	NRC	lauriacum_area
+Q85	Populi	TSC	pannonia_prima_occidentalis_area
+Q86	Strobilos	BYZ	bithynia_inferior_area
+Q87	Nikonia	ISO	olbia_area
+Q88	Abdera	TRE	rhodope_area
+Q89	Uskodama	TRE	haemimontus_area
+Q8A	Carsium	TRE	scythia_area
+Q8B	Eidos	KAB	haemimontus_area
+Q8C	Astibos	PAA	macedonia_salutaris_area
+Q8D	Amphipolis	MAC	chalkidiki_area
+Q8E	Pelagonia	MAC	upper_macedonia_area
+Q8F	Larissa	MAC	thessaly_area
+Q8G	Lamia	MAC	boeotia_area
+Q8H	Oichalia Aitolias	MAC	aetolia_area
+Q8I	Herakleia Sintike	MAC	macedonia_salutaris_area
+Q8J	Lemnos	ATH	rhodope_area
+Q8K	Skyros	ATH	euboea_area
+Q8L	Leukas	KRK	aetolia_area
+Q8M	Zakynthos	KEF	achaea_area
+Q8N	Oropos	BOE	central_greece_area
+Q8O	Chalcis	BOE	euboea_area
+Q8P	Kea	DEL	central_greece_area
+Q8Q	Syros	ADR	aegean_islands_area
+Q8R	Heraia	ARK	achaea_area
+Q8S	Lepreon	ARK	south_peleponnesos_area
+Q8T	Kleonai	ARG	achaea_area
+Q8U	Kyphanta	ARG	south_peleponnesos_area
+Q8V	Tylissos	ARG	crete_area
+Q8W	Leros	MLO	sporades_area
+Q8X	Amorgos	SAS	aegean_islands_area
+Q8Y	Diospolis Lykou	CIA	inland_caria_area
+Q8Z	Iasos	CIA	ionia_area
+Q90	Physkos	RHO	coastal_caria_area
+Q91	Kalpe	BIT	heracleotis_area
+Q92	Parium	TRD	mysia_area
+Q93	Larisa Ionias	ION	lydia_area
+Q94	Magnesia pros Maiandro	ION	inland_caria_area
+Q95	Kyme	ION	aeolia_area
+Q96	Nisyros	KNI	sporades_area
+Q97	Kios	MIT	bithynia_inferior_area
+Q98	Kabia	MIT	bithynia_superior_area
+Q99	Miletopolis	MIT	mysia_area
+Q9A	Pergamon	MIT	mysia_abrettene_area
+Q9B	Side Pontike	AMS	machelonia_area
+Q9C	Synnada	PRY	phrygia_parorea_area
+Q9D	Kadoi	PRY	phrygia_epiktetos
+Q9E	Pessinous	PRY	galatia_area
+Q9F	Apamea Cibotus	PRY	phrygia_area
+Q9G	Baris	PRY	pisidia_area
+Q9H	Pogla	PRY	milyas_area
+Q9I	Iconium	PRY	lycaonia_area
+Q9J	Salamis	PRY	central_greece_area
+Q9K	Soloi	PRY	cilicia_trachea_area
+Q9L	Mallos	PRY	cilicia_pedias_area
+Q9M	Doliche	PRY	syria_cyrrestice_area
+Q9N	Leuke Akte	PRY	north_phoenicia_area
+Q9O	Kadasa	PRY	south_phoenicia_area
+Q9P	Damascus	PRY	syria_coele_area
+Q9Q	Triparadeisos	PRY	apamene_area
+Q9R	Palmyra	PRY	palmyra_area
+Q9S	Scythopolis	PRY	galilee_area
+Q9T	Raphon	PRY	decapolis_area
+Q9U	Doura	PRY	euphrates_area
+Q9V	Ascalon	PRY	philistia_area
+Q9W	Adma	PRY	osroene_area
+Q9X	Salamis Kyprias	PRY	cyprus_area
+Q9Y	Side	PRY	pamphylia_area
+Q9Z	Tyana	PRY	cappadocia_garsauritis_area
+X00	Ioppe	PRY	samaria_area
+X0A	Gorbeous	PRY	galatia_trocmi_area
+X0B	Adora	PRY	judea_area
+X0C	Garsaura	CAP	cappadocia_garsauritis_area
+X0D	Pteria	CAP	cappadocia_saravene_area
+X0E	Dasmenda	CAP	cappadocia_cataonia_area
+X0F	Karana	CAP	pontus_colopene_area
+X0G	Taouion	CAP	galatia_trocmi_area
+X0H	Melitia	KAP	cappadocia_melitene_area
+X0I	Oulnia	KAP	commagene_area
+X0J	Danai	PON	pontus_colopene_area
+X0K	Sauronisena	PON	machelonia_area
+X0L	Matouasko	PON	armenia_minor_area
+X0M	Ankyra	PAP	galatia_trocmi_area
+X0N	Rumailah	MAK	omana_area
+X0O	Istana	GRH	qaraah_area
+X0P	Largis	GRH	ukrush_area
+X0Q	Apphana	TYO	meshan_area
+X0R	Oarakta	TYO	utia_area
+X0S	Zafar	SHB	sheba_area
+X0T	Mouza Emporion	SHB	qataba_area
+X0U	Caminacum	MIN	arabia_felix_centralis_area
+X0V	Barek	MIN	taifa_area
+X0W	Cama	MIN	arabia_maritimae_area
+X0X	Jurash	MIN	asir_area
+X0Y	Firai	HDM	arabia_felix_orientalis_area
+X0Z	Samharam	HDM	hadramut_orientalis_area
+X1A	Makeda	QTB	arabia_felix_orientalis_area
+X1B	'Adan	QTB	qataba_area
+X1C	Mampsis	NBT	peraea_area
+X1D	Madiama	NBT	arabia_relicta_area
+X1E	Nuweiba	NBT	sinai_area
+X1F	Masada	NBT	judea_area
+X1G	Elousa	NBT	philistia_area
+X1H	Laba	LHY	arabia_relicta_area
+X1I	Eroe	LHY	arabia_deserta_area
+X1J	Raunathou Kome	LHY	arabia_ad_sinus_area
+X1K	Livias	AMN	judea_area
+X1L	Rabbat Ammon	AMN	decapolis_area
+X1M	Asophon	AMN	samaria_area
+X1N	Kefar Shuni	SMA	galilee_area
+X1O	Lydda	SMA	judea_area
+X1P	Ake-Ptolemais	TYE	galilee_area
+X1Q	Raphaneia	ARA	apamene_area
+X1R	Berytus	BYB	south_phoenicia_area
+X1S	Korne	COM	cappadocia_melitene_area
+X1T	Tragonica	PES	veshapur_area
+X1U	Portospana	PES	utia_area
+X1V	Suravan	PES	pars_area
+X1W	Babylon	SEL	babylonia_area
+X1X	Haditha	SEL	euphrates_area
+X1Y	Apamea ad Tigridem	SEL	beth_daraye_area
+X1Z	Larsa	SEL	veh_kavad_area
+X2A	Alexandria Susiana	SEL	meshan_area
+X2B	Arragan	SEL	pars_area
+X2C	Shushan	SEL	susiana_area
+X2D	Kelonai	SEL	garamig_area
+X2E	Ashur	SEL	tigris_area
+X2F	Nisibis	SEL	upper_mesopotamia_area
+X2G	Nineveh	SEL	niniveh_area
+X2H	Akkaz	SEL	qaraah_area
+X2I	Kangavar	SEL	kossioi_area
+X2J	Ecbatana	SEL	ecbatana_area
+X2K	Rhagai	SEL	rhagai_area
+X2L	Aspadana	SEL	aspadana_area
+X2M	Artacana	SEL	media_felix_area
+X2N	Caumata	SEL	ardashir_area
+X2O	Tabai Persikai	SEL	namek_area
+X2P	Komish	SEL	parthia_komishene_area
+X2Q	Tarouana	SEL	carmania_area
+X2R	Barda	SEL	sagartia_area
+X2S	Choana	SEL	vishpauzatis_area
+X2T	Saringiy	SEL	hyrcania_area
+X2U	Thubrasine	SEL	aria_area
+X2V	Zranka	SEL	drangiana_area
+X2W	Alexandreia Sakastenes	SEL	pactya_area
+X2X	Qom	SEL	media_choromithrene
+X2Y	Badghis	SEL	margu_area
+X2Z	Izala Mons	SEL	corduene_area
+X3A	Balaleisa	CRD	vaspurakan_area
+X3B	Shapur	CRD	niniveh_area
+X3C	Karkathiokerta	SPH	corduene_area
+X3D	Aqcha	BAC	transoxus_area
+X3E	Baskata	BAC	tarim_area
+X3F	Oskobara	BAC	oxiana_area
+X3G	Marakanda	BAC	sogdiana_area
+X3H	Matuaspa	BAC	cyropolis_area
+X3I	Antentia	BAC	margu_area
+X3J	Alexandria Margiana	BAC	margiana_area
+X3K	Erbend	BAC	kharesmia_superior
+X3L	Alexandreia Bactriane	BAC	bactria_area
+X3M	Arachotus	ARS	pactya_area
+X3N	Pura	ARS	gedrosia_area
+X3O	Cottabura	ARS	parecania_area
+X3P	Arbiti	ARS	patalene_area
+X3Q	Rana	PRM	sattagydia_area
+X3R	Alexandreia Areia	PRM	aria_area
+X3S	Hormirzad	CAM	harmozeia_area
+X3T	Thospis	CAM	utia_area
+X3U	Patigrabana	PAR	parthia_area
+X3V	Kotake	PAR	margu_area
+X3W	Vishpauzatis	PAR	vishpauzatis_area
+X3X	Taga	PAR	parthia_komishene_area
+X3Y	Kurh u Kich	ADI	garamig_area
+X3Z	Cymiza	ARM	vaspurakan_area
+X4A	Arxata	ARM	syunik_area
+X4B	Tigranakert	ARM	artshak_area
+X4C	Artaxata	ARM	ayrarat_area
+X4D	Shamiram	ARM	soducene_area
+X4E	Chauon	ARM	parsatunik_area
+X4F	Gazrik	ARM	parskahayk_area
+X4G	Arsissa	ARM	tarawn_area
+X4H	Gymnias	ARM	upper_armenia_area
+X4I	Sinoria	AR2	upper_armenia_area
+X4J	Kamisa	AR2	armenia_maior_area
+X4K	Tzantzakon	AR2	machelonia_area
+X4L	Miyana	MAP	kadousioi_area
+X4M	Batina	MAP	media_area
+X4N	Talish	MAP	paytankert_area
+X4O	Mari	MAP	parskahayk_area
+X4P	Kyropolis	MAP	amardioi_area
+X4Q	Sagarejo	IBR	kahetia_area
+X4R	Sary-tepe	IBR	gugark_area
+X4S	Pharangion	IBR	tayk_area
+X4T	Idzhevan	IBR	arran_area
+X4U	Bori	IBR	suaneti_area
+X4V	Archaiopolis	COL	colchis_area
+X4W	Tqvarcheli	COL	abasgoi_area
+X4X	Apsaros	COL	tayk_area
+X4Y	Rhizaion	COL	machelonia_area
+X4Z	Shahargah	ALB	arran_area
+X5A	Gumbati	ALB	kahetia_area
+X5B	Tzur	ALB	scythia_trans_montem_area
+X5C	Gorat	LGA	alania_area
+X5D	Didai	LGA	scythia_trans_montem_area
+X5E	Duzea	LGA	sattara_area
+X5F	Sarden	LGA	hyrcania_superior_area
+X5G	Ustret	SCA	scythia_ultima_area
+X5H	Shachkra	SCA	scythia_ad_pontem_area
+X5I	Satticha	SCA	darn_area
+X5J	Darada	ZHZ	gilgit_area
+X5K	Lashang	ZHZ	suvarna_gotra_area
+X5L	Barma	ZHZ	jangtang_area
+X5M	Sihora	ATV	dahala_area
+X5N	Gondia	ATV	fanindrapura_area
+X5O	Rohtas	ATV	kasi_area
+X5P	Kakanada	HYA	dahala_area
+X5Q	Devasabha	HYA	avanti_area
+X5R	Indur	PLD	vidarbha_area
+X5S	Audabaravati	PLD	vindya_area
+X5T	Chhindwara	PLD	dahala_area
+X5U	Podoperoura	KSR	south_satiyaputa_area
+X5V	Tennagora	KSR	south_mahishamandala_area
+X5W	Kolinah	ADG	koda_area
+X5X	Plagira	GHA	taxila_area
+X5Y	Andaka	GHA	bamyan_area
+X5Z	Kophen	GHA	sattagydia_area
+X62	Chandaniot	PRA	panchanada_area
+X63	Boukephalia	PRA	taxila_area
+X64	Nokhar	PRA	trigarta_area
+X65	Sthanishvara	YDD	sthanisvara_area
+X66	Jalandhara	YDD	trigarta_area
+X67	Okara	YDD	panchanada_area
+X68	Chishtian	YDD	rodewala_area
+X69	Embadina	KHB	kasmira_area
+X6A	Parsni	KHB	gilgit_area
+X6B	Adrestai	KLS	madra_area
+X6C	Rupar	NBA	trigarta_area
+X6D	Matipura	NBA	kuru_area
+X6E	Rampurwa	NBP	malla_area
+X6F	Damak	NBP	kamata_area
+X6G	Barisal	SMT	vanga_area
+X6H	Tsanghla	TSA	chomolangma_area
+X6I	Mon Bumtang	YRL	tsang_area
+X6J	Dodong	SMP	sumpa_area
+X6K	Tyrannosboas	ALU	south_sahyadri_area
+X6L	Panapala	KUN	vanavasi_area
+X6M	Brahmagiri	KUN	north_mahishamandala_area
+X6N	Sonnolagi	KUN	asika_area
+X6O	Yakaris	PIT	south_sahyadri_area
+X6P	Godavara	PIT	mulaka_area
+X6Q	Tapia	BOJ	vindya_area
+X6R	Nousaripa	RTI	aparanta_area
+X6S	Maharatthalava	RTI	mulaka_area
+X6T	Purnaya	RTI	vindya_area
+X6U	Pravarapura	ASM	andhra_area
+X6V	Pattithana	ASM	mulaka_area
+X6W	Kalyani Asika	ASM	asika_area
+X6X	Lattalura	ASM	vidarbha_area
+X6Y	Srisailam	ANH	sriparvata_area
+X6Z	Yajatinagara	KAL	mahendragiri_area
+X70	Caritra	KAL	radha_area
+X71	Sisupalgarh	KAL	brahmani_area
+X72	Bhargava	KRP	kamata_area
+X73	Goalpara	KRP	samatata_area
+X74	Balipura	KRP	pundra_area
+X75	Koti	PND	pandiya_area
+X76	Koroula	PND	koda_area
+X77	Vinitapura	KRA	mahendragiri_area
+X78	Sopattinam	CHL	south_tondainadu_area
+X79	Koreoura	CHR	south_satiyaputa_area
+X7A	Talavanapura	TM1	south_mahishamandala_area
+X7B	Kuvalalapura	TA0	south_mahishamandala_area
+X7C	Kadapa	TM5	north_tondainadu_area
+X7D	Tirumala	TDN	north_tondainadu_area
+X7E	Brahmanaka	MRY	sauvira_area
+X7F	Detta	MRY	abhiria_area
+X7G	Abuyya	MRY	maru_area
+X7H	Madhyamika	MRY	madhyamika_area
+X7I	Dhavagarta	MRY	matsya_area
+X7J	Sripatha	MRY	surasena_area
+X7K	Erakaccha	MRY	west_cedi_area
+X7L	Varanasi	MRY	kasi_area
+X7M	Kanyakubja	MRY	pancala_area
+X7N	Ahicchatra	MRY	ahicchatra_area
+X7O	Ayodhya	MRY	kosala_area
+X7P	Vaishali	MRY	vrji_area
+X7Q	Kusinagara	MRY	malla_area
+X7R	Karnasuvarna	MRY	anga_area
+X7S	Aganagara	MRY	vanga_area
+X7T	Varendra	MRY	pundra_area
+X7U	Tamralipti	MRY	radha_area
+X7V	Itahar	MRY	kamata_area
+X7W	Indraprastha	MRY	kuru_area
+X7X	Taxila	MRY	taxila_area
+X7Y	Salutara	MRY	kasmira_area
+X7Z	Mallava	MRY	panchanada_area
+X80	Sibipura	MRY	sivi_area
+X81	Mulasthanapura	MRY	north_sindhu_area
+X82	Mallia	MRY	mallia_area
+X83	Maltecoria	MRY	kaccha_area
+X84	Ujjayini	MRY	avanti_area
+X85	Airakina	MRY	dasarna_area
+X86	Ayanakagraha	MRY	anartta_area
+X87	Minnagara	MRY	aparanta_area
+X88	Prabhasa	MRY	outer_saurashtra_area
+X89	Valabhi	MRY	inner_saurashtra_area
+X8A	Sindhumana	MRY	south_sindhu_area
+X8B	Alexandrou Limen	MRY	patalene_area
+X8C	Patan Minara	MRY	rodewala_area
+X8D	Shikharji	MRY	damodar_area
+X8E	Tageairike	SHU	north_tarim_area
+X8F	Irkeshtam	TAY	tarim_area
+X8G	Kyropolis Baktriane	TAY	cyropolis_area
+X8H	Yul	WUS	talas_area
+X8I	Maca	WUS	taraz_area
+X8J	Agaie	WUS	kapchagay_area
+X8K	Komar	WUS	chu_area
+X8L	Uvikat	SOG	sirdarya_area
+X8M	Poshkar	SOG	jaxartia_area
+X8N	Janaqala	MGT	upper_jaxartia_area
+X8O	Boot	MGT	eastern_aral_area
+X8P	Zhanatalap	MGT	syr_area
+X8Q	Vynikka	SCE	sattara_area
+X8R	Huruir	SCE	tanaissa_area
+X8S	Iados	SCE	maeotia_minores_area
+X8T	Gorgippia	BPK	bosproranum_area
+X8U	Tanais	BPK	maeotia_area
+X8V	Kalos Limen	CHS	maeotia_area
+X8W	Taphros	SCY	maeotia_area
+X8X	Karkine	SCY	olbia_area
+X8Y	Taurica	SCY	taurica_area
+X8Z	Exampeaus	SCY	sarmatia_superioris_area
+X90	Gerrhos	SCY	borysthenia_area
+X91	Ektonopolis	SCY	sarmatia_area
+X92	Onskoet	SCY	hypania_area
+X93	Aghonor	SCY	borysthenia_maioris_area
+X94	Zhenna	SCY	transborysthenia_area
+X95	Dioscurias	PHI	abasgoi_area
+X96	Yeyata	MAE	bosproranum_area
+X97	Volumis	TYG	zargidava_area
+X98	Pachora	KSH	north_nubia_area
+X99	Patigga	KSH	south_nubia_area
+X9A	Napata	KSH	napata_area
+X9B	Darou	KSH	alana_area
+X9C	Kuweib	KSH	bayuda_area
+X9D	Meragh	KSH	muqaddam_area
+X9E	Nagaa	KSH	awateib_area
+X9F	Hamadab	KSH	hawad_area
+X9G	Kakabi	KSH	kartub_area
+X9H	Gala Abu Ahmed	KSH	yellow_nile_area
+X9I	Kufriyat Atash	KSH	melik_area
+X9J	Thebai Arabikai	THD	arabia_maritimae_area
+X9K	Rabigh	THD	arabia_ad_sinus_area
+X9L	Ta'if	THD	taifa_area
+X9M	Ptolemais Theron	BMY	ptolemais_area
+X9N	Shabbabah	BMY	eastern_desert_area
+X9O	Doum	BMY	gabgaba_area
+X9P	Anak	BOR	meroe_area
+X9Q	Thalathun	BOR	kartub_area
+X9R	Taragaga	BOR	gash_area
+X9S	Bum	AUT	muqaddam_area
+X9T	Qigi	DAB	kartub_area
+X9U	Tanachtala	DOC	atbaras_area
+X9V	Uikra	YEH	tana_area
+X9W	Awash	GWN	awash_area
+X9X	Salata	BST	lugia_area
+X9Y	Mitabis	BST	ciscarpathia_area
+X9Z	Angrivaria	CHC	chaucia_area
+Z00	Vineta	GIT	east_gothia_area
+Z01	Sigulonia Australis	TIT	cimbrica_inferioris_area
+Z02	Astuia	SMN	pharodenia_area
+Z03	Fosa	LGB	chaucia_area
+Z04	Cobandia Minor	ANG	cimbrica_inferioris_area
+Z05	Manarmanis	SXS	chasuaria_area
+Z06	Dihistan	PRN	hyrcania_area
+Z07	Shalak	PRN	dahaea_area
+Z08	Yetteka	PRN	scythia_ad_pontem_area
+Z09	Bandiyan	PSS	margu_area
+Z0A	Sild	ZNT	derbicca_area
+Z0B	Balkan	ZNT	parnia_area
+Z0C	Sariq	ZNT	kharesmia_area
+Z0D	Sthura	ZNT	scythia_prima_area
+Z0E	Gurganj	KRZ	kharesmia_area
+Z0F	Amul	KRZ	kharesmia_superior
+Z0G	Campia	GTH	rugia_area
+Z0H	Rhuticlia Helveconia	RGG	helveconia_area
+Z0I	Venideva	SCI	vistulia_area
+Z0J	Duretica	SCI	galindia_area
+Z0K	Alaria	FOS	langobardia_area
+Z0L	Aregellia	FOS	caluconia_area
+Z0M	Saxonnia	REU	chaucia_area
+Z0N	Charudia	AVO	saxony_area
+Z0O	Ascalingium	AGR	chaucia_area
+Z0P	Tivedia	VDL	west_gothia_area
+Z0Q	Helveconia	BUR	helveconia_area
+Z0R	Caucia Occidentalis	ELA	hibernia_occidentalis_area
+Z0S	Manapia Occidentalis	CAU	hibernia_occidentalis_area
+Z0T	Venedicana	VND	galindia_area
+Z0U	Cephaloedium	THR	east_sicily_area
+Z0V	Olbia Pamphylias	TRM	pamphylia_area
+Z0W	Lystra	HMD	lycaonia_area
+Z0X	Phaselis	LYC	pamphylia_area
+Z0Y	Pappa	ORO	lycaonia_area
+Z0Z	Kagrai	ABL	isauria_area
+Z10	Saleia Salbakes	KIB	inland_caria_area
+Z11	Ziporeia	KAK	paphlagonia_inferior_area
+Z12	Klibanos	KLT	isauria_area
+Z13	Lairtes	KLT	pamphylia_area
+Z14	Orippo	ASA	baetica_hispalensis_area
+Z15	Lauro	ASG	malacita_area
+Z16	Suel	CIP	malacita_area
+Z17	Segida	CRM	baetica_cordubensis_area
+Z18	Ad Rubras	ILP	couneia_area
+Z19	Tharsis	ONU	turdetania_occidentalis_area
+Z1A	Follia	AUA	galindia_area
+Z1B	Wundwin	BNN	shan_area
+Z1C	Pai	HAL	shan_area
+Z1D	Anglia Meridionalis	SUA	saxony_area
+Z1E	Ruticlia	SUA	pharodenia_area
+Z1F	Cobandia Maior	CHD	cimbrica_inferioris_area
+Z1G	Thwetum	FAV	west_gothia_area
+Z1H	Vist	FAV	east_gothia_area
+Z1I	Burgus Quadorum	TEC	transcarpathia_occidentalis_area
+Z1J	Anartiana	TEC	pannonia_terminus_area
+Z1K	Tisia	TEC	iazygia_majoris_area
+Z1L	Zurobara	TOL	iazygia_majoris_area
+Z1M	Albocensia	TOI	iazygia_minoris_area
+Z1N	Lugio	TOI	pannonia_valeria_area
+Z1O	Municipium	CEL	moesia_prima_orientalis_area
+Z1P	Clevora	TIM	dacia_inferioris_area
+Z1Q	Mestrianis	AIA	pannonia_prima_occidentalis_area
+Z1R	Piretis	ADZ	pannonia_prima_orientalis_area
+Z1S	Dravia	AMA	savia_occidentalis_area
+Z1T	Abusina	RUC	tulingia_area
+Z1U	Vidrosia	CHV	chasuaria_area
+Z1V	Naharvalorum	MNI	elysia_area
+Z1W	Kavera Venedia	MNI	venedia_area
+Z1X	Mornal	MNI	galindia_area
+Z1Y	Ambium	HAR	lugia_area
+Z1Z	Vartia	HEL	lugia_area
+Z20	Vindua	NAH	elysia_area
+Z21	Vistugia	VAN	chamavia_area
+Z22	Amisia	USI	bructeria_area
+Z23	Isala	BRU	frisia_area
+Z24	Buguntia	HEV	elysia_area
+Z25	Icorigium	CAE	treveria_area
+Z26	Aquae Granni	CND	menapia_orientalis
+Z27	Vervigium	PAM	nervia_area
+Z28	Makopsis	KEL	sardinia_septentrionalis
+Z29	Kares	RUB	sardinia_septentrionalis
+Z2A	Settina	IAZ	borysthenia_minor_area
+Z2B	Kisko	IAZ	tanassa_area
+Z2C	Uldan	IAZ	borysthenia_maioris_area
+Z2D	Alkhyent	IAZ	danaia_area
+Z2E	Shashcha	IAZ	danaia_superioris_area
+Z2F	Kichpa	ROX	alania_proper_area
+Z2G	Vyrni	ROX	confluenta_area
+Z2H	Sechem	ROX	sattara_area
+Z2I	Porach	ROX	hyrcania_superior_area
+Z2J	Mennichak	AOR	alania_orientalis_area
+Z2K	Enim	AOR	atara_area
+Z2L	Dymar	AOR	durse_area
+Z2M	Reama	AOR	hyrcania_superior_area
+Z2N	Birky	GLO	budinia_area
+Z2O	Ahgranika	GLO	transborysthenia_area
+Z2P	Merefa	BDI	gelonia_area
+Z2Q	Desna	BDI	desna_area
+Z2R	Psel	BDI	seym_area
+Z2S	Sula	BDI	dnieper_area
+Z2T	Kleven	MLN	desna_area
+Z2U	Zhuchok	MLN	seym_area
+Z2V	Siskary	ALZ	hypania_area
+Z2W	Vyrketin	ARO	hypania_area
+Z2X	Volyatss	ARO	hypania_minoris_area
+Z2Y	Gelts	BRY	transhypania_area
+Z2Z	Soe	BRY	transborysthenia_area
+Z30	Akhynt	BRY	hypania_area
+Z31	Vurdant	NEU	bassetia_area
+Z32	Assula	NEU	amadocia_occidentalis_area
+Z33	Gorodische	NEU	milograd_area
+Z34	Lyubech	NEU	desna_area
+Z35	Alu	ANP	joki_area
+Z36	Lechta	AGA	hypania_minoris_area
+Z37	Ad Verticem	AGA	muradava_area
+Z38	Krueng	AGA	transhypania_area
+Z39	Gangania	GAN	hibernia_occidentalis_area
+Z3A	Juba	AX4	dufar_area
+Z3B	Andhur	AX6	dufar_area
+Z3C	Tabankuduk	SA0	north_aral_area
+Z3D	Karabulak	SA0	west_aral_area
+Z3E	Beyneu	SA0	atyrau_area
+Z3F	Gyoria	SA0	darn_area
+Z3G	Tortkuduk	SA0	zhanaqala_area
+Z3H	Tigdi	SA1	sarysu_area
+Z3I	Krugli	SA2	zhanaqala_area
+Z3J	Hurasa	SA2	thyssagetia_orientalis_area
+Z3K	Vaski	SA3	thyssagetia_occidentalis_area
+Z3L	Kazanka	SA3	durse_area
+Z3M	Kalm	SA3	sarmatia_eschate_area
+Z3N	Sary Su	SA3	raha_ulterior_area
+Z3O	Touggourt	MGU	touggourt_area
+Z3P	Guerrara	MGU	ouargla_area

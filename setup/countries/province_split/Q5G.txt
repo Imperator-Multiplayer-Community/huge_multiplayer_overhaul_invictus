@@ -1,0 +1,17 @@
+﻿color = rgb { 135 34 229 }
+color2 = rgb { 155 34 229 }
+
+gender_equality = no
+
+ship_names = {
+	Anderiton Anicio
+	Bannaciacon Bibracte Bormo Borvo Briva
+	Gabales Gergovia
+	Icioduron Iciomagos
+	Mediocantos
+	Randosatis Rigomagos Rodumna Ruessio
+	Segeta Segodunon Segusiaves Sitillia
+	Tritullos
+	Ubrivon
+	Vellaves Vorogio
+}

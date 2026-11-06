@@ -1,0 +1,3 @@
+﻿NLevy = {
+	DISBAND_MILITARY_EXP_MULT = 0 # when disbanding a levy military experience will be added to the country
+}

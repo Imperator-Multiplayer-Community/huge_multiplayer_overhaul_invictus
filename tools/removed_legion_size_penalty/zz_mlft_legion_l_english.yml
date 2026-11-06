@@ -1,0 +1,7 @@
+﻿l_english:
+ mlft_legion_oversized_1:0 "Oversized Legion"
+ mlft_legion_oversized_1_desc:0 "This legion has more than 6,000 men (1-2 cohorts over the limit). Its armies are harder to supply and keep in order."
+ mlft_legion_oversized_2:0 "Bloated Legion"
+ mlft_legion_oversized_2_desc:0 "This legion has 3-4 cohorts more than the 6,000-man limit. Morale, supply and marching speed suffer."
+ mlft_legion_oversized_3:0 "Unwieldy Legion"
+ mlft_legion_oversized_3_desc:0 "This legion has 5 or more cohorts over the 6,000-man limit. It is close to unmanageable."

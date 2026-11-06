@@ -1,0 +1,8 @@
+﻿color = rgb { 176 47 191 }
+color2 = rgb { 191 47 191 }
+
+gender_equality = no
+
+ship_names = {
+	#
+}

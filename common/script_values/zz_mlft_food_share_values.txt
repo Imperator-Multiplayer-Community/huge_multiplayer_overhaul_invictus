@@ -1,0 +1,7 @@
+﻿# Food an allied/subject army takes from your granaries each month (from HMO).
+mlft_unit_food_share_svalue = { # unit scope
+	value = unit_size
+	divide = 5
+	floor = yes
+	add = 5
+}

@@ -1,0 +1,51 @@
+﻿# Unify Your Home Lands (MLHU) - who can start the mission.
+
+# Our primary culture is the majority in a territory we don't own: one that borders us,
+# or failing that, anywhere else (covers islands and colonies far from their kin).
+mlhu_primary_kin_nearby_trigger = {
+	OR = {
+		any_owned_province = {
+			any_neighbor_province = {
+				is_sea = no
+				has_owner = yes
+				NOT = { owner = root }
+				dominant_province_culture = root.culture
+			}
+		}
+		# Checked last because it is the slowest: kin anywhere else in the world
+		# (islands and overseas colonies, e.g. Lemnos looking to Athens).
+		any_province = {
+			is_sea = no
+			has_owner = yes
+			NOT = { owner = root }
+			dominant_province_culture = root.culture
+		}
+	}
+}
+
+# Same check for the culture that is the majority in our capital, when it differs from our
+# primary culture (a ruling class over foreign pops).
+mlhu_capital_kin_nearby_trigger = {
+	NOT = { root.capital_scope = { dominant_province_culture = root.culture } }
+	OR = {
+		any_owned_province = {
+			any_neighbor_province = {
+				is_sea = no
+				has_owner = yes
+				NOT = { owner = root }
+				dominant_province_culture = root.capital_scope.culture
+			}
+		}
+		capital_scope = {
+			exists = region
+			region = {
+				any_region_province = {
+					is_sea = no
+					has_owner = yes
+					NOT = { owner = root }
+					dominant_province_culture = root.capital_scope.culture
+				}
+			}
+		}
+	}
+}

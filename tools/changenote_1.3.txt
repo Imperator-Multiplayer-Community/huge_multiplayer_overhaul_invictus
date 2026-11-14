@@ -1,0 +1,5 @@
+Version 1.3
+- Fixed: many nations had no missions at all (reported by Krook for Bactria). The "Unify Your Home Lands" tree used Invictus's block for nations with their own story trees, which shut out every Hellenic and Macedonian nation and many others, even when the one-province split had made their story tree impossible to start. It is now open to all independent nations. Historical trees are still preferred by the AI.
+- Changed: "Unify Your Home Lands" can now also start when your people live overseas or far away, not only next door (e.g. Lemnos and Athens).
+- New: a ruling class over foreign pops (e.g. Macedonian Bactria, Sardis, Arachosia) whose own culture has no kin left to unite takes the culture of its capital as its people instead.
+- Nations that start with no mission available drop from 71 to 8. The 8 left already own every territory of their culture, so there is nothing to unify.

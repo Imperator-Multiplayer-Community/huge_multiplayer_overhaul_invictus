@@ -1,5 +1,7 @@
 ﻿# Unify Your Home Lands (MLHU) - requested by Nabber.
 # Generic tree for every nation: unite the territories where your primary culture is the majority.
+# If no territory we do not own has our primary culture as its majority (e.g. a Macedonian
+# dynasty ruling Lydians), the homeland is instead the culture that is the majority in our capital.
 # The homeland is fixed when the mission starts (variable list mlhu_homeland on the country).
 
 mlhu_unify_homeland = {
@@ -23,14 +25,12 @@ mlhu_unify_homeland = {
 		NOT = { has_variable = mlhu_homeland_done }
 		is_subject = no
 		has_civil_war = no
-		invictus_mission_block_trigger = yes # respects Invictus's scripted openings (Rome, Carthage, Athens, Sparta...)
-		any_owned_province = {
-			any_neighbor_province = {
-				is_sea = no
-				has_owner = yes
-				NOT = { owner = root }
-				dominant_province_culture = root.culture
-			}
+		# No invictus_mission_block_trigger here on purpose: after the one-province split many
+		# nations it blocks (Hellenic, Macedonian Diadochi fragments...) can no longer start their
+		# historical trees. Historical trees still win for the AI through the chance weights.
+		OR = {
+			mlhu_primary_kin_nearby_trigger = yes
+			mlhu_capital_kin_nearby_trigger = yes
 		}
 	}
 
@@ -41,14 +41,33 @@ mlhu_unify_homeland = {
 	on_start = {
 		start_mission_ai_effect = yes
 		clear_variable_list = mlhu_homeland
-		every_province = {
-			limit = {
-				is_sea = no
-				has_owner = yes
-				dominant_province_culture = root.culture
+		remove_variable = mlhu_capital_culture
+		if = {
+			# Our primary culture has kin to unite (next to us, or anywhere else)
+			limit = { mlhu_primary_kin_nearby_trigger = yes }
+			every_province = {
+				limit = {
+					is_sea = no
+					has_owner = yes
+					dominant_province_culture = root.culture
+				}
+				root = {
+					add_to_variable_list = { name = mlhu_homeland target = prev }
+				}
 			}
-			root = {
-				add_to_variable_list = { name = mlhu_homeland target = prev }
+		}
+		else = {
+			# Fallback: a ruling class over foreign pops unites the people of its capital
+			set_variable = mlhu_capital_culture
+			every_province = {
+				limit = {
+					is_sea = no
+					has_owner = yes
+					dominant_province_culture = root.capital_scope.culture
+				}
+				root = {
+					add_to_variable_list = { name = mlhu_homeland target = prev }
+				}
 			}
 		}
 	}
@@ -56,6 +75,7 @@ mlhu_unify_homeland = {
 	on_abort = {
 		custom_tooltip = mlhu_cooldown_tt
 		clear_variable_list = mlhu_homeland
+		remove_variable = mlhu_capital_culture
 		set_variable = {
 			name = mlhu_cooldown
 			days = 7300
@@ -65,6 +85,7 @@ mlhu_unify_homeland = {
 	on_completion = {
 		complete_mission_effect = yes
 		clear_variable_list = mlhu_homeland
+		remove_variable = mlhu_capital_culture
 	}
 
 	# 1. Call of Kinship - claim every homeland territory we don't hold
@@ -131,7 +152,13 @@ mlhu_unify_homeland = {
 				any_country = {
 					NOT = { this = root }
 					has_land = yes
-					primary_culture = root.culture
+					OR = {
+						primary_culture = root.culture
+						AND = {
+							root = { has_variable = mlhu_capital_culture }
+							primary_culture = root.capital_scope.culture
+						}
+					}
 					OR = {
 						is_subject_of = root
 						alliance_with = root

@@ -2,8 +2,8 @@
  mlhu_unify_homeland: "Unify Your Home Lands"
  mlhu_unify_homeland_BUTTON_TOOLTIP: "Our people live in lands we do not rule. Bring them under one banner."
  mlhu_unify_homeland_BUTTON_DETAILS: ""
- mlhu_unify_homeland_DESCRIPTION: "Across the hills and valleys around us live people who speak our tongue, honour our gods and share our ancestors, yet they answer to other masters. Every territory where our people are the majority is part of our homeland, and it is time to unite it."
- mlhu_unify_homeland_CRITERIA_DESCRIPTION: "This mission is complete when we own at least 90% of the territories where our primary culture held the majority when the mission began."
+ mlhu_unify_homeland_DESCRIPTION: "Across the hills and valleys around us live people who speak our tongue, honour our gods and share our ancestors, yet they answer to other masters. Every territory where our people are the majority is part of our homeland, and it is time to unite it. (If our ruling culture has no kin left to unite, our people are the culture of our capital.)"
+ mlhu_unify_homeland_CRITERIA_DESCRIPTION: "This mission is complete when we own at least 90% of the territories where our people held the majority when the mission began."
  mlhu_unify_homeland_REWARD_DESCRIPTION: "A permanent bonus to the happiness of our own people, stability, diplomatic reputation and morale."
  mlhu_cooldown_tt: "We will not be able to take this mission again for #Y 20#! years."
 
@@ -17,7 +17,7 @@
 
  mlhu_task_3: "Bonds of Blood"
  mlhu_task_3_DESC: "Not every kin state must be conquered. An alliance or a loyal subject of our own people strengthens our claim to lead them."
- mlhu_task_3_req_tt: "Another nation with our primary culture is our #Y ally#! or #Y subject#!."
+ mlhu_task_3_req_tt: "Another nation of our people is our #Y ally#! or #Y subject#!."
 
  mlhu_task_4: "Heart of Our People"
  mlhu_task_4_DESC: "A great people needs a great capital, a city where our kin will gather and thrive."

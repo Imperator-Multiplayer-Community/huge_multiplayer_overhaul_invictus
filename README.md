@@ -6,7 +6,7 @@ Published on Steam as **Molon Labe Invictus SubMod – Foreign Traditions** ([Wo
 
 A submod for **Imperator: Invictus** that rebalances the military and reshapes the map. Foreign military traditions are easier and cheaper to reach but much weaker than your own, so borrowing from your neighbours becomes a flavour choice rather than the best build. Military tech no longer inflates morale. Every nation starts independent, with at most one province and without legions, and a new mission tree lets each people fight to unite its homeland.
 
-**Current version: 1.2**
+**Current version: 1.3**
 
 Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you don't need to run both.
 
@@ -18,7 +18,7 @@ Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you d
 - **One Province Nations.** Every nation starts with at most one province. Each nation keeps the province its capital is in, and every other province it held becomes a new independent nation, about 1,500 nations in total. New nations take their culture and religion from their pops and their government and tech from their old owner, and they are named after their capital.
 - **No subjects at start.** All starting feudatories, satrapies, tributaries, client states, vassal tribes and temple states begin as independent nations.
 - **No legions at start.** No nation starts with a legion or with a military law that allows recruiting one. The Diadochi kingdoms now start on "Recruit from Nobles" instead of "Work for the Best", so everyone has to change military law before raising legions. Mission rewards that used to hand out a free legion (Parthian satrapy, Argyraspides, Hamilcar, Magas of Cyrene) now give manpower instead, about 1,000 men for every cohort the legion would have had.
-- **Unify Your Home Lands.** A new mission tree, suggested by Nabber, for every independent nation that borders a territory where its primary culture is the majority. When you start it, every territory where your culture holds the majority becomes your homeland. Claim it all, conquer it step by step (25%, 50%, 75%, 90%), win over a kin nation as ally or subject and build up your capital. Finishing it grants a permanent *Homeland United* bonus. The AI uses it too, but historical mission trees are preferred wherever they are available.
+- **Unify Your Home Lands.** A new mission tree, suggested by Nabber, for every independent nation whose people still live in territories it does not own. When you start it, every territory where your primary culture holds the majority becomes your homeland. A ruling class over foreign pops, like a Macedonian dynasty in Bactria or Lydia, unites the culture of its capital instead. Claim it all, conquer it step by step (25%, 50%, 75%, 90%), win over a kin nation as ally or subject and build up your capital. Finishing it grants a permanent *Homeland United* bonus. The AI uses it too, but historical mission trees are preferred wherever they are available. Almost every nation has at least one mission at start; the few exceptions already rule every territory of their people.
 - **Open granaries for allies.** Ported from **HMO: Huge Multiplayer Overhaul**. While you are at war, player armies of your allies, subjects and overlord standing in your provinces are fed from your province food stores every month: unit size ÷ 5 + 5 food, as long as the province has that much and at least 10 food. AI armies don't take your food.
 - **Molon Labe changes by Pope:** disbanding levies no longer gives military experience, plus his reworked integrated-culture decisions.
 
@@ -37,7 +37,7 @@ Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you d
 - Also replaces five Invictus event files to swap mission legions for manpower: *events/flavor_egy.txt*, *events/dhe/dhe_carthage.txt*, *me_parthia_satrapy.txt*, *me_diadochi_empire.txt* and *me_carthage_iberian_investments.txt*. Mods that change those events will conflict.
 - Does not change any Invictus military tradition file, so tradition overhauls will still load, although their new traditions won't get a penalty until this mod is updated.
 - One Province Nations needs a **new game**. The other features are safe to add to an existing save, and tradition penalties appear within the first month.
-- With about 1,500 nations at start, the early game will run slower than normal Invictus.
+- With about 1,500 nations and roughly 70% more characters than a normal Invictus start, the early game runs noticeably slower. Speed improves as nations are conquered and merged.
 
 ## Credits
 Pope for the original Molon Labe Invictus SubMod, Nabber for the Unify Your Home Lands idea, the HMO: Huge Multiplayer Overhaul team for the allied food-sharing system, and the Invictus team.

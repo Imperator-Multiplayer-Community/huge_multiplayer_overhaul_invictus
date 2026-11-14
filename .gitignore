@@ -1,3 +1,5 @@
 .DS_Store
 __pycache__/
 *.pyc
+tools/mission_audit/adj_cache.json
+tools/mission_audit/result.json

@@ -1,0 +1,8 @@
+﻿# Levy XP retention (MLLX). Base experience decay is 4.5%/month (Invictus base_values);
+# tribes already have -1%. Both end up at ~0.5%/month while no legion law is enacted.
+mllx_levy_xp_retention = {
+	experience_decay = -0.04
+}
+mllx_levy_xp_retention_tribal = {
+	experience_decay = -0.03
+}

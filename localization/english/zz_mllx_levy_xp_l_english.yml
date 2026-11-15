@@ -1,0 +1,7 @@
+﻿l_english:
+ disband_levy:0 "Disband Levy"
+ disband_levydesc:0 "Send levy troops home and gain military experience from the experience they gained since they were raised (up to 10). Only levies commanded by governors or the ruler yield military experience."
+ mllx_levy_xp_retention:0 "Levy Veterans"
+ mllx_levy_xp_retention_desc:0 "Our military law does not allow legions, so our levies keep their hard-won experience."
+ mllx_levy_xp_retention_tribal:0 "Levy Veterans"
+ mllx_levy_xp_retention_tribal_desc:0 "Our military law does not allow legions, so our levies keep their hard-won experience."

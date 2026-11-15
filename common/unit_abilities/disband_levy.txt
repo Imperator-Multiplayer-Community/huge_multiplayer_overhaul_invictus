@@ -1,0 +1,71 @@
+﻿# Levy XP (MLLX) - ported from HMO. Disband a levy and get military experience
+# for the experience it gained since it was raised (governor / ruler levies only).
+disband_levy = {
+	enable = yes
+	toggle = no
+	army_only = yes
+
+	hidden = {
+		OR = {
+			has_legion_trigger = yes
+			AND = {
+				exists = commander
+				commander = { is_mercenary = yes }
+			}
+		}
+	}
+
+	soundeffect = "event:/SFX/UI/Unit/sfx_ui_unit_reorganization"
+
+	allow = {
+		is_army = yes
+		in_combat = no
+		is_moving = no
+		is_exiled = no
+		in_siege = no
+		has_commander = yes
+		has_legion_trigger = no
+		unit_owner = {
+			war = no
+			has_civil_war = no
+		}
+		trigger_if = {
+			limit = { exists = commander }
+			commander = { loyalty > 33 }
+		}
+	}
+
+	start_effect = {
+		set_variable = {
+			name = normalized_xp_percentage
+			value = experience_percentage
+		}
+		save_scope_as = levy_unit
+
+		if = {
+			limit = {
+				exists = commander
+				commander = {
+					OR = {
+						is_governor = yes
+						is_ruler = yes
+					}
+					is_mercenary = no
+				}
+			}
+			change_variable = {
+				name = normalized_xp_percentage
+				multiply = 100
+			}
+			scope:levy_unit.unit_owner = {
+				mllx_disband_levy_xp_effect = yes
+			}
+		}
+
+		scope:levy_unit = {
+			remove_variable = normalized_xp_percentage
+			remove_variable = levy_start_xp
+			destroy_unit = yes
+		}
+	}
+}

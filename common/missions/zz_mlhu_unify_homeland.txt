@@ -1,7 +1,9 @@
 ﻿# Unify Your Home Lands (MLHU) - requested by Nabber.
-# Generic tree for every nation: unite the territories where your primary culture is the majority.
-# If no territory we do not own has our primary culture as its majority (e.g. a Macedonian
-# dynasty ruling Lydians), the homeland is instead the culture that is the majority in our capital.
+# Generic tree for every nation: unite the territories of your capital's region where your people
+# are the majority. "Your people" is the culture that is the majority in your capital; if that culture
+# has no territory left to unite in the region, your primary culture is used instead.
+# Limited to the capital's region so nations whose culture spread far (Macedonians from Greece to
+# India, Punic from Iberia to Libya) don't get a homeland spanning half the map.
 # The homeland is fixed when the mission starts (variable list mlhu_homeland on the country).
 
 mlhu_unify_homeland = {
@@ -29,8 +31,8 @@ mlhu_unify_homeland = {
 		# nations it blocks (Hellenic, Macedonian Diadochi fragments...) can no longer start their
 		# historical trees. Historical trees still win for the AI through the chance weights.
 		OR = {
-			mlhu_primary_kin_nearby_trigger = yes
 			mlhu_capital_kin_nearby_trigger = yes
+			mlhu_primary_kin_nearby_trigger = yes
 		}
 	}
 
@@ -43,30 +45,33 @@ mlhu_unify_homeland = {
 		clear_variable_list = mlhu_homeland
 		remove_variable = mlhu_capital_culture
 		if = {
-			# Our primary culture has kin to unite (next to us, or anywhere else)
-			limit = { mlhu_primary_kin_nearby_trigger = yes }
-			every_province = {
-				limit = {
-					is_sea = no
-					has_owner = yes
-					dominant_province_culture = root.culture
-				}
-				root = {
-					add_to_variable_list = { name = mlhu_homeland target = prev }
+			# The people of our capital still have kin to unite in our region
+			limit = { mlhu_capital_kin_nearby_trigger = yes }
+			capital_scope.region = {
+				every_region_province = {
+					limit = {
+						is_sea = no
+						has_owner = yes
+						dominant_province_culture = root.capital_scope.culture
+					}
+					root = {
+						add_to_variable_list = { name = mlhu_homeland target = prev }
+					}
 				}
 			}
 		}
 		else = {
-			# Fallback: a ruling class over foreign pops unites the people of its capital
-			set_variable = mlhu_capital_culture
-			every_province = {
-				limit = {
-					is_sea = no
-					has_owner = yes
-					dominant_province_culture = root.capital_scope.culture
-				}
-				root = {
-					add_to_variable_list = { name = mlhu_homeland target = prev }
+			# Fallback: our primary culture's kin in our region
+			capital_scope.region = {
+				every_region_province = {
+					limit = {
+						is_sea = no
+						has_owner = yes
+						dominant_province_culture = root.culture
+					}
+					root = {
+						add_to_variable_list = { name = mlhu_homeland target = prev }
+					}
 				}
 			}
 		}
@@ -141,7 +146,8 @@ mlhu_unify_homeland = {
 		}
 	}
 
-	# 3. Bonds of Blood - a kin nation as ally or subject
+	# 3. Bonds of Blood - any nation as ally or subject (kin no longer required: after conquering
+	# our kin there may be none left, and every nation should be able to finish the tree)
 	mlhu_task_3 = {
 		icon = task_diplomatic
 		requires = { mlhu_task_1 }
@@ -152,13 +158,6 @@ mlhu_unify_homeland = {
 				any_country = {
 					NOT = { this = root }
 					has_land = yes
-					OR = {
-						primary_culture = root.culture
-						AND = {
-							root = { has_variable = mlhu_capital_culture }
-							primary_culture = root.capital_scope.culture
-						}
-					}
 					OR = {
 						is_subject_of = root
 						alliance_with = root

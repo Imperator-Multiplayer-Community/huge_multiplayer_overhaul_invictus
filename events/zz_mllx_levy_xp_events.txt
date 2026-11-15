@@ -1,0 +1,29 @@
+﻿# Levy XP (MLLX) - ported from HMO (hmo_unit_abilities.17).
+# Monthly safety net: levies raised without the military-view buttons (e.g. from
+# the levy map mode) still get their starting experience recorded.
+namespace = mllx_levy_xp
+
+mllx_levy_xp.1 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no # save cpu cycles
+		any_army = {
+			has_commander = yes
+			commander = {
+				OR = {
+					is_governor = yes
+					is_ruler = yes
+				}
+				is_mercenary = no
+			}
+			has_legion_trigger = no
+			NOT = { has_variable = levy_start_xp }
+		}
+	}
+
+	immediate = {
+		mllx_set_levy_starting_xp_effect = yes
+	}
+}

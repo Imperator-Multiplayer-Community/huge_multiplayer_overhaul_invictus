@@ -1,0 +1,92 @@
+﻿# Levy XP (MLLX) - ported from HMO: Huge Multiplayer Overhaul (by x8).
+# When a levy is raised, its starting experience is recorded. When it is disbanded
+# with the "Disband Levy" ability (or "Disband All Levies"), the country gets military
+# experience for the experience the levy GAINED: (current % - start %) x 0.075, max 10.
+# Only levies led by a governor or the ruler pay out (otherwise tribes would farm it).
+# Vanilla disband XP stays at 0 (NLevy DISBAND_MILITARY_EXP_MULT = 0).
+
+mllx_set_levy_starting_xp_effect = {
+	# scope: country
+	every_army = {
+		limit = {
+			has_commander = yes
+			commander = {
+				OR = {
+					is_governor = yes
+					is_ruler = yes
+				}
+				is_mercenary = no
+			}
+			has_legion_trigger = no
+			NOT = { has_variable = levy_start_xp }
+		}
+		set_variable = {
+			name = levy_start_xp
+			value = experience_percentage
+		}
+		change_variable = {
+			name = levy_start_xp
+			multiply = 100
+		}
+	}
+}
+
+mllx_disband_levy_xp_effect = {
+	# scope: country; needs scope:levy_unit
+	if = {
+		# no mil xp if the levy was never initialised
+		limit = {
+			exists = scope:levy_unit.var:levy_start_xp
+			exists = scope:levy_unit.var:normalized_xp_percentage
+		}
+		add_military_experience = {
+			value = scope:levy_unit.var:normalized_xp_percentage
+			subtract = scope:levy_unit.var:levy_start_xp
+			multiply = 0.075
+			min = 0
+			max = 10
+		}
+	}
+}
+
+# Levy XP retention: while the country's military law does not allow legions,
+# its armies are all levies, so cut experience decay almost to zero. Starting
+# experience then sticks, making levies much stronger (but disbanding them pays
+# less military experience, since only XP gained above the start counts).
+mllx_refresh_levy_xp_retention_effect = {
+	# scope: country
+	if = {
+		limit = { mllx_has_levy_only_military_law_trigger = yes }
+		if = {
+			limit = { is_tribal = yes }
+			if = {
+				limit = { has_country_modifier = mllx_levy_xp_retention }
+				remove_country_modifier = mllx_levy_xp_retention
+			}
+			if = {
+				limit = { NOT = { has_country_modifier = mllx_levy_xp_retention_tribal } }
+				add_country_modifier = { name = mllx_levy_xp_retention_tribal duration = -1 }
+			}
+		}
+		else = {
+			if = {
+				limit = { has_country_modifier = mllx_levy_xp_retention_tribal }
+				remove_country_modifier = mllx_levy_xp_retention_tribal
+			}
+			if = {
+				limit = { NOT = { has_country_modifier = mllx_levy_xp_retention } }
+				add_country_modifier = { name = mllx_levy_xp_retention duration = -1 }
+			}
+		}
+	}
+	else = {
+		if = {
+			limit = { has_country_modifier = mllx_levy_xp_retention }
+			remove_country_modifier = mllx_levy_xp_retention
+		}
+		if = {
+			limit = { has_country_modifier = mllx_levy_xp_retention_tribal }
+			remove_country_modifier = mllx_levy_xp_retention_tribal
+		}
+	}
+}

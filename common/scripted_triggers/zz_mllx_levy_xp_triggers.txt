@@ -1,0 +1,20 @@
+﻿# True when the country's military law does NOT let it recruit legions
+# (any law not listed here leaves legions disabled).
+mllx_has_levy_only_military_law_trigger = {
+	NOR = {
+		# monarchy
+		has_law = work_for_the_best
+		has_law = standing_army_law
+		# republic
+		has_law = republican_recruitment_2
+		has_law = republican_recruitment_4
+		has_law = republic_military_recruitment_car_2
+		has_law = republic_military_recruitment_car_4
+		# Rome
+		has_law = punic_reforms
+		has_law = marian_reforms
+		# tribes
+		has_law = super_decentralized_military_law_two
+		has_law = super_centralized_military_law_two
+	}
+}

@@ -7,6 +7,7 @@ monthly_country_pulse = {
 	on_actions = {
 		mlft_tradition_malus_pulse
 		mlft_food_share_pulse
+		mllx_levy_xp_pulse
 	}
 }
 
@@ -21,5 +22,17 @@ mlft_tradition_malus_pulse = {
 mlft_food_share_pulse = {
 	events = {
 		mlft_food_share.1
+	}
+}
+
+
+# Levy XP (ported from HMO): record levy starting XP and keep levy XP decay
+# near zero while no legion law is enacted.
+mllx_levy_xp_pulse = {
+	effect = {
+		mllx_refresh_levy_xp_retention_effect = yes
+	}
+	events = {
+		mllx_levy_xp.1
 	}
 }

@@ -1,0 +1,65 @@
+﻿# Levy XP (MLLX) - hooked into gui/military_view.gui raise / disband buttons.
+mllx_single_levy_xp_set_start_value = {
+	scope = country
+	effect = {
+		mllx_set_levy_starting_xp_effect = yes
+	}
+}
+
+mllx_all_levy_xp_set_start_value = {
+	scope = country
+	effect = {
+		mllx_set_levy_starting_xp_effect = yes
+	}
+}
+
+mllx_all_levy_xp_to_military_xp = {
+	scope = country
+
+	ai_is_valid = {
+		always = no
+	}
+
+	effect = {
+		every_army = {
+			limit = {
+				has_legion_trigger = no
+				exists = commander
+				commander = { is_mercenary = no }
+				NOT = {
+					any_sub_unit = { is_migration = yes }
+				}
+			}
+			set_variable = {
+				name = normalized_xp_percentage
+				value = experience_percentage
+			}
+			save_scope_as = levy_unit
+
+			if = {
+				# only governor / ruler levies give xp, otherwise it would be OP for tribes
+				limit = {
+					commander = {
+						OR = {
+							is_governor = yes
+							is_ruler = yes
+						}
+					}
+				}
+				change_variable = {
+					name = normalized_xp_percentage
+					multiply = 100
+				}
+				ROOT = {
+					mllx_disband_levy_xp_effect = yes
+				}
+			}
+
+			scope:levy_unit = {
+				remove_variable = normalized_xp_percentage
+				remove_variable = levy_start_xp
+				destroy_unit = yes
+			}
+		}
+	}
+}

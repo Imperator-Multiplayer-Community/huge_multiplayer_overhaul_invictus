@@ -1,0 +1,24 @@
+﻿#####################################
+# Molon Labe Invictus SubMod - trade good overrides
+# Loads after Invictus's common/trade_goods/00_default.txt, so entries here replace
+# the Invictus definitions of the same key ("Overriding entry" in database_conflicts.log).
+# Keep everything else identical to Invictus; only the marked lines differ.
+#####################################
+
+# Ported from HMO: Huge Multiplayer Overhaul (common/trade_goods/hmo_tradegoods.txt):
+# a vegetables surplus also makes moving tribesmen cheaper, not just slaves.
+vegetables = { #441 territories
+	category = 1
+
+	gold = 0.2
+
+	province = {
+		local_monthly_food = 3
+	}
+	country = {
+		slaves_move_cost_modifier = -0.25
+		tribesmen_move_cost_modifier = -0.25	# HMO
+	}
+
+	color = hsv { 0.3 0.9 0.3 }
+}

@@ -1,0 +1,3 @@
+﻿l_spanish:
+ # Molon Labe SubMod: same title in every language so gui/diplomatic_view.gui can hide the Threaten War button
+ THREATEN_WARTITLE:0 "Threaten War"

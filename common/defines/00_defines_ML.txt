@@ -1,3 +1,8 @@
 ﻿NLevy = {
 	DISBAND_MILITARY_EXP_MULT = 0 # when disbanding a levy military experience will be added to the country
 }
+
+NDiplomacy = {
+	TRUCE_YEARS = 15 # every truce lasts 15 years (vanilla 3)
+	SCALED_TRUCE_YEARS = 0 # no extra years scaled by warscore (vanilla 5)
+}

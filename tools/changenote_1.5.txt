@@ -1,0 +1,5 @@
+Version 1.5
+- New: 15-year truces. Every peace deal now gives a flat 15-year truce, whatever the warscore (vanilla: 3 years plus up to 5 more for a decisive peace).
+- Removed: the "Threaten War" diplomatic action. The button is gone from the diplomacy window in every game language, and the AI always refuses it as a safety net, so territory only changes hands through real wars.
+- Changed: Cyrene stays independent. The first Magas mission ("A Governor for Cyrenaica") no longer makes Cyrene a feudatory of Egypt. Magas still arrives from the Ptolemaic court and takes the throne, and Cyrene gains +10 stability and +15 legitimacy instead.
+- Compatibility: the mod now also replaces Invictus's gui/diplomatic_view.gui, common/ai_diplochance/00_default.txt and events/mission_events/me_cyr_magas_events.txt. UI mods that change the diplomacy window, and mods that change the Cyrene Magas events, will conflict.

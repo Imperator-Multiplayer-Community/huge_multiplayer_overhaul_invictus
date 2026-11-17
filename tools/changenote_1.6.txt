@@ -1,0 +1,6 @@
+Version 1.6
+- New: less gold for large empires. Regional Powers get -5% tax income, Major Powers -10% tax and -5% commerce, and Great Powers -15% tax and -10% commerce. All other rank bonuses are unchanged.
+- New (ported from HMO: Huge Multiplayer Overhaul): recruiting mercenaries costs +100% for Regional Powers, +200% for Major Powers and +300% for Great Powers.
+- New (ported from HMO: Huge Multiplayer Overhaul): a vegetables surplus now makes moving tribesmen 25% cheaper as well as slaves (Invictus: slaves only).
+- Compatibility: the mod now overrides the vegetables trade good (the rest of Invictus's trade goods are untouched). Mods that change the vegetables trade good will conflict.
+- Compatibility: the mod now overrides the Regional, Major and Great Power rank modifiers. Mods that change rank modifiers will conflict.

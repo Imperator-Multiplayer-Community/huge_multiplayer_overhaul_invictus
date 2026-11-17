@@ -1,0 +1,5 @@
+Version 1.10
+- Fixed: "Disband All Levies" no longer disbands armies granted by missions or events (for example the Macrobian Mahout war elephants). It used to remove every army that wasn't a legion; now the game itself decides what counts as a levy, the same way as in Invictus.
+- Changed: the per-army "Disband Levy" button is gone, because it couldn't tell a levy from a mission army either. The per-governorship disband button in the military window is back instead.
+- Unchanged: disbanding levies still gives military experience for the experience they gained since they were raised (up to 10 per levy, only for levies led by a governor or the ruler). Armies that are not disbanded give nothing.
+- Fixed: two script errors in the log: the Pontus mission no longer tries to free Pontus from the Antigonids when it isn't their subject (starting subjects are removed in this mod), and Unify Your Home Lands no longer clears a variable it doesn't use anymore.

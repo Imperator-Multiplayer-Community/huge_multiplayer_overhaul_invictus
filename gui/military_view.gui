@@ -809,9 +809,10 @@ base_window = {
 						size = { 200 0 }
 						parentanchor = right
 						blockoverride "Center_text" { text = "DISBAND_ALL_LEVIES" }
-						datacontext = "[GetScriptedGui('mllx_all_levy_xp_to_military_xp')]" # MLLX levy xp
-						blockoverride "On_click" {
-							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+						blockoverride "On_click" { # MLLX levy xp: xp before, engine disband, xp after
+							onclick = "[GetScriptedGui('mllx_levy_xp_before_disband').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+							onclick = "[MilitaryView.DisbandAllLevies]"
+							onclick = "[GetScriptedGui('mllx_levy_xp_after_disband').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
 						}
 						enabled = "[MilitaryView.CanDisbandAllLevies]"
 						tooltip = "[MilitaryView.CanDisbandAllLeviesTooltip]"
@@ -1077,7 +1078,19 @@ base_window = {
 												spacing = 6
 												ignoreinvisible = yes
 
-												# MLLX levy xp: vanilla per-governorship disband removed (use the Disband Levy unit ability)
+												# MLLX levy xp: per-governorship disband restored in v1.10 (engine disband + levy xp)
+												button_delete_item = {
+													parentanchor = vcenter
+													size = { 32 32 }
+													enabled = "[GovernorshipItem.CanDisbandLevy]"
+													blockoverride "On_click"
+													{
+														onclick = "[GetScriptedGui('mllx_levy_xp_before_disband').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+														onclick = "[GovernorshipItem.OnDisbandLevy]"
+														onclick = "[GetScriptedGui('mllx_levy_xp_after_disband').Execute( GuiScope.SetRoot( Player.MakeScope ).End )]"
+													}
+													tooltip = "[GovernorshipItem.CanDisbandLevyTooltip]"
+												}
 
 												text_button_square = {
 													parentanchor = vcenter

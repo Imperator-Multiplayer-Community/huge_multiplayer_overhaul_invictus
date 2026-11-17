@@ -5,19 +5,17 @@ disband_levy = {
 	toggle = no
 	army_only = yes
 
+	# v1.10: hidden. Script cannot tell a levy from a mission/event army, so this
+	# ability destroyed armies granted by missions. Use the per-governorship disband
+	# or Disband All Levies instead (the engine only disbands real levies there).
 	hidden = {
-		OR = {
-			has_legion_trigger = yes
-			AND = {
-				exists = commander
-				commander = { is_mercenary = yes }
-			}
-		}
+		always = yes
 	}
 
 	soundeffect = "event:/SFX/UI/Unit/sfx_ui_unit_reorganization"
 
 	allow = {
+		always = no
 		is_army = yes
 		in_combat = no
 		is_moving = no

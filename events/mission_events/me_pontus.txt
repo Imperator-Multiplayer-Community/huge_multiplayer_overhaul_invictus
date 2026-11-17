@@ -491,7 +491,7 @@ pontus_startup.6 = {
                 save_scope_as = mithridates_temp_capital
             }
             set_capital = scope:mithridates_temp_capital
-            c:PRY = { release_subject = root }
+            if = { limit = { is_subject_of = c:PRY } c:PRY = { release_subject = root } } # MLPM: no starting subjects
             every_in_list = {
                 list = pop_list
                 move_pop = scope:mithridates_temp_capital

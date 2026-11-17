@@ -13,7 +13,16 @@ mllx_all_levy_xp_set_start_value = {
 	}
 }
 
-mllx_all_levy_xp_to_military_xp = {
+# Disbanding (v1.10): the game engine decides which armies are levies and disbands
+# them (Disband All Levies / per-governorship disband). Our script no longer
+# destroys anything - it used to destroy EVERY non-legion army, including armies
+# granted by missions and events (e.g. Macrobian Mahout's war elephants).
+# The buttons run: mllx_levy_xp_before_disband -> engine disband -> mllx_levy_xp_after_disband.
+# "before" works out the military experience each tagged levy would pay; "after"
+# takes back the share of every army that is still alive, so only the armies the
+# engine really disbanded pay out.
+
+mllx_levy_xp_before_disband = {
 	scope = country
 
 	ai_is_valid = {
@@ -21,45 +30,93 @@ mllx_all_levy_xp_to_military_xp = {
 	}
 
 	effect = {
+		set_variable = {
+			name = mllx_pending_levy_xp
+			value = 0
+		}
 		every_army = {
 			limit = {
 				has_legion_trigger = no
+				has_variable = levy_start_xp
 				exists = commander
-				commander = { is_mercenary = no }
-				NOT = {
-					any_sub_unit = { is_migration = yes }
-				}
-			}
-			set_variable = {
-				name = normalized_xp_percentage
-				value = experience_percentage
-			}
-			save_scope_as = levy_unit
-
-			if = {
-				# only governor / ruler levies give xp, otherwise it would be OP for tribes
-				limit = {
-					commander = {
-						OR = {
-							is_governor = yes
-							is_ruler = yes
-						}
+				commander = {
+					is_mercenary = no
+					OR = {
+						is_governor = yes
+						is_ruler = yes
 					}
 				}
+			}
+			save_scope_as = mllx_levy_unit
+			set_variable = {
+				name = mllx_pending_xp
+				value = experience_percentage
+			}
+			change_variable = {
+				name = mllx_pending_xp
+				multiply = 100
+			}
+			change_variable = {
+				name = mllx_pending_xp
+				subtract = scope:mllx_levy_unit.var:levy_start_xp
+			}
+			change_variable = {
+				name = mllx_pending_xp
+				multiply = 0.075
+			}
+			if = {
+				limit = { var:mllx_pending_xp < 0 }
+				set_variable = {
+					name = mllx_pending_xp
+					value = 0
+				}
+			}
+			if = {
+				limit = { var:mllx_pending_xp > 10 }
+				set_variable = {
+					name = mllx_pending_xp
+					value = 10
+				}
+			}
+			ROOT = {
 				change_variable = {
-					name = normalized_xp_percentage
-					multiply = 100
-				}
-				ROOT = {
-					mllx_disband_levy_xp_effect = yes
+					name = mllx_pending_levy_xp
+					add = scope:mllx_levy_unit.var:mllx_pending_xp
 				}
 			}
+		}
+	}
+}
 
-			scope:levy_unit = {
-				remove_variable = normalized_xp_percentage
-				remove_variable = levy_start_xp
-				destroy_unit = yes
+mllx_levy_xp_after_disband = {
+	scope = country
+
+	ai_is_valid = {
+		always = no
+	}
+
+	effect = {
+		if = {
+			limit = { has_variable = mllx_pending_levy_xp }
+			# armies still alive were not disbanded: they pay nothing
+			every_army = {
+				limit = { has_variable = mllx_pending_xp }
+				save_scope_as = mllx_levy_unit
+				ROOT = {
+					change_variable = {
+						name = mllx_pending_levy_xp
+						subtract = scope:mllx_levy_unit.var:mllx_pending_xp
+					}
+				}
+				remove_variable = mllx_pending_xp
 			}
+			if = {
+				limit = { var:mllx_pending_levy_xp > 0 }
+				add_military_experience = {
+					value = var:mllx_pending_levy_xp
+				}
+			}
+			remove_variable = mllx_pending_levy_xp
 		}
 	}
 }

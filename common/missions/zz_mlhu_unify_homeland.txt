@@ -43,7 +43,6 @@ mlhu_unify_homeland = {
 	on_start = {
 		start_mission_ai_effect = yes
 		clear_variable_list = mlhu_homeland
-		remove_variable = mlhu_capital_culture
 		if = {
 			# The people of our capital still have kin to unite in our region
 			limit = { mlhu_capital_kin_nearby_trigger = yes }
@@ -80,7 +79,6 @@ mlhu_unify_homeland = {
 	on_abort = {
 		custom_tooltip = mlhu_cooldown_tt
 		clear_variable_list = mlhu_homeland
-		remove_variable = mlhu_capital_culture
 		set_variable = {
 			name = mlhu_cooldown
 			days = 7300
@@ -90,7 +88,6 @@ mlhu_unify_homeland = {
 	on_completion = {
 		complete_mission_effect = yes
 		clear_variable_list = mlhu_homeland
-		remove_variable = mlhu_capital_culture
 	}
 
 	# 1. Call of Kinship - claim every homeland territory we don't hold

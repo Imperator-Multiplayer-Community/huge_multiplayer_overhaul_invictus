@@ -1,0 +1,106 @@
+﻿#####################################
+# Molon Labe Invictus SubMod - Auto-trade helper (MLAT) triggers
+# See common/scripted_effects/zz_mlat_auto_trade_effects.txt
+#####################################
+
+# State scope (the importing state): it has a free route and does not have this good yet.
+mlat_wants_good_trigger = {
+	unused_trade_routes >= 1
+	root = { is_trade_goods_allowed = $GOOD$ }
+	NOT = { any_state_province = { trade_goods = $GOOD$ } }
+	trade_good_imports = {
+		target = $GOOD$
+		value < 1
+	}
+}
+
+# State scope (a candidate exporting state): has a spare unit of the good and the engine
+# would allow scope:mlat_importer to import it from here.
+mlat_exporter_base_trigger = {
+	NOT = { this = scope:mlat_importer }
+	trade_good_surplus = {
+		target = $GOOD$
+		value >= 1
+	}
+	# Keep the capital bonus: a capital only exports if it still has a surplus afterwards.
+	OR = {
+		NOT = { has_capital_bonus_for_trade_good = $GOOD$ }
+		trade_good_surplus = {
+			target = $GOOD$
+			value >= 2
+		}
+	}
+	scope:mlat_importer = {
+		can_create_trade_route = {
+			target = prev
+			goods = $GOOD$
+		}
+	}
+}
+
+# One of our own states.
+mlat_own_exporter_trigger = {
+	mlat_exporter_base_trigger = { GOOD = $GOOD$ }
+}
+
+# A state of an AI country that is not at war with us, does not dislike us and is in the
+# given standing tier (ally / great / good / neutral). Cheap owner checks come first.
+mlat_foreign_exporter_trigger = {
+	owner = {
+		is_ai = yes
+		NOT = { this = root }
+		NOT = { war_with = root }
+		opinion = {
+			target = root
+			value >= 0
+		}
+		mlat_standing_$TIER$_trigger = yes
+	}
+	mlat_exporter_base_trigger = { GOOD = $GOOD$ }
+}
+
+# State scope (scope:mlat_importer): is there such an exporter in our region / a neighbouring region?
+mlat_region_has_exporter_trigger = {
+	region = {
+		any_region_state = { mlat_foreign_exporter_trigger = { GOOD = $GOOD$ TIER = $TIER$ } }
+	}
+}
+
+mlat_neighbor_has_exporter_trigger = {
+	region = {
+		any_neighbor_region = {
+			any_region_state = { mlat_foreign_exporter_trigger = { GOOD = $GOOD$ TIER = $TIER$ } }
+		}
+	}
+}
+
+# Standing tiers. Country scope = the exporting country, root = us.
+# Allies, our subjects and our overlord.
+mlat_standing_ally_trigger = {
+	OR = {
+		alliance_with = root
+		is_subject_of = root
+		any_subject = { this = root }
+	}
+}
+
+# Great relations (Invictus's OPINION_GREAT_RELATIONS is 80).
+mlat_standing_great_trigger = {
+	opinion = {
+		target = root
+		value >= 80
+	}
+}
+
+# Good relations.
+mlat_standing_good_trigger = {
+	opinion = {
+		target = root
+		value >= 40
+	}
+}
+
+# Anyone who does not dislike us (the opinion >= 0 check above already covers it).
+mlat_standing_neutral_trigger = {
+	always = yes
+}

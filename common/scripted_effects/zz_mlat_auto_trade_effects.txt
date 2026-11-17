@@ -1,0 +1,171 @@
+﻿#####################################
+# Molon Labe Invictus SubMod - Auto-trade helper (MLAT)
+#
+# The engine's own "automated trading" (the per-state auto-trade toggle) adds routes very
+# slowly, never replaces routes, and often leaves free routes empty for years.
+# Once a month, for every PLAYER state that has automated trading switched on and a free
+# trade route, this script fills the free routes with goods the state does not have yet.
+# Foreign imports give commerce and trading with yourself gives (almost) none, so foreign
+# AI nations come first, best standing first:
+#   1. allies, subjects and our overlord,
+#   2. nations with great relations (opinion of us 80+, Invictus's "great relations" mark),
+#   3. nations with good relations (opinion of us 40+),
+#   4. any other nation that does not dislike us (opinion of us 0+),
+#   5. only then one of our own states (no commerce, but the state still gets the good).
+# Within each step, AI states in our own region are tried before neighbouring regions.
+# Rules:
+#   - only goods the state neither produces nor already imports (one route per good);
+#   - never takes the last surplus a capital needs for its capital bonus;
+#   - never imports from another PLAYER (players decide their own exports) or from an AI
+#     we are at war with or that dislikes us;
+#   - the engine's own can_create_trade_route check (range, free route, access) must pass.
+# AI countries keep the engine's normal trade behaviour.
+#####################################
+
+# Country scope (root = the player country). Called from mlat_auto_trade_pulse.
+mlat_auto_trade_effect = {
+	every_country_state = {
+		limit = {
+			is_automated_trading = yes
+			unused_trade_routes >= 1
+		}
+		save_scope_as = mlat_importer
+		mlat_try_import_effect = { GOOD = salt }
+		mlat_try_import_effect = { GOOD = iron }
+		mlat_try_import_effect = { GOOD = horses }
+		mlat_try_import_effect = { GOOD = wine }
+		mlat_try_import_effect = { GOOD = wood }
+		mlat_try_import_effect = { GOOD = amber }
+		mlat_try_import_effect = { GOOD = stone }
+		mlat_try_import_effect = { GOOD = fish }
+		mlat_try_import_effect = { GOOD = spices }
+		mlat_try_import_effect = { GOOD = elephants }
+		mlat_try_import_effect = { GOOD = papyrus }
+		mlat_try_import_effect = { GOOD = cloth }
+		mlat_try_import_effect = { GOOD = wild_game }
+		mlat_try_import_effect = { GOOD = precious_metals }
+		mlat_try_import_effect = { GOOD = steppe_horses }
+		mlat_try_import_effect = { GOOD = cattle }
+		mlat_try_import_effect = { GOOD = earthware }
+		mlat_try_import_effect = { GOOD = dye }
+		mlat_try_import_effect = { GOOD = fur }
+		mlat_try_import_effect = { GOOD = olive }
+		mlat_try_import_effect = { GOOD = leather }
+		mlat_try_import_effect = { GOOD = base_metals }
+		mlat_try_import_effect = { GOOD = woad }
+		mlat_try_import_effect = { GOOD = marble }
+		mlat_try_import_effect = { GOOD = honey }
+		mlat_try_import_effect = { GOOD = incense }
+		mlat_try_import_effect = { GOOD = hemp }
+		mlat_try_import_effect = { GOOD = vegetables }
+		mlat_try_import_effect = { GOOD = gems }
+		mlat_try_import_effect = { GOOD = camel }
+		mlat_try_import_effect = { GOOD = glass }
+		mlat_try_import_effect = { GOOD = silk }
+		mlat_try_import_effect = { GOOD = dates }
+		mlat_try_import_effect = { GOOD = sugar }
+		mlat_try_import_effect = { GOOD = cedar }
+		mlat_try_import_effect = { GOOD = myrrh }
+		mlat_try_import_effect = { GOOD = cinnabar }
+		mlat_try_import_effect = { GOOD = lapis }
+		mlat_try_import_effect = { GOOD = jade }
+		mlat_try_import_effect = { GOOD = fruits }
+		mlat_try_import_effect = { GOOD = silphium }
+	}
+}
+
+# State scope (scope:mlat_importer). One good, at most one new route.
+mlat_try_import_effect = {
+	if = {
+		limit = { mlat_wants_good_trigger = { GOOD = $GOOD$ } }
+		# 1. Allies, subjects, overlord
+		if = {
+			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = ally } }
+			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = ally }
+		}
+		else_if = {
+			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = ally } }
+			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = ally }
+		}
+		# 2. Great relations
+		else_if = {
+			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = great } }
+			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = great }
+		}
+		else_if = {
+			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = great } }
+			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = great }
+		}
+		# 3. Good relations
+		else_if = {
+			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = good } }
+			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = good }
+		}
+		else_if = {
+			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = good } }
+			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = good }
+		}
+		# 4. Anyone who does not dislike us
+		else_if = {
+			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = neutral } }
+			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = neutral }
+		}
+		else_if = {
+			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = neutral } }
+			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = neutral }
+		}
+		# 5. Our own states (no commerce, but the state still gets the good)
+		else_if = {
+			limit = {
+				root = {
+					any_country_state = { mlat_own_exporter_trigger = { GOOD = $GOOD$ } }
+				}
+			}
+			root = {
+				random_country_state = {
+					limit = { mlat_own_exporter_trigger = { GOOD = $GOOD$ } }
+					mlat_add_route_effect = { GOOD = $GOOD$ }
+				}
+			}
+		}
+	}
+}
+
+# State scope (scope:mlat_importer). Import from an AI state of the given standing in our region.
+mlat_import_from_region_effect = {
+	region = {
+		random_region_state = {
+			limit = { mlat_foreign_exporter_trigger = { GOOD = $GOOD$ TIER = $TIER$ } }
+			mlat_add_route_effect = { GOOD = $GOOD$ }
+		}
+	}
+}
+
+# State scope (scope:mlat_importer). Same, in a neighbouring region.
+mlat_import_from_neighbor_effect = {
+	region = {
+		random_neighbor_region = {
+			limit = {
+				any_region_state = { mlat_foreign_exporter_trigger = { GOOD = $GOOD$ TIER = $TIER$ } }
+			}
+			random_region_state = {
+				limit = { mlat_foreign_exporter_trigger = { GOOD = $GOOD$ TIER = $TIER$ } }
+				mlat_add_route_effect = { GOOD = $GOOD$ }
+			}
+		}
+	}
+}
+
+# State scope = the exporting state. scope:mlat_importer imports the good from it.
+# Direction: the importing state is the scope, the exporting state is the target.
+# If testing shows routes going the wrong way, swap the two scopes here (and in
+# mlat_exporter_base_trigger), nothing else needs to change.
+mlat_add_route_effect = {
+	save_scope_as = mlat_exporter
+	scope:mlat_importer = {
+		add_trade_route = {
+			target = scope:mlat_exporter
+			goods = $GOOD$
+		}
+	}
+}

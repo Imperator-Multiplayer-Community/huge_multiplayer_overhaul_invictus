@@ -1,0 +1,57 @@
+﻿# Unify Your Home Lands (MLHU) - effects.
+
+# Old Imperator bug: claims added by script are not picked up by the Declare War screen
+# ("War without Casus Belli") until the country's war-goal data is rebuilt. In the UI the
+# known fix is to queue a building and cancel it; this does the same from script by adding
+# one level of a building the capital does not have and removing it again (net change: none).
+# Only buildings with 0 levels are used, so an existing building can never be lost.
+# Country scope.
+mlhu_refresh_claims_effect = {
+	capital_scope = {
+		if = {
+			limit = { has_city_status = yes }
+			if = {
+				limit = { num_of_library_building = 0 }
+				add_building_level = library_building
+				remove_building_level = library_building
+			}
+			else_if = {
+				limit = { num_of_court_building = 0 }
+				add_building_level = court_building
+				remove_building_level = court_building
+			}
+			else_if = {
+				limit = { num_of_theathre_building = 0 }
+				add_building_level = theathre_building
+				remove_building_level = theathre_building
+			}
+			else_if = {
+				limit = { num_of_aqueduct_building = 0 }
+				add_building_level = aqueduct_building
+				remove_building_level = aqueduct_building
+			}
+		}
+		else = {
+			if = {
+				limit = { num_of_basic_settlement_infratructure_building = 0 }
+				add_building_level = basic_settlement_infratructure_building
+				remove_building_level = basic_settlement_infratructure_building
+			}
+			else_if = {
+				limit = { num_of_latifundia_building = 0 }
+				add_building_level = latifundia_building
+				remove_building_level = latifundia_building
+			}
+			else_if = {
+				limit = { num_of_slave_mine_building = 0 }
+				add_building_level = slave_mine_building
+				remove_building_level = slave_mine_building
+			}
+			else_if = {
+				limit = { num_of_hill_fort = 0 }
+				add_building_level = hill_fort
+				remove_building_level = hill_fort
+			}
+		}
+	}
+}

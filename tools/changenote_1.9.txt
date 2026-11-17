@@ -1,0 +1,3 @@
+Version 1.9
+- Changed: auto-trade now buys abroad first. Importing from your own states earns no commerce, while foreign imports do, so for every missing good it now looks for a seller in this order: AI allies, subjects and your overlord; then AI nations with great relations with you (opinion 80+); then good relations (40+); then any AI nation that does not dislike you. Your own region is tried before neighbouring regions. Your own states are only used when no foreign seller can be found.
+- Unchanged: it still only fills free trade routes, keeps your capital's surplus for the capital bonus, never imports from other players and never from AI nations at war with you or that dislike you.

@@ -8,6 +8,7 @@ monthly_country_pulse = {
 		mlft_tradition_malus_pulse
 		mlft_food_share_pulse
 		mllx_levy_xp_pulse
+		mlat_auto_trade_pulse
 	}
 }
 
@@ -34,5 +35,16 @@ mllx_levy_xp_pulse = {
 	}
 	events = {
 		mllx_levy_xp.1
+	}
+}
+
+
+# Auto-trade helper: fills free trade routes of player states that have automated trading on.
+mlat_auto_trade_pulse = {
+	trigger = {
+		is_ai = no
+	}
+	effect = {
+		mlat_auto_trade_effect = yes
 	}
 }

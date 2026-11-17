@@ -110,6 +110,7 @@ mlhu_unify_homeland = {
 					limit = { NOT = { owner = root } }
 					add_claim = root
 				}
+				mlhu_refresh_claims_effect = yes	# make the Declare War screen see the new claims
 			}
 		}
 	}
@@ -228,6 +229,7 @@ mlhu_unify_homeland = {
 					limit = { NOT = { owner = root } }
 					add_claim = root
 				}
+				mlhu_refresh_claims_effect = yes	# make the Declare War screen see the new claims
 			}
 		}
 	}

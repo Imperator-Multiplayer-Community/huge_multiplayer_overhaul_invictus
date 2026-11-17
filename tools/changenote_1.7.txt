@@ -1,0 +1,6 @@
+Version 1.7
+- Changed: the 1.6 "less gold for large empires" rule now targets commerce instead of tax. Data from our last campaign showed that late-game money inflation comes from commerce (about 70% of player income by the late game, and it grew twice as fast as tax), while tax grows in line with population.
+- Changed: penalties now start at Major Power. Regional Powers are back to Invictus values (no tax penalty, normal mercenary cost), because by mid-game almost every nation is a Regional Power.
+- Major Powers: -15% commerce income (was -10% tax, -5% commerce) and +200% mercenary recruit cost (unchanged).
+- Great Powers: -25% commerce income and -5% tax (was -15% tax, -10% commerce) and +300% mercenary recruit cost (unchanged).
+- Compatibility: the mod now overrides only the Major and Great Power rank modifiers (no longer Regional Power).

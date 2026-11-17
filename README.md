@@ -6,7 +6,7 @@ Published on Steam as **Molon Labe Invictus SubMod – Foreign Traditions** ([Wo
 
 A submod for **Imperator: Invictus** that rebalances the military and reshapes the map. Foreign military traditions are easier and cheaper to reach but much weaker than your own, so borrowing from your neighbours becomes a flavour choice rather than the best build. Military tech no longer inflates morale. Every nation starts independent, with at most one province and without legions, and a new mission tree lets each people fight to unite its homeland.
 
-**Current version: 1.6**
+**Current version: 1.7**
 
 Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you don't need to run both.
 
@@ -25,7 +25,7 @@ Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you d
 - **15-year truces.** Every peace deal now gives a flat 15-year truce, whatever the warscore (vanilla: 3 years plus up to 5 more for a decisive peace).
 - **Open granaries for allies.** Ported from **HMO: Huge Multiplayer Overhaul**. While you are at war, player armies of your allies, subjects and overlord standing in your provinces are fed from your province food stores every month: unit size ÷ 5 + 5 food, as long as the province has that much and at least 10 food. AI armies don't take your food.
 - **Vegetables move tribesmen too.** Ported from **HMO: Huge Multiplayer Overhaul**. A vegetables surplus now makes moving tribesmen 25% cheaper as well as slaves (Invictus: slaves only).
-- **Less gold for large empires.** Regional Powers get −5% tax income, Major Powers −10% tax and −5% commerce, Great Powers −15% tax and −10% commerce. Ported from **HMO: Huge Multiplayer Overhaul**: recruiting mercenaries costs +100% for Regional, +200% for Major and +300% for Great Powers. Every other rank bonus is unchanged.
+- **Less commerce for large empires.** Late-game money inflation comes from commerce, not tax, so large empires lose commerce income: Major Powers −15% commerce, Great Powers −25% commerce and −5% tax. Ported from **HMO: Huge Multiplayer Overhaul**: recruiting mercenaries costs +200% for Major and +300% for Great Powers. Regional Powers are untouched, since by mid-game almost every nation is one. Every other rank bonus is unchanged.
 - **Levy experience.** Ported from **HMO: Huge Multiplayer Overhaul** (by x8). A levy remembers its experience when it is raised. Disband it with the new *Disband Levy* unit ability or the *Disband All Levies* button and you get military experience for what it gained since: 7.5% of the gain in experience points, up to 10 per levy. Only levies led by a governor or the ruler pay out. The vanilla disband (and its flat experience) is gone.
 - **Levy veterans.** While your military law does not allow legions, experience decay drops from 4.5% to about 0.5% a month, so starting experience sticks and levies are much stronger. The trade-off: since only experience gained above the starting value counts, these levies give less military experience when disbanded. Enacting a legion law removes the bonus.
 - **Molon Labe changes by Pope:** his reworked integrated-culture decisions.
@@ -48,7 +48,7 @@ Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you d
 - Also replaces Invictus's *gui/diplomatic_view.gui* (hides the Threaten War button) and *common/ai_diplochance/00_default.txt* (AI always refuses Threaten War), and sets the Threaten War title to the same text in all languages. UI mods that change the diplomacy window will conflict.
 - Also replaces Invictus's *events/mission_events/me_cyr_magas_events.txt* (Cyrene no longer becomes Egypt's feudatory). Mods that change the Cyrene Magas events will conflict.
 - Also overrides the *vegetables* trade good (in *common/trade_goods/zz_mltg_trade_goods.txt*; the rest of Invictus's trade goods file is untouched). Mods that change the vegetables trade good will conflict.
-- Also overrides the Regional, Major and Great Power rank modifiers (*nation_rank_3/4/5* in *common/modifiers/zz_mlrk_rank_modifiers.txt*). Mods that change rank modifiers will conflict.
+- Also overrides the Major and Great Power rank modifiers (*nation_rank_4/5* in *common/modifiers/zz_mlrk_rank_modifiers.txt*). Mods that change rank modifiers will conflict.
 - Does not change any Invictus military tradition file, so tradition overhauls will still load, although their new traditions won't get a penalty until this mod is updated.
 - One Province Nations needs a **new game**. The other features are safe to add to an existing save, and tradition penalties appear within the first month.
 - With about 1,500 nations and roughly 70% more characters than a normal Invictus start, the early game runs noticeably slower. Speed improves as nations are conquered and merged.

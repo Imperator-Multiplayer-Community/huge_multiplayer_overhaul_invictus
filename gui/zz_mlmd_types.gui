@@ -1,0 +1,14 @@
+﻿# Batch building destroyer (MLMD): widget types HMO takes from its BUI interface files, which this
+# mod doesn't include. Renamed with an mlmd_ prefix so they never clash with another mod's copy.
+types mlmd_types
+{
+	type mlmd_tag_fixed = tag {
+		autoresize = no
+	}
+
+	type mlmd_tag_left_fixed = mlmd_tag_fixed {
+		blockoverride "Align" {
+			align = left|nobaseline
+		}
+	}
+}

@@ -1,0 +1,6 @@
+Version 1.12
+- Changed: Unify Your Home Lands and your nation's Invictus mission tree are now one or the other. Once you finish the first task of an Invictus tree, Unify Your Home Lands is no longer offered.
+- Changed: the first four Unify Your Home Lands tasks (Call of Kinship, Secure the Heartland, Bonds of Blood, Heart of Our People) now take a year each once started. Their requirements are checked when you start them.
+- Changed: Unify Your Home Lands now measures how much of your homeland you own once a month with an event, and each task's reward comes as an event, instead of relying on triggers and effects inside the mission (which Imperator doesn't always handle well). The task tooltips show your current share.
+- New: truces start at 5 years and grow as the game goes on (+1 year at 475, 500, 525, 550 and 575 AUC) and with nation rank (+1 Regional Power, +2 Major Power, +3 Great Power; the higher of the two sides counts), up to 13 years. They used to be a flat 15 years.
+- New: destroy buildings in batches from the Macro Builder (ported from HMO). Open the Destroy tab to remove every building of one type at once or one province at a time, and lock the provinces you want to keep. You get back a quarter of the building's Invictus base cost (half for hill forts). Provinces under siege or below 33% loyalty are skipped.

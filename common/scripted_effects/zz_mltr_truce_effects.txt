@@ -1,0 +1,78 @@
+﻿# Truces (MLTR). Every truce starts at 5 years (define TRUCE_YEARS) and lasts longer as the game
+# goes on and when a big nation is involved:
+#   +1 year at 475, 500, 525, 550 and 575 AUC (up to +5)
+#   +1 if either side is a Regional Power, +2 a Major Power, +3 a Great Power (the higher rank counts)
+# So 5 years at the start, up to 13 years late in the game between Great Powers.
+# When a war ends, every truce it created (between any attacker and any defender) is set to that length.
+
+# Country scope = one side of the truce; scope:mltr_b = the other side.
+mltr_add_truce_pair_effect = {
+	save_scope_as = mltr_a
+	add_truce = {
+		target = scope:mltr_b
+		duration = $DAYS$
+	}
+	scope:mltr_b = {
+		add_truce = {
+			target = scope:mltr_a
+			duration = $DAYS$
+		}
+	}
+}
+
+# Country scope = one side of the truce; scope:mltr_b = the other side.
+mltr_apply_truce_effect = {
+	if = {
+		limit = { mltr_truce_years >= 13 }
+		mltr_add_truce_pair_effect = { DAYS = 4745 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 12 }
+		mltr_add_truce_pair_effect = { DAYS = 4380 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 11 }
+		mltr_add_truce_pair_effect = { DAYS = 4015 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 10 }
+		mltr_add_truce_pair_effect = { DAYS = 3650 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 9 }
+		mltr_add_truce_pair_effect = { DAYS = 3285 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 8 }
+		mltr_add_truce_pair_effect = { DAYS = 2920 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 7 }
+		mltr_add_truce_pair_effect = { DAYS = 2555 }
+	}
+	else_if = {
+		limit = { mltr_truce_years >= 6 }
+		mltr_add_truce_pair_effect = { DAYS = 2190 }
+	}
+	else = {
+		mltr_add_truce_pair_effect = { DAYS = 1825 }
+	}
+}
+
+# Country scope (on_ending_war). Lengthens the truces of every war that just ended.
+mltr_extend_truces_effect = {
+	every_ended_war = {
+		every_war_attacker = {
+			save_scope_as = mltr_attacker
+			prev = {
+				every_war_defender = {
+					limit = { has_truce_with = scope:mltr_attacker }
+					save_scope_as = mltr_b
+					scope:mltr_attacker = {
+						mltr_apply_truce_effect = yes
+					}
+				}
+			}
+		}
+	}
+}

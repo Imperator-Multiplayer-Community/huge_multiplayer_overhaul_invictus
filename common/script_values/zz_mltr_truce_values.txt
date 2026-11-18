@@ -1,0 +1,53 @@
+﻿# Truces (MLTR) - truce length in years. Country scope = one side; scope:mltr_b = the other side.
+mltr_truce_years = {
+	value = 5
+	# The game goes on
+	if = {
+		limit = { current_date >= 475.1.1 }
+		add = 1
+	}
+	if = {
+		limit = { current_date >= 500.1.1 }
+		add = 1
+	}
+	if = {
+		limit = { current_date >= 525.1.1 }
+		add = 1
+	}
+	if = {
+		limit = { current_date >= 550.1.1 }
+		add = 1
+	}
+	if = {
+		limit = { current_date >= 575.1.1 }
+		add = 1
+	}
+	# Nation rank: the higher of the two sides counts
+	if = {
+		limit = {
+			OR = {
+				rank = great_power
+				scope:mltr_b = { rank = great_power }
+			}
+		}
+		add = 3
+	}
+	else_if = {
+		limit = {
+			OR = {
+				rank = major_power
+				scope:mltr_b = { rank = major_power }
+			}
+		}
+		add = 2
+	}
+	else_if = {
+		limit = {
+			OR = {
+				rank = regional_power
+				scope:mltr_b = { rank = regional_power }
+			}
+		}
+		add = 1
+	}
+}

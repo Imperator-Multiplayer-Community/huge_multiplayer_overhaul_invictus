@@ -55,3 +55,53 @@ mlhu_refresh_claims_effect = {
 		}
 	}
 }
+
+# Measures how much of our homeland we own (variables mlhu_homeland_total, mlhu_homeland_owned
+# and mlhu_owned_pct, 0-100). Run when the mission starts and every month by event mlhu.1.
+# Country scope.
+mlhu_update_progress_effect = {
+	set_variable = { name = mlhu_homeland_total value = 0 }
+	set_variable = { name = mlhu_homeland_owned value = 0 }
+	save_scope_as = mlhu_country
+	every_in_list = {
+		variable = mlhu_homeland
+		scope:mlhu_country = {
+			change_variable = { name = mlhu_homeland_total add = 1 }
+		}
+		if = {
+			limit = { owner = scope:mlhu_country }
+			scope:mlhu_country = {
+				change_variable = { name = mlhu_homeland_owned add = 1 }
+			}
+		}
+	}
+	set_variable = { name = mlhu_owned_pct value = 0 }
+	if = {
+		limit = { var:mlhu_homeland_total > 0 }
+		set_variable = { name = mlhu_owned_pct value = var:mlhu_homeland_owned }
+		change_variable = { name = mlhu_owned_pct multiply = 100 }
+		change_variable = { name = mlhu_owned_pct divide = var:mlhu_homeland_total }
+	}
+}
+
+# Clears the mission's homeland list and progress variables (mission ended or aborted).
+mlhu_clear_progress_effect = {
+	clear_variable_list = mlhu_homeland
+	remove_variable = mlhu_homeland_total
+	remove_variable = mlhu_homeland_owned
+	remove_variable = mlhu_owned_pct
+}
+
+# Claims on every homeland territory we don't own, made visible to the Declare War screen.
+mlhu_claim_homeland_effect = {
+	custom_tooltip = mlhu_task_1_tt
+	hidden_effect = {
+		save_scope_as = mlhu_country
+		every_in_list = {
+			variable = mlhu_homeland
+			limit = { NOT = { owner = scope:mlhu_country } }
+			add_claim = scope:mlhu_country
+		}
+		mlhu_refresh_claims_effect = yes
+	}
+}

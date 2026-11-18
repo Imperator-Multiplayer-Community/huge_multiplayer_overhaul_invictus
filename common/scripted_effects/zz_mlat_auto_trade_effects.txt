@@ -15,7 +15,12 @@
 # Within each step, AI states in our own region are tried before neighbouring regions.
 # Rules:
 #   - only goods the state neither produces nor already imports (one route per good);
-#   - never takes the last surplus a capital needs for its capital bonus;
+#   - never uses our own capital's surplus; an AI capital only sells if it keeps one unit;
+#   - each exporting state sells at most one unit of a good per month (surplus is only
+#     recalculated later, so selling more overbooked it and the game cancelled the extras);
+#   - once a state got a route for a good, it waits a year before trying that good again,
+#     so a cancelled route is not re-added (with a new notification) every month;
+#   - adds no messages of its own;
 #   - never imports from another PLAYER (players decide their own exports) or from an AI
 #     we are at war with or that dislikes us;
 #   - the engine's own can_create_trade_route check (range, free route, access) must pass.
@@ -167,5 +172,13 @@ mlat_add_route_effect = {
 			target = scope:mlat_exporter
 			goods = $GOOD$
 		}
+		set_variable = {
+			name = mlat_cd_$GOOD$
+			days = 365
+		}
+	}
+	set_variable = {
+		name = mlat_sold_$GOOD$
+		days = 25
 	}
 }

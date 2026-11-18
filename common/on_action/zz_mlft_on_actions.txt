@@ -9,6 +9,7 @@ monthly_country_pulse = {
 		mlft_food_share_pulse
 		mllx_levy_xp_pulse
 		mlat_auto_trade_pulse
+		mlhu_progress_pulse
 	}
 }
 
@@ -46,5 +47,27 @@ mlat_auto_trade_pulse = {
 	}
 	effect = {
 		mlat_auto_trade_effect = yes
+	}
+}
+
+
+# Unify Your Home Lands: measure homeland ownership once a month while the mission runs.
+mlhu_progress_pulse = {
+	events = {
+		mlhu.1
+	}
+}
+
+
+# Truces: lengthen the truces of a war that just ended (by game date and nation rank).
+on_ending_war = {
+	on_actions = {
+		mltr_truce_on_war_end
+	}
+}
+
+mltr_truce_on_war_end = {
+	effect = {
+		mltr_extend_truces_effect = yes
 	}
 }

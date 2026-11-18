@@ -32,3 +32,19 @@ mlhu_primary_kin_nearby_trigger = {
 		}
 	}
 }
+
+# We own at least $PCT$% of our homeland. The share is measured once a month by event mlhu.1
+# (and when the mission starts), not by a list trigger inside the task, because list triggers
+# in mission tasks are unreliable in Imperator.
+mlhu_owns_homeland_share_trigger = {
+	has_variable = mlhu_owned_pct
+	var:mlhu_owned_pct >= $PCT$
+}
+
+# The mission is running (its homeland list is only filled while it runs).
+mlhu_mission_running_trigger = {
+	any_in_list = {
+		variable = mlhu_homeland
+		always = yes
+	}
+}

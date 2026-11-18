@@ -1,0 +1,7 @@
+Version 1.0
+First release. Built on the Molon Labe Invictus SubMod by Pope, which is included, so you don't need to run both.
+- New: study foreign ways of war with a single pop. The "Study ... Ways of War" culture decisions no longer need the culture to be integrated or a large pop share. Owning at least one pop of a culture in that tradition's culture group is enough. The other requirements and costs are unchanged: 10 territories, more than 40 stability, 180 military experience, and the stability and political influence cost.
+- New: foreign traditions work at 25% strength. Every tradition that is not from your primary culture's own tree gets a counter-modifier worth -75% of its values, so a foreign +10% discipline gives you +2.5%. Each penalty appears in your country modifiers as "Foreign Tradition: <name>". Only numbers are reduced: unit unlocks (octeres, mega galleys and so on) and combat tactics still work in full.
+- New: the penalty follows your primary culture. If you change primary culture, your old tree's traditions take the penalty and the new tree's traditions return to full strength automatically. Penalties refresh once a month. Works for AI nations too.
+- Included from Pope's submod: disbanding levies no longer gives military experience, and his reworked integrated-culture decisions.
+- Compatibility: replaces Invictus's culture_decisions/integrated_culture_decisions_inv.txt. Safe to add to an existing save.

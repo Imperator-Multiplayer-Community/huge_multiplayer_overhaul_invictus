@@ -1,0 +1,1910 @@
+{
+ "dahae_missions": {
+  "file": "00_dahae.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "dahae_missions_1"
+  ]
+ },
+ "generic_mission_conquer_region": {
+  "file": "00_generic.txt",
+  "generic": true,
+  "tasks": 20,
+  "roots": [
+   "generic_mission_conquer_region_branch_1",
+   "generic_mission_conquer_region_branch_develop_owned",
+   "generic_mission_conquer_region_branch_colonize_area",
+   "generic_mission_conquer_region_branch_defend_area"
+  ]
+ },
+ "generic_mission_home_infrastructure": {
+  "file": "00_generic_mission_infra.txt",
+  "generic": true,
+  "tasks": 33,
+  "roots": [
+   "food_branch_1",
+   "mining_branch_1",
+   "port_branch_1",
+   "urbanize_city"
+  ]
+ },
+ "gm_subject_independence": {
+  "file": "00_generic_mission_subject_independence_inv.txt",
+  "generic": false,
+  "tasks": 30,
+  "roots": [
+   "gm_subject_independence_1"
+  ]
+ },
+ "igk_mission": {
+  "file": "00_indo_germanic_missions.txt",
+  "generic": false,
+  "tasks": 43,
+  "roots": [
+   "igk_mission_syncronize",
+   "igk_mission_invite_religion_new",
+   "igk_mission_northern_expansion",
+   "igk_mission_southern_expansion"
+  ]
+ },
+ "tribal_reform": {
+  "file": "00_tribal_reform.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "tribal_reform_1",
+   "tribal_reform_2"
+  ]
+ },
+ "albion_mission": {
+  "file": "01_Albion_missions.txt",
+  "generic": false,
+  "tasks": 69,
+  "roots": [
+   "albion_main_mission_start",
+   "albion_side_mission_start",
+   "albion_conquest_mission_start"
+  ]
+ },
+ "secure_venetia_mission_vnt": {
+  "file": "01_Veneto_missions.txt",
+  "generic": false,
+  "tasks": 69,
+  "roots": [
+   "secure_venetia_mission_task_1",
+   "secure_venetia_mission_task_6",
+   "secure_venetia_mission_task_20",
+   "secure_venetia_mission_task_33",
+   "secure_venetia_mission_task_39",
+   "secure_venetia_mission_task_57"
+  ]
+ },
+ "01_albania": {
+  "file": "01_albania_mission.txt",
+  "generic": false,
+  "tasks": 30,
+  "roots": [
+   "01_albania_task_1",
+   "01_albania_task_21"
+  ]
+ },
+ "androphagia": {
+  "file": "01_androphagia_missions.txt",
+  "generic": false,
+  "tasks": 33,
+  "roots": [
+   "androphagia_task_1"
+  ]
+ },
+ "antigonid_01_vision": {
+  "file": "01_antigonid_mission_01_vision.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "antigonid_01_vision_1",
+   "antigonid_01_vision_4",
+   "antigonid_01_vision_15"
+  ]
+ },
+ "antigonid_02_aspiration": {
+  "file": "01_antigonid_mission_02_aspiration.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "antigonid_02_aspiration_1",
+   "antigonid_02_aspiration_4",
+   "antigonid_02_aspiration_5"
+  ]
+ },
+ "antigonid_03_birthright": {
+  "file": "01_antigonid_mission_03_birthright.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "antigonid_03_birthright_3",
+   "antigonid_03_birthright_4",
+   "antigonid_03_birthright_5",
+   "antigonid_03_birthright_7"
+  ]
+ },
+ "armenia_missions": {
+  "file": "01_armenia.txt",
+  "generic": false,
+  "tasks": 41,
+  "roots": [
+   "armenia_task_start",
+   "armenia_task_16"
+  ]
+ },
+ "01_arvernia_missions": {
+  "file": "01_arvernia_missions.txt",
+  "generic": false,
+  "tasks": 24,
+  "roots": [
+   "01_arvernia_missions_task_2",
+   "01_arvernia_missions_task_16"
+  ]
+ },
+ "athenian_mission_02_attica": {
+  "file": "01_athenian_missions_02_developing_attica.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "athenian_mission_02_attica_task_1"
+  ]
+ },
+ "01_bosporan_kingdom": {
+  "file": "01_bosporan_kingdom_missions.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "01_bosporan_kingdom_task_1",
+   "01_bosporan_kingdom_task_5",
+   "01_bosporan_kingdom_task_6",
+   "01_bosporan_kingdom_task_18",
+   "01_bosporan_kingdom_task_26"
+  ]
+ },
+ "carthaginian_aftermath_of_the_invasion_mission": {
+  "file": "01_carthaginian_missions_00_aftermath_inv.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "carthaginian_africa_invasion_walls_of_carthage",
+   "carthaginian_africa_invasion_altar_philaeni",
+   "carthaginian_africa_invasion_charax"
+  ]
+ },
+ "carthaginian_africa_expansion_mission": {
+  "file": "01_carthaginian_missions_01_africa.txt",
+  "generic": false,
+  "tasks": 9,
+  "roots": [
+   "carthaginian_africa_expansion_libyphoenician_settlement",
+   "carthaginian_africa_expansion_ending_massaesylia",
+   "carthaginian_africa_expansion_unruly_subject",
+   "carthaginian_africa_expansion_eastern_coast"
+  ]
+ },
+ "carthaginian_sicily_expansion_mission": {
+  "file": "01_carthaginian_missions_02_sicily.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "carthaginian_sicily_expansion_mission_1",
+   "carthaginian_sicily_expansion_mission_3",
+   "carthaginian_sicily_expansion_mission_4",
+   "carthaginian_sicily_expansion_mission_6"
+  ]
+ },
+ "carthaginian_iberia_expansion_mission": {
+  "file": "01_carthaginian_missions_03_iberia.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "carthaginian_iberia_expansion_mission_task_1",
+   "carthaginian_iberia_expansion_mission_task_4",
+   "carthaginian_iberia_expansion_mission_task_7",
+   "carthaginian_iberia_expansion_mission_task_9"
+  ]
+ },
+ "carthaginian_magna_graecia_expansion_mission": {
+  "file": "01_carthaginian_missions_04_magna_graecia.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "carthaginian_magna_graecia_expansion_mission_task_1",
+   "carthaginian_magna_graecia_expansion_mission_task_4",
+   "carthaginian_magna_graecia_expansion_mission_task_8"
+  ]
+ },
+ "carthaginian_mission_bomilcars_revolution": {
+  "file": "01_carthaginian_missions_05_bomilcar.txt",
+  "generic": false,
+  "tasks": 9,
+  "roots": [
+   "carthaginian_mission_bomilcars_revolution_task_1",
+   "carthaginian_mission_bomilcars_revolution_task_2",
+   "carthaginian_mission_bomilcars_revolution_task_3"
+  ]
+ },
+ "carthaginian_rome_expansion_mission": {
+  "file": "01_carthaginian_missions_06_rome.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "carthaginian_rome_expansion_mission_task_1",
+   "carthaginian_rome_expansion_mission_task_13"
+  ]
+ },
+ "carthaginian_phoenicia_expansion_mission": {
+  "file": "01_carthaginian_missions_07_phoenicia.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "carthaginian_phoenicia_expansion_mission_task_1",
+   "carthaginian_phoenicia_expansion_mission_task_4"
+  ]
+ },
+ "carthaginian_mission_naval_dominance": {
+  "file": "01_carthaginian_missions_08_naval.txt",
+  "generic": false,
+  "tasks": 8,
+  "roots": [
+   "carthaginian_mission_naval_dominance_task_1",
+   "carthaginian_mission_naval_dominance_task_4",
+   "carthaginian_mission_naval_dominance_task_7"
+  ]
+ },
+ "carthage_mission_iberian_investments": {
+  "file": "01_carthaginian_missions_09_iberia_2.txt",
+  "generic": false,
+  "tasks": 8,
+  "roots": [
+   "carthage_mission_iberian_investments_metal_emporium",
+   "carthage_mission_iberian_investments_ports_iberia",
+   "carthage_mission_iberian_investments_governing_iberia"
+  ]
+ },
+ "diadochi_empire": {
+  "file": "01_diadochi_empire.txt",
+  "generic": false,
+  "tasks": 41,
+  "roots": [
+   "diadochi_hellenistic_empire",
+   "diadochi_macedonian_barons",
+   "diadochi_to_the_strongest",
+   "diadochi_invictus_4"
+  ]
+ },
+ "epirus_1_epirus": {
+  "file": "01_epirus_missions_01_epirus.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "epirus_1_epirus_2",
+   "epirus_1_epirus_3",
+   "epirus_1_epirus_4",
+   "epirus_1_epirus_5",
+   "epirus_1_epirus_15"
+  ]
+ },
+ "epirus_2_magna": {
+  "file": "01_epirus_missions_02_magna.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "epirus_2_magna_1",
+   "epirus_2_magna_2",
+   "epirus_2_magna_3",
+   "epirus_2_magna_8",
+   "epirus_2_magna_12"
+  ]
+ },
+ "epirus_3_greece": {
+  "file": "01_epirus_missions_03_greece.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "epirus_3_greece_1",
+   "epirus_3_greece_2",
+   "epirus_3_greece_6",
+   "epirus_3_greece_10",
+   "epirus_3_greece_12"
+  ]
+ },
+ "etruria_roman_incursion": {
+  "file": "01_etruria_missions_01_roman_incursion.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "etruria_roman_incursion_task_1"
+  ]
+ },
+ "01_etruria_missions_western_markets": {
+  "file": "01_etruria_missions_western_markets.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "01_etruria_missions_western_markets_task_1",
+   "01_etruria_missions_western_markets_task_2",
+   "01_etruria_missions_western_markets_task_15",
+   "01_etruria_missions_western_markets_task_24"
+  ]
+ },
+ "01_fugandulu": {
+  "file": "01_fugandulu_mission.txt",
+  "generic": false,
+  "tasks": 19,
+  "roots": [
+   "01_fugandulu_task_1",
+   "01_fugandulu_task_15"
+  ]
+ },
+ "germania_mission": {
+  "file": "01_germania_missions.txt",
+  "generic": false,
+  "tasks": 58,
+  "roots": [
+   "germania_main_mission_start",
+   "germania_main_mission_6_4",
+   "germania_conquest_mission_start"
+  ]
+ },
+ "getae_mission_01_inv": {
+  "file": "01_getae_missions_1.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "getae_mission_01_inv_1_task",
+   "getae_mission_01_inv_3_task"
+  ]
+ },
+ "01_gordyene": {
+  "file": "01_gordyene_mission.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "01_gordyene_task_1"
+  ]
+ },
+ "greek_1_black_sea": {
+  "file": "01_greek_missions_01_black_sea.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": [
+   "greek_1_6",
+   "greek_1_7",
+   "greek_1_8",
+   "greek_1_10",
+   "greek_1_9",
+   "greek_1_14"
+  ]
+ },
+ "greek_2_greece": {
+  "file": "01_greek_missions_02_greece.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "greek_2_1",
+   "greek_2_2",
+   "greek_2_3"
+  ]
+ },
+ "greek_4_west": {
+  "file": "01_greek_missions_04_west.txt",
+  "generic": false,
+  "tasks": 37,
+  "roots": [
+   "greek_4_1",
+   "greek_4_7",
+   "greek_4_8",
+   "greek_4_10",
+   "greek_4_9"
+  ]
+ },
+ "greek_5_pontus": {
+  "file": "01_greek_missions_05_pontus_inv.txt",
+  "generic": false,
+  "tasks": 27,
+  "roots": [
+   "greek_5_2",
+   "greek_5_19",
+   "greek_5_25"
+  ]
+ },
+ "greek_6_crete": {
+  "file": "01_greek_missions_06_crete.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": []
+ },
+ "greek_7_korkyra": {
+  "file": "01_greek_missions_07_korkyra.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "greek_7_korkyra_task_1",
+   "greek_7_korkyra_task_2",
+   "greek_7_korkyra_task_3"
+  ]
+ },
+ "01_horn_of_africa": {
+  "file": "01_horn_of_africa.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "01_horn_of_africa_task_9",
+   "01_horn_of_africa_task_26"
+  ]
+ },
+ "indoparthia_missions": {
+  "file": "01_indo_parthia.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "indoparthia_missions_1"
+  ]
+ },
+ "ionian_resurgence": {
+  "file": "01_ionian_group.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "ionian_task_2",
+   "ionian_task_9"
+  ]
+ },
+ "ionian_resurgence_2": {
+  "file": "01_ionian_group_02.txt",
+  "generic": false,
+  "tasks": 39,
+  "roots": [
+   "ionian_league_task_1"
+  ]
+ },
+ "01_legia": {
+  "file": "01_legia_mission.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "01_legia_task_1",
+   "01_legia_task_2"
+  ]
+ },
+ "macedon_01_legacy": {
+  "file": "01_macedon_mission_01_legacy.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "macedon_01_legacy_5",
+   "macedon_01_legacy_7",
+   "macedon_01_legacy_11",
+   "macedon_01_legacy_13"
+  ]
+ },
+ "macedon_02_mastery": {
+  "file": "01_macedon_mission_02_mastery.txt",
+  "generic": false,
+  "tasks": 9,
+  "roots": [
+   "macedon_02_mastery_1",
+   "macedon_02_mastery_5"
+  ]
+ },
+ "macedon_03_adriatic": {
+  "file": "01_macedon_mission_03_adriatic.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "macedon_03_adriatic_1",
+   "macedon_03_adriatic_5"
+  ]
+ },
+ "macedon_04_lighthouse": {
+  "file": "01_macedon_mission_04_lighthouse.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "macedon_04_lighthouse_1",
+   "macedon_04_lighthouse_4",
+   "macedon_04_lighthouse_7"
+  ]
+ },
+ "macedon_05_rhodopes": {
+  "file": "01_macedon_mission_05_rhodopes.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "macedon_05_rhodopes_1",
+   "macedon_05_rhodopes_6",
+   "macedon_05_rhodopes_9",
+   "macedon_05_rhodopes_14"
+  ]
+ },
+ "miletos_mission": {
+  "file": "01_miletos.txt",
+  "generic": false,
+  "tasks": 35,
+  "roots": [
+   "miletos_task_1",
+   "miletos_task_25"
+  ]
+ },
+ "01_native_pontus": {
+  "file": "01_native_pontus_mission.txt",
+  "generic": false,
+  "tasks": 41,
+  "roots": [
+   "01_native_pontus_task_1",
+   "01_native_pontus_task_2"
+  ]
+ },
+ "01_paphlagonia": {
+  "file": "01_paphlagonia_mission.txt",
+  "generic": false,
+  "tasks": 21,
+  "roots": [
+   "01_paphlagonia_task_1"
+  ]
+ },
+ "patauion_mission_01": {
+  "file": "01_patauion_mission.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "patauion_mission_task_1"
+  ]
+ },
+ "patauion_mission_02": {
+  "file": "01_patauion_mission_02_expansion.txt",
+  "generic": false,
+  "tasks": 31,
+  "roots": [
+   "patauion_mission_02_task_1",
+   "patauion_mission_02_task_6",
+   "patauion_mission_02_task_12",
+   "patauion_mission_task_12",
+   "patauion_mission_task_13",
+   "patauion_mission_task_14",
+   "patauion_mission_task_15"
+  ]
+ },
+ "rhaetia_alpine_mission": {
+  "file": "01_rhaetia_missions.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "rhaetia_alpine_mission_task_1"
+  ]
+ },
+ "roman_1_italia": {
+  "file": "01_roman_missions_01_italia.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "roman_1_italia_destroy_latins",
+   "roman_1_italia_encourage_expansion",
+   "roman_1_italia_latin_congress"
+  ]
+ },
+ "roman_2_provincia": {
+  "file": "01_roman_missions_02_provincia.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "roman_2_provincia_case_for_expansion"
+  ]
+ },
+ "roman_3_cisalpine_gaul": {
+  "file": "01_roman_missions_03_cisalpine_gaul.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "roman_3_cisalpine_gaul_land_grants_in_senonia"
+  ]
+ },
+ "roman_4_punic_rivals": {
+  "file": "01_roman_missions_04_punic_rivals.txt",
+  "generic": false,
+  "tasks": 9,
+  "roots": [
+   "roman_4_punic_rivals_hispania_dominance",
+   "roman_4_punic_rivals_naval_parity",
+   "roman_4_punic_rivals_deter_punic_support"
+  ]
+ },
+ "roman_7_invading_gaul": {
+  "file": "01_roman_missions_07_invading_gaul.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "roman_7_secure_allies",
+   "roman_7_offer_gauls_protection",
+   "roman_7_greek_colonies",
+   "roman_7_secure_alps",
+   "roman_7_secure_provincia"
+  ]
+ },
+ "roman_mission_08_greece": {
+  "file": "01_roman_missions_08_greece.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "roman_mission_08_greece_task_2",
+   "roman_mission_08_greece_task_3",
+   "roman_mission_08_greece_task_5"
+  ]
+ },
+ "roman_mission_09_eastern_glory": {
+  "file": "01_roman_missions_09_eastern_glory.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "roman_mission_09_eastern_glory_task_1",
+   "roman_mission_09_eastern_glory_task_3",
+   "roman_mission_09_eastern_glory_task_4"
+  ]
+ },
+ "roman_10_invading_britannia": {
+  "file": "01_roman_missions_10_invading_britannia_inv.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "roman_10_secure_aremorica",
+   "roman_10_secure_belgica",
+   "roman_10_northern_fleet",
+   "roman_10_secure_allies",
+   "roman_10_offer_britons_protection"
+  ]
+ },
+ "roman_11_rhaetia_vindelicia": {
+  "file": "01_roman_missions_11_rhaetia_vindelicia.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "roman_11_mission_task_1",
+   "roman_11_mission_task_2",
+   "roman_11_mission_task_5",
+   "roman_11_mission_task_9",
+   "roman_11_mission_task_10"
+  ]
+ },
+ "roman_12_illyria_pannonia": {
+  "file": "01_roman_missions_12_illyria_pannonia.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "roman_12_mission_task_1",
+   "roman_12_mission_task_9"
+  ]
+ },
+ "01_salluvian": {
+  "file": "01_salluvian.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "01_salluvian_task_2",
+   "01_salluvian_task_4"
+  ]
+ },
+ "seleukid_mission_01_babylonia": {
+  "file": "01_seleukid_missions_01_babylonia.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "seleukid_mission_01_babylonia_task_1",
+   "seleukid_mission_01_babylonia_task_5",
+   "seleukid_mission_01_babylonia_task_9"
+  ]
+ },
+ "seleukid_mission_02_syria": {
+  "file": "01_seleukid_missions_02_syria.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "seleukid_mission_02_syria_task_1"
+  ]
+ },
+ "seleukid_mission_03_anatolia": {
+  "file": "01_seleukid_missions_03_anatolia.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "seleukid_mission_03_anatolia_task_1",
+   "seleukid_mission_03_anatolia_task_6"
+  ]
+ },
+ "seleukid_mission_04_palestine": {
+  "file": "01_seleukid_missions_04_palestine.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "seleukid_mission_04_palestine_task_1"
+  ]
+ },
+ "01_shan": {
+  "file": "01_shan_mission.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "01_shan_task_1",
+   "01_shan_task_15"
+  ]
+ },
+ "01_soodak_missions": {
+  "file": "01_soodak_missions.txt",
+  "generic": false,
+  "tasks": 34,
+  "roots": [
+   "01_soodak_missions_task_1"
+  ]
+ },
+ "spartan_mission_01_laconia": {
+  "file": "01_spartan_missions_01_laconia.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "spartan_mission_01_laconia_task_1",
+   "spartan_mission_01_laconia_task_3",
+   "spartan_mission_01_laconia_task_9",
+   "spartan_mission_01_laconia_task_12"
+  ]
+ },
+ "01_sparta_missions_02_peloponnesus": {
+  "file": "01_spartan_missions_02_peloponnesus.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "01_sparta_missions_02_peloponnesus_task_1",
+   "01_sparta_missions_02_peloponnesus_task_4",
+   "01_sparta_missions_02_peloponnesus_task_6",
+   "01_sparta_missions_02_peloponnesus_task_13",
+   "01_sparta_missions_02_peloponnesus_task_14",
+   "01_sparta_missions_02_peloponnesus_task_15"
+  ]
+ },
+ "spartan_mission_03_peloponnesian_league": {
+  "file": "01_spartan_missions_03_peloponnesian_league.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "spartan_mission_03_peloponnesian_league_task_1",
+   "spartan_mission_03_peloponnesian_league_task_11"
+  ]
+ },
+ "spartan_mission_04_rivals": {
+  "file": "01_spartan_missions_04_ancient_rivals.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "spartan_mission_04_rivals_task_1",
+   "spartan_mission_04_rivals_task_6",
+   "spartan_mission_04_rivals_task_7",
+   "spartan_mission_04_rivals_task_11"
+  ]
+ },
+ "me_syracuse_1_democracy": {
+  "file": "01_syracuse_missions_01_democracy.txt",
+  "generic": false,
+  "tasks": 8,
+  "roots": [
+   "syracuse_1_1_tentative_whispers"
+  ]
+ },
+ "me_syracuse_2_sicily": {
+  "file": "01_syracuse_missions_02_sicily.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "syracuse_2_2",
+   "syracuse_2_1",
+   "syracuse_2_8",
+   "syracuse_2_13"
+  ]
+ },
+ "me_syracuse_3_punic": {
+  "file": "01_syracuse_missions_03_punic.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "syracuse_3_1",
+   "syracuse_3_4",
+   "syracuse_3_3"
+  ]
+ },
+ "me_syracuse_4_magna": {
+  "file": "01_syracuse_missions_04_magna.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "syracuse_4_1",
+   "syracuse_4_3"
+  ]
+ },
+ "tayuan_mission_1": {
+  "file": "01_tayuan_mission.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "tayuan_task_start"
+  ]
+ },
+ "tayuan_mission_2": {
+  "file": "01_tayuan_mission_02.txt",
+  "generic": false,
+  "tasks": 52,
+  "roots": [
+   "tayuan_ferghana_task_51"
+  ]
+ },
+ "thrace_03_philhellene": {
+  "file": "01_thrace_mission_03_philhellene.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "thrace_03_philhellene_1",
+   "thrace_03_philhellene_5"
+  ]
+ },
+ "thracian_02_paper_kingdom": {
+  "file": "01_thracian_mission_02_paper_kingdom.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": []
+ },
+ "thracian_01_hellespont": {
+  "file": "01_thracian_missions_01_hellespont.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "thracian_01_hellespont_task_1",
+   "thracian_01_hellespont_task_2",
+   "thracian_01_hellespont_task_8",
+   "thracian_01_hellespont_task_5"
+  ]
+ },
+ "turdetanian_mission_01_sons_baetica_inv": {
+  "file": "01_turdetania_mission_01_sons_baetica.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": []
+ },
+ "turdetanian_mission_02_heirs_tartessia_inv": {
+  "file": "01_turdetania_mission_02_heirs_tartessia.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": []
+ },
+ "turdetanian_mission_03_conquerors_inv": {
+  "file": "01_turdetania_mission_03_conquerors.txt",
+  "generic": false,
+  "tasks": 52,
+  "roots": []
+ },
+ "umbria_mission_01": {
+  "file": "01_umbria_mission.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "umbria_mission_task_1",
+   "umbria_mission_task_9",
+   "umbria_mission_task_17",
+   "umbria_mission_task_28"
+  ]
+ },
+ "01_adriatic_pirate_missions": {
+  "file": "02_adriatic_pirate_missions.txt",
+  "generic": false,
+  "tasks": 22,
+  "roots": [
+   "01_adriatic_pirate_missions_task_1",
+   "01_adriatic_pirate_missions_task_2"
+  ]
+ },
+ "aksum_mission_1_ethiopia": {
+  "file": "02_aksum_mission_1_ethiopia.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "aksum_mission_1_ethiopia_task_1",
+   "aksum_mission_1_ethiopia_task_2",
+   "aksum_mission_1_ethiopia_task_3"
+  ]
+ },
+ "aksum_mission_2_nubia": {
+  "file": "02_aksum_mission_2_nubia.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "aksum_mission_2_nubia_task_1",
+   "aksum_mission_2_nubia_task_10",
+   "aksum_mission_2_nubia_task_12"
+  ]
+ },
+ "alis_ubbo_missions_iberia": {
+  "file": "02_alis_ubbo_missions_iberia.txt",
+  "generic": false,
+  "tasks": 19,
+  "roots": [
+   "alis_ubbo_missions_iberia_province_investments_0",
+   "alis_ubbo_missions_tin_trade_0",
+   "alis_ubbo_missions_tribes_1"
+  ]
+ },
+ "barbaricum_aremorica_mission": {
+  "file": "02_aremorica.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "barbaricum_aremorica_mission_task_1",
+   "barbaricum_aremorica_mission_task_3",
+   "barbaricum_aremorica_mission_task_20"
+  ]
+ },
+ "argos_missions_01_greece": {
+  "file": "02_argos_missions_01_greece.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "argos_missions_01_greece_task_1",
+   "argos_missions_01_greece_task_2",
+   "argos_missions_01_greece_task_5",
+   "argos_missions_01_greece_task_18",
+   "argos_missions_01_greece_task_23"
+  ]
+ },
+ "armazic_missions": {
+  "file": "02_armazic_monarch.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "armazic_missions_task_1",
+   "armazic_missions_task_6"
+  ]
+ },
+ "arseka_missions_01": {
+  "file": "02_arseka_missions_01.txt",
+  "generic": false,
+  "tasks": 33,
+  "roots": [
+   "arseka_01_task_1",
+   "arseka_01_task_17",
+   "arseka_01_task_25",
+   "arseka_01_task_26"
+  ]
+ },
+ "aryavarta_missions": {
+  "file": "02_aryavarta_missions.txt",
+  "generic": false,
+  "tasks": 31,
+  "roots": [
+   "aryavarta_missions_task_1",
+   "aryavarta_missions_task_21",
+   "aryavarta_missions_task_22",
+   "aryavarta_missions_task_23",
+   "aryavarta_missions_task_30"
+  ]
+ },
+ "atropatene_mission_01": {
+  "file": "02_atropatene_missions.txt",
+  "generic": false,
+  "tasks": 30,
+  "roots": [
+   "atropatene_mission_01_task_01",
+   "atropatene_mission_01_task_02"
+  ]
+ },
+ "bactrian_mission_01_bactria": {
+  "file": "02_bactrian_missions_01_bactria.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "bactrian_mission_01_bactria_task_1"
+  ]
+ },
+ "bactrian_mission_02_parthia": {
+  "file": "02_bactrian_missions_02_parthia.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "bactrian_mission_02_parthia_task_1"
+  ]
+ },
+ "bactrian_mission_03_aria": {
+  "file": "02_bactrian_missions_03_aria.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "bactrian_mission_03_aria_task_1"
+  ]
+ },
+ "barbaricum_bastarnia_mission": {
+  "file": "02_bastarnia.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "barbaricum_bastarnia_mission_task_1"
+  ]
+ },
+ "blemmia_missions": {
+  "file": "02_blemmia_missions.txt",
+  "generic": false,
+  "tasks": 24,
+  "roots": [
+   "blemmia_missions_task_1",
+   "blemmia_missions_task_2",
+   "blemmia_missions_task_3",
+   "blemmia_missions_task_4"
+  ]
+ },
+ "barbaricum_bohemia_mission": {
+  "file": "02_bohemia.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": [
+   "barbaricum_bohemia_mission_task_1",
+   "barbaricum_bohemia_mission_task_5"
+  ]
+ },
+ "bithynia_missions": {
+  "file": "02_bythinia_missions.txt",
+  "generic": false,
+  "tasks": 70,
+  "roots": [
+   "bithynia_missions_task_1",
+   "bithynia_missions_task_3",
+   "bithynia_missions_task_4"
+  ]
+ },
+ "01_caledonian_missions": {
+  "file": "02_caledonian_missions.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "01_caledonian_missions_task_1",
+   "01_caledonian_missions_task_2"
+  ]
+ },
+ "cappadocia_mission_inv": {
+  "file": "02_cappadocia_missions_01.txt",
+  "generic": false,
+  "tasks": 73,
+  "roots": [
+   "cappadocia_mission_inv_1_task",
+   "cappadocia_mission_inv_1d_task"
+  ]
+ },
+ "caria_missions": {
+  "file": "02_caria_mission_01.txt",
+  "generic": false,
+  "tasks": 25,
+  "roots": [
+   "caria_missions_task_1",
+   "caria_missions_task_3",
+   "caria_missions_task_6"
+  ]
+ },
+ "colchis_missions": {
+  "file": "02_colchis_missions.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "colchis_missions_task_01",
+   "colchis_missions_task_02"
+  ]
+ },
+ "south_arabia_mission": {
+  "file": "02_common_south_arabia_02.txt",
+  "generic": false,
+  "tasks": 38,
+  "roots": [
+   "sa_task_1",
+   "sa_task_25"
+  ]
+ },
+ "cyrene_1_academies": {
+  "file": "02_cyrene_missions_academies.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "cyrene_1_academies_task_1",
+   "cyrene_1_academies_task_7"
+  ]
+ },
+ "cyrene_1_intoegypt": {
+  "file": "02_cyrene_missions_egypt.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "cyrene_1_intoegypt_task_1"
+  ]
+ },
+ "cyrene_1_magas": {
+  "file": "02_cyrene_missions_magas.txt",
+  "generic": false,
+  "tasks": 34,
+  "roots": [
+   "cyrene_1_magas_task_1"
+  ]
+ },
+ "cyrene_1_ophellas": {
+  "file": "02_cyrene_missions_ophellas.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": [
+   "cyrene_1_ophellas_task_1",
+   "cyrene_1_ophellas_task_10"
+  ]
+ },
+ "cyrene_1_reform": {
+  "file": "02_cyrene_missions_reform.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "cyrene_1_reform_task_1"
+  ]
+ },
+ "cyrene_1_thera": {
+  "file": "02_cyrene_missions_thera.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "cyrene_1_thera_task_1",
+   "cyrene_1_thera_task_4"
+  ]
+ },
+ "01_sw_britain_dum": {
+  "file": "02_dumnonia.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": []
+ },
+ "eburonian_missions_01": {
+  "file": "02_eburonia_missions.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "eburonian_missions_task_1",
+   "eburonian_missions_task_2"
+  ]
+ },
+ "egypt_mission_1_sea": {
+  "file": "02_egypt_mission_1_sea.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "egypt_mission_1_sea_task_1",
+   "egypt_mission_1_sea_task_2",
+   "egypt_mission_1_sea_task_3"
+  ]
+ },
+ "egypt_mission_2_pharaoh": {
+  "file": "02_egypt_mission_2_pharaoh.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "egypt_mission_2_pharaoh_task_1",
+   "egypt_mission_2_pharaoh_task_3",
+   "egypt_mission_2_pharaoh_task_4"
+  ]
+ },
+ "egypt_mission_3_empire": {
+  "file": "02_egypt_mission_3_empire.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "egypt_mission_3_empire_task_1",
+   "egypt_mission_3_empire_task_6",
+   "egypt_mission_3_empire_task_7"
+  ]
+ },
+ "egypt_mission_4_border": {
+  "file": "02_egypt_mission_4_border.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "egypt_mission_4_border_task_1",
+   "egypt_mission_4_border_task_2",
+   "egypt_mission_4_border_task_3",
+   "egypt_mission_4_border_task_4"
+  ]
+ },
+ "fezzani_mission_01": {
+  "file": "02_fezzani_missions_01.txt",
+  "generic": false,
+  "tasks": 66,
+  "roots": [
+   "fezzani_mission_01_task_01"
+  ]
+ },
+ "barbaricum_francia_austria_mission": {
+  "file": "02_francia_austria.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "barbaricum_francia_austria_mission_task_1",
+   "barbaricum_francia_austria_mission_task_7"
+  ]
+ },
+ "barbaricum_form_francia_mission": {
+  "file": "02_francia_form.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "barbaricum_form_francia_mission_task_1",
+   "barbaricum_form_francia_mission_task_7",
+   "barbaricum_form_francia_mission_task_8"
+  ]
+ },
+ "barbaricum_gallia_cisalpina_mission": {
+  "file": "02_gallia_cisalpina.txt",
+  "generic": false,
+  "tasks": 22,
+  "roots": [
+   "barbaricum_gallia_cisalpina_mission_task_1",
+   "barbaricum_gallia_cisalpina_mission_task_10",
+   "barbaricum_gallia_cisalpina_mission_task_17",
+   "barbaricum_gallia_cisalpina_mission_task_18"
+  ]
+ },
+ "barbaricum_gothonia_mission": {
+  "file": "02_gothonia.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "barbaricum_gothonia_mission_task_4",
+   "barbaricum_gothonia_mission_task_7",
+   "barbaricum_gothonia_mission_task_16"
+  ]
+ },
+ "gymnaesian_mission_01": {
+  "file": "02_gymnaesia_missions.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "gymnaesian_mission_01_task_01",
+   "gymnaesian_mission_01_task_02"
+  ]
+ },
+ "hcp_mission_01": {
+  "file": "02_hcp_missions_01.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "hcp_mission_01_task_01",
+   "hcp_mission_01_task_02",
+   "hcp_mission_01_task_09",
+   "hcp_mission_01_task_12"
+  ]
+ },
+ "hcp_mission_02": {
+  "file": "02_hcp_missions_02.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "hcp_mission_02_task_01"
+  ]
+ },
+ "hibernian_missions_01": {
+  "file": "02_hibernia.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "hibernian_missions_task_1",
+   "hibernian_missions_task_2"
+  ]
+ },
+ "02_horn_of_africa": {
+  "file": "02_horn_of_africa.txt",
+  "generic": false,
+  "tasks": 42,
+  "roots": [
+   "02_horn_of_africa_task_start"
+  ]
+ },
+ "iberia_missions": {
+  "file": "02_iberia.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "iberia_missions_task_1",
+   "iberia_missions_task_6"
+  ]
+ },
+ "icenia_mission_tree": {
+  "file": "02_icenia_mission.txt",
+  "generic": false,
+  "tasks": 20,
+  "roots": [
+   "icenia_mission_tree_task_1",
+   "icenia_mission_tree_task_3",
+   "icenia_mission_tree_task_9"
+  ]
+ },
+ "indian_mission_01_gandara": {
+  "file": "02_indian_missions_01_gandara.txt",
+  "generic": false,
+  "tasks": 27,
+  "roots": [
+   "indian_mission_01_gandara_task_1"
+  ]
+ },
+ "indian_mission_02_ganges": {
+  "file": "02_indian_missions_02_ganges.txt",
+  "generic": false,
+  "tasks": 25,
+  "roots": [
+   "indian_mission_02_ganges_task_1"
+  ]
+ },
+ "indian_mission_03_aparanta": {
+  "file": "02_indian_missions_03_aparanta.txt",
+  "generic": false,
+  "tasks": 22,
+  "roots": [
+   "indian_mission_03_aparanta_task_1",
+   "indian_mission_03_aparanta_task_2"
+  ]
+ },
+ "indian_mission_04_dravidia": {
+  "file": "02_indian_missions_04_dravidia.txt",
+  "generic": false,
+  "tasks": 21,
+  "roots": [
+   "indian_mission_04_dravidia_task_1"
+  ]
+ },
+ "judea_inv_mission": {
+  "file": "02_judea_inv_01.txt",
+  "generic": false,
+  "tasks": 35,
+  "roots": [
+   "judea_inv_mission_task_1",
+   "judea_inv_mission_task_5",
+   "judea_inv_mission_task_18"
+  ]
+ },
+ "kalinga_missions": {
+  "file": "02_kalinga_missions.txt",
+  "generic": false,
+  "tasks": 30,
+  "roots": [
+   "kalinga_missions_task_2",
+   "kalinga_missions_task_29",
+   "kalinga_missions_task_30"
+  ]
+ },
+ "kush_missions": {
+  "file": "02_kush_missions.txt",
+  "generic": false,
+  "tasks": 52,
+  "roots": [
+   "kush_missions_task_1",
+   "kush_missions_task_25",
+   "kush_missions_task_31"
+  ]
+ },
+ "lankan_missions": {
+  "file": "02_lankan_missions.txt",
+  "generic": false,
+  "tasks": 20,
+  "roots": [
+   "lankan_missions_task_1",
+   "lankan_missions_task_13",
+   "lankan_missions_task_14",
+   "lankan_missions_task_15",
+   "lankan_missions_task_20"
+  ]
+ },
+ "lankan_missions_reclamation": {
+  "file": "02_lankan_missions_02_reclamation.txt",
+  "generic": false,
+  "tasks": 25,
+  "roots": [
+   "lankan_missions_reclamation_task_1",
+   "lankan_missions_reclamation_task_7"
+  ]
+ },
+ "mauryan_collapse_prevention": {
+  "file": "02_mauryan_missions_01_prevention.txt",
+  "generic": false,
+  "tasks": 10,
+  "roots": [
+   "mauryan_collapse_prevention_task_2",
+   "mauryan_collapse_prevention_task_3",
+   "mauryan_collapse_prevention_task_4"
+  ]
+ },
+ "mauryan_reconquest": {
+  "file": "02_mauryan_missions_02_reconquest.txt",
+  "generic": false,
+  "tasks": 22,
+  "roots": [
+   "mauryan_reconquest_task_1",
+   "mauryan_reconquest_task_13"
+  ]
+ },
+ "messapia_missions": {
+  "file": "02_messapia_missions.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "messapia_missions_task_1",
+   "messapia_missions_task_23"
+  ]
+ },
+ "mitanni_missions": {
+  "file": "02_mitanni_missions.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "mitanni_missions_task_1",
+   "mitanni_missions_task_11"
+  ]
+ },
+ "nabatea_mission_01": {
+  "file": "02_nabatean_missions.txt",
+  "generic": false,
+  "tasks": 33,
+  "roots": [
+   "nabatea_mission_01_task_01",
+   "nabatea_mission_01_task_02",
+   "nabatea_mission_01_task_03"
+  ]
+ },
+ "nabhapakti_missions": {
+  "file": "02_nabhapakti_missions.txt",
+  "generic": false,
+  "tasks": 35,
+  "roots": [
+   "nabhapakti_missions_task_1",
+   "nabhapakti_missions_task_2",
+   "nabhapakti_missions_task_17"
+  ]
+ },
+ "numidian_mission_01": {
+  "file": "02_numidian_missions_numidia.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "numidian_mission_01_task_01",
+   "numidian_mission_01_task_02",
+   "numidian_mission_01_task_03",
+   "numidian_mission_01_task_09",
+   "numidian_mission_01_task_15"
+  ]
+ },
+ "nuragic_mission_01_inv": {
+  "file": "02_nuragic_missions_1.txt",
+  "generic": false,
+  "tasks": 35,
+  "roots": [
+   "nuragic_mission_01_inv_1_task"
+  ]
+ },
+ "nuragic_mission_02_inv": {
+  "file": "02_nuragic_missions_2.txt",
+  "generic": false,
+  "tasks": 76,
+  "roots": [
+   "nuragic_mission_02_inv_task_1",
+   "nuragic_mission_02_inv_task_2",
+   "nuragic_mission_02_inv_task_4",
+   "nuragic_mission_02_inv_task_71"
+  ]
+ },
+ "odrysia_missions_01_freedom": {
+  "file": "02_odrysia_missions_01_freedom.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "odrysia_missions_01_freedom_task_01"
+  ]
+ },
+ "parthia_missions": {
+  "file": "02_parthia_missions.txt",
+  "generic": false,
+  "tasks": 150,
+  "roots": [
+   "parthia_missions_1",
+   "parthia_missions_48"
+  ]
+ },
+ "parthia_satrapy_missions": {
+  "file": "02_parthia_satrapy_missions.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "parthia_satrapy_missions_1"
+  ]
+ },
+ "paurava_missions": {
+  "file": "02_paurava_missions.txt",
+  "generic": false,
+  "tasks": 22,
+  "roots": [
+   "paurava_missions_task_0",
+   "paurava_missions_task_51"
+  ]
+ },
+ "pentapotamia_missions": {
+  "file": "02_pentapotamia_missions_01.txt",
+  "generic": false,
+  "tasks": 21,
+  "roots": [
+   "pentapotamia_missions_task_1"
+  ]
+ },
+ "persis_mission_1_freedom": {
+  "file": "02_persis_mission_1_freedom.txt",
+  "generic": false,
+  "tasks": 20,
+  "roots": [
+   "persis_mission_1_freedom_task_1",
+   "persis_mission_1_freedom_task_2"
+  ]
+ },
+ "phoenicia_missions": {
+  "file": "02_phoenicia_mission_01.txt",
+  "generic": false,
+  "tasks": 46,
+  "roots": [
+   "phoenicia_missions_task_1",
+   "phoenicia_missions_task_4",
+   "phoenicia_missions_task_7",
+   "phoenicia_missions_task_8",
+   "phoenicia_missions_task_32"
+  ]
+ },
+ "pontus_kingdom_missions": {
+  "file": "02_pontus_missions_01.txt",
+  "generic": false,
+  "tasks": 21,
+  "roots": [
+   "pontus_kingdom_missions_task_4",
+   "pontus_kingdom_missions_task_17",
+   "pontus_kingdom_missions_task_19"
+  ]
+ },
+ "01_cde_pontus_missions_01_black_sea": {
+  "file": "02_pontus_missions_02.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "01_cde_pontus_missions_01_task_1",
+   "01_cde_pontus_missions_01_task_3",
+   "01_cde_pontus_missions_01_task_5",
+   "01_cde_pontus_missions_01_task_24"
+  ]
+ },
+ "punic_resurgence_mission": {
+  "file": "02_punic_missions.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "punic_mission_task_1",
+   "punic_mission_task_3"
+  ]
+ },
+ "qataba_mission": {
+  "file": "02_qataba_mission.txt",
+  "generic": false,
+  "tasks": 24,
+  "roots": [
+   "qataba_task_1"
+  ]
+ },
+ "rhodes_01_aegean": {
+  "file": "02_rhodes_missions_01_aegean.txt",
+  "generic": false,
+  "tasks": 20,
+  "roots": [
+   "rhodes_01_aegean_task_1",
+   "rhodes_01_aegean_task_2",
+   "rhodes_01_aegean_task_8"
+  ]
+ },
+ "rhodes_02_asia": {
+  "file": "02_rhodes_missions_02_asia.txt",
+  "generic": false,
+  "tasks": 29,
+  "roots": [
+   "rhodes_02_asia_task_1",
+   "rhodes_02_asia_task_2",
+   "rhodes_02_asia_task_11",
+   "rhodes_02_asia_task_15",
+   "rhodes_02_asia_task_18"
+  ]
+ },
+ "saba_mission": {
+  "file": "02_saba_mission.txt",
+  "generic": false,
+  "tasks": 27,
+  "roots": [
+   "saba_task_0"
+  ]
+ },
+ "samaria_inv_mission": {
+  "file": "02_samaria_inv_01.txt",
+  "generic": false,
+  "tasks": 36,
+  "roots": [
+   "samaria_inv_mission_task_1",
+   "samaria_inv_mission_task_10"
+  ]
+ },
+ "samnium_mission": {
+  "file": "02_samnium.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "samnium_task_1",
+   "samnium_task_2",
+   "samnium_task_3",
+   "samnium_task_4"
+  ]
+ },
+ "samnium_mission_2": {
+  "file": "02_samnium_2.txt",
+  "generic": false,
+  "tasks": 54,
+  "roots": [
+   "samnium_2_task_1",
+   "samnium_2_task_40",
+   "samnium_2_task_41",
+   "samnium_2_task_51"
+  ]
+ },
+ "barbaricum_saxonia_anglia_mission": {
+  "file": "02_saxonia_anglia.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": [
+   "barbaricum_saxonia_anglia_mission_task_1"
+  ]
+ },
+ "barbaricum_saxonia_form_mission": {
+  "file": "02_saxonia_form.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "barbaricum_saxonia_form_mission_task_1",
+   "barbaricum_saxonia_form_mission_task_7",
+   "barbaricum_saxonia_form_mission_task_8"
+  ]
+ },
+ "scandinavian_missions_01": {
+  "file": "02_scandinavia.txt",
+  "generic": false,
+  "tasks": 12,
+  "roots": [
+   "scandinavian_missions_task_1",
+   "scandinavian_missions_task_2",
+   "scandinavian_missions_task_3",
+   "scandinavian_missions_task_4"
+  ]
+ },
+ "scythia_mission_01_greek_stance": {
+  "file": "02_scythia_missions_01_greek_stance.txt",
+  "generic": false,
+  "tasks": 28,
+  "roots": [
+   "scythia_mission_01_greek_stance_task_1",
+   "scythia_mission_01_greek_stance_task_25"
+  ]
+ },
+ "01_siculia_missions": {
+  "file": "02_siculia_missions.txt",
+  "generic": false,
+  "tasks": 27,
+  "roots": [
+   "01_siculia_missions_task_1",
+   "01_siculia_missions_task_2"
+  ]
+ },
+ "sogdia_missions": {
+  "file": "02_sogdia.txt",
+  "generic": false,
+  "tasks": 33,
+  "roots": [
+   "sogdia_missions_task_2",
+   "sogdia_missions_task_25"
+  ]
+ },
+ "barbaricum_suebi_boiohaemia_mission": {
+  "file": "02_suebi_boihaemia.txt",
+  "generic": false,
+  "tasks": 11,
+  "roots": [
+   "barbaricum_suebi_boiohaemia_mission_task_1"
+  ]
+ },
+ "barbaricum_suebi_gallia_mission": {
+  "file": "02_suebi_gallia.txt",
+  "generic": false,
+  "tasks": 17,
+  "roots": [
+   "barbaricum_suebi_gallia_mission_task_17",
+   "barbaricum_suebi_gallia_mission_task_2"
+  ]
+ },
+ "tamil_king_missions": {
+  "file": "02_tamil_king_missions.txt",
+  "generic": false,
+  "tasks": 43,
+  "roots": [
+   "tamil_king_missions_task_1",
+   "tamil_king_missions_task_2",
+   "tamil_king_missions_task_50",
+   "tamil_king_missions_task_16",
+   "tamil_king_missions_task_30",
+   "tamil_king_missions_task_37",
+   "tamil_king_missions_task_45"
+  ]
+ },
+ "tamilakam_missions_01_unity": {
+  "file": "02_tamilakam_missions_01_unity.txt",
+  "generic": false,
+  "tasks": 31,
+  "roots": [
+   "tamilakam_missions_01_task_1",
+   "tamilakam_missions_01_task_14",
+   "tamilakam_missions_01_task_15",
+   "tamilakam_missions_01_task_31"
+  ]
+ },
+ "01_tasm_missions": {
+  "file": "02_tasm_missions.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "01_tasm_missions_task_1"
+  ]
+ },
+ "01_tasm_missions_2": {
+  "file": "02_tasm_missions_2.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "01_tasm_missions_2_task_3"
+  ]
+ },
+ "thebes_missions_01_restoration": {
+  "file": "02_thebes_missions_01_restoration.txt",
+  "generic": false,
+  "tasks": 18,
+  "roots": [
+   "thebes_missions_01_restoration_task_1",
+   "thebes_missions_01_restoration_task_12",
+   "thebes_missions_01_restoration_task_18"
+  ]
+ },
+ "thebes_missions_02_rivals": {
+  "file": "02_thebes_missions_02_rivals.txt",
+  "generic": false,
+  "tasks": 13,
+  "roots": [
+   "thebes_missions_02_rivals_task_1",
+   "thebes_missions_02_rivals_task_3"
+  ]
+ },
+ "thebes_missions_03_prosperity": {
+  "file": "02_thebes_missions_03_prosperity.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "thebes_missions_03_prosperity_task_1",
+   "thebes_missions_03_prosperity_task_3",
+   "thebes_missions_03_prosperity_task_10",
+   "thebes_missions_03_prosperity_task_11"
+  ]
+ },
+ "thebes_missions_04_conquest": {
+  "file": "02_thebes_missions_04_conquest.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "thebes_missions_04_conquest_task_1",
+   "thebes_missions_04_conquest_task_2",
+   "thebes_missions_04_conquest_task_12",
+   "thebes_missions_04_conquest_task_23"
+  ]
+ },
+ "barbaricum_treveria_mission": {
+  "file": "02_treveria.txt",
+  "generic": false,
+  "tasks": 19,
+  "roots": [
+   "barbaricum_treveria_mission_task_1",
+   "barbaricum_treveria_mission_task_6",
+   "barbaricum_treveria_mission_task_9",
+   "barbaricum_treveria_mission_task_14",
+   "barbaricum_treveria_mission_task_15"
+  ]
+ },
+ "tylos_missions": {
+  "file": "02_tylos_missions.txt",
+  "generic": false,
+  "tasks": 26,
+  "roots": [
+   "tylos_missions_task_1",
+   "tylos_missions_task_11"
+  ]
+ },
+ "barbaricum_vandalia_lugia_mission": {
+  "file": "02_vandalia_lugia_form.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "barbaricum_vandalia_lugia_mission_task_1",
+   "barbaricum_vandalia_lugia_mission_task_3",
+   "barbaricum_vandalia_lugia_mission_task_9"
+  ]
+ },
+ "vasconian_mission_01": {
+  "file": "02_vasconian_missions.txt",
+  "generic": false,
+  "tasks": 16,
+  "roots": [
+   "vasconian_mission_01_task_01",
+   "vasconian_mission_01_task_02",
+   "vasconian_mission_01_task_03"
+  ]
+ },
+ "yaudheya_missions": {
+  "file": "02_yaudheya_missions.txt",
+  "generic": false,
+  "tasks": 21,
+  "roots": [
+   "yaudheya_missions_task_1"
+  ]
+ },
+ "01_zhangzhung_missions": {
+  "file": "02_zhangzhung_missions.txt",
+  "generic": false,
+  "tasks": 25,
+  "roots": [
+   "01_zhangzhung_missions_task_1"
+  ]
+ },
+ "zygia_missions": {
+  "file": "02_zygia_missions.txt",
+  "generic": false,
+  "tasks": 15,
+  "roots": [
+   "zygia_missions_task_1",
+   "zygia_missions_task_2"
+  ]
+ },
+ "bharat_missions": {
+  "file": "03_bharat_missions.txt",
+  "generic": false,
+  "tasks": 23,
+  "roots": [
+   "bharat_missions_task_1",
+   "bharat_missions_task_2",
+   "bharat_missions_task_3",
+   "bharat_missions_task_8"
+  ]
+ },
+ "03_tibet_mission": {
+  "file": "03_tibet_missions.txt",
+  "generic": false,
+  "tasks": 14,
+  "roots": [
+   "03_tibet_mission_task_1",
+   "03_tibet_mission_task_2",
+   "03_tibet_mission_task_3"
+  ]
+ },
+ "mlhu_unify_homeland": {
+  "file": "zz_mlhu_unify_homeland.txt",
+  "generic": false,
+  "tasks": 7,
+  "roots": [
+   "mlhu_task_1"
+  ]
+ }
+}

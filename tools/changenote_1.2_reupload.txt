@@ -1,0 +1,2 @@
+Version 1.2 (re-upload)
+- Fixed: script errors found in testing: the Pontus start-up event, the Thessalian League formable, the Tylos missions, and Mithridates' and Thrace's events that still pointed to overlords removed by "no subjects at start".

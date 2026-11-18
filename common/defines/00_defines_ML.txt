@@ -3,6 +3,6 @@
 }
 
 NDiplomacy = {
-	TRUCE_YEARS = 15 # every truce lasts 15 years (vanilla 3)
+	TRUCE_YEARS = 5 # every truce starts at 5 years (vanilla 3); script (zz_mltr) lengthens it by game date and nation rank
 	SCALED_TRUCE_YEARS = 0 # no extra years scaled by warscore (vanilla 5)
 }

@@ -5,6 +5,9 @@
 # Limited to the capital's region so nations whose culture spread far (Macedonians from Greece to
 # India, Punic from Iberia to Libya) don't get a homeland spanning half the map.
 # The homeland is fixed when the mission starts (variable list mlhu_homeland on the country).
+# v1.12: one tree or the other - hidden once the nation has started an Invictus mission tree.
+# Progress is measured by a monthly event (mlhu.1) instead of list triggers inside the tasks, and
+# every reward is given by an event (mlhu.11-17). The first four tasks take a year each.
 
 mlhu_unify_homeland = {
 	header = "mission_image_general"
@@ -34,6 +37,8 @@ mlhu_unify_homeland = {
 			mlhu_capital_kin_nearby_trigger = yes
 			mlhu_primary_kin_nearby_trigger = yes
 		}
+		# One tree or the other: hidden once the nation has started an Invictus mission tree.
+		mlhu_invictus_tree_started_trigger = no
 	}
 
 	abort = {
@@ -74,11 +79,16 @@ mlhu_unify_homeland = {
 				}
 			}
 		}
+		hidden_effect = {
+			mlhu_update_progress_effect = yes	# first reading; then monthly by event mlhu.1
+		}
 	}
 
 	on_abort = {
 		custom_tooltip = mlhu_cooldown_tt
-		clear_variable_list = mlhu_homeland
+		hidden_effect = {
+			mlhu_clear_progress_effect = yes
+		}
 		set_variable = {
 			name = mlhu_cooldown
 			days = 7300
@@ -87,35 +97,37 @@ mlhu_unify_homeland = {
 
 	on_completion = {
 		complete_mission_effect = yes
-		clear_variable_list = mlhu_homeland
+		hidden_effect = {
+			mlhu_clear_progress_effect = yes
+		}
 	}
 
-	# 1. Call of Kinship - claim every homeland territory we don't hold
+	# 1. Call of Kinship (1 year) - claim every homeland territory we don't hold
 	mlhu_task_1 = {
 		icon = task_political
+		duration = 365
 
 		allow = {
 			political_influence >= 40
 		}
 
-		on_completion = {
+		on_start = {
 			add_political_influence = -40
-			custom_tooltip = mlhu_task_1_tt
-			hidden_effect = {
-				every_in_list = {
-					variable = mlhu_homeland
-					limit = { NOT = { owner = root } }
-					add_claim = root
-				}
-				mlhu_refresh_claims_effect = yes	# make the Declare War screen see the new claims
+		}
+
+		on_completion = {
+			show_as_tooltip = {
+				custom_tooltip = mlhu_task_1_tt
 			}
+			trigger_event = { id = mlhu.11 }
 		}
 	}
 
-	# 2. Secure the Heartland - own a quarter of the homeland
+	# 2. Secure the Heartland (1 year) - own a quarter of the homeland
 	mlhu_task_2 = {
 		icon = "task_battle"
 		requires = { mlhu_task_1 }
+		duration = 365
 
 		highlight = {
 			scope:province = {
@@ -127,28 +139,28 @@ mlhu_unify_homeland = {
 		allow = {
 			custom_tooltip = {
 				text = mlhu_task_2_req_tt
-				any_in_list = {
-					variable = mlhu_homeland
-					percent >= 0.25
-					owner = root
-				}
+				mlhu_owns_homeland_share_trigger = { PCT = 25 }
 			}
 		}
 
 		on_completion = {
-			add_stability = 5
-			add_country_modifier = {
-				name = mlhu_rallied_kin
-				duration = 3650
+			show_as_tooltip = {
+				add_stability = 5
+				add_country_modifier = {
+					name = mlhu_rallied_kin
+					duration = 3650
+				}
 			}
+			trigger_event = { id = mlhu.12 }
 		}
 	}
 
-	# 3. Bonds of Blood - any nation as ally or subject (kin no longer required: after conquering
-	# our kin there may be none left, and every nation should be able to finish the tree)
+	# 3. Bonds of Blood (1 year) - any nation as ally or subject (kin no longer required: after
+	# conquering our kin there may be none left, and every nation should be able to finish the tree)
 	mlhu_task_3 = {
 		icon = task_diplomatic
 		requires = { mlhu_task_1 }
+		duration = 365
 
 		allow = {
 			custom_tooltip = {
@@ -165,17 +177,21 @@ mlhu_unify_homeland = {
 		}
 
 		on_completion = {
-			add_country_modifier = {
-				name = mlhu_bonds_of_blood
-				duration = 3650
+			show_as_tooltip = {
+				add_country_modifier = {
+					name = mlhu_bonds_of_blood
+					duration = 3650
+				}
 			}
+			trigger_event = { id = mlhu.13 }
 		}
 	}
 
-	# 4. Heart of Our People - a populous capital
+	# 4. Heart of Our People (1 year) - a populous capital
 	mlhu_task_4 = {
 		icon = "task_economical"
 		requires = { mlhu_task_1 }
+		duration = 365
 
 		allow = {
 			capital_scope = {
@@ -184,12 +200,15 @@ mlhu_unify_homeland = {
 		}
 
 		on_completion = {
-			capital_scope = {
-				add_permanent_province_modifier = {
-					name = mlhu_heart_of_the_people
-					duration = -1
+			show_as_tooltip = {
+				capital_scope = {
+					add_permanent_province_modifier = {
+						name = mlhu_heart_of_the_people
+						duration = -1
+					}
 				}
 			}
+			trigger_event = { id = mlhu.14 }
 		}
 	}
 
@@ -208,26 +227,17 @@ mlhu_unify_homeland = {
 		allow = {
 			custom_tooltip = {
 				text = mlhu_task_5_req_tt
-				any_in_list = {
-					variable = mlhu_homeland
-					percent >= 0.5
-					owner = root
-				}
+				mlhu_owns_homeland_share_trigger = { PCT = 50 }
 			}
 		}
 
 		on_completion = {
-			add_stability = 5
-			add_political_influence = 50
-			custom_tooltip = mlhu_task_1_tt
-			hidden_effect = {
-				every_in_list = {
-					variable = mlhu_homeland
-					limit = { NOT = { owner = root } }
-					add_claim = root
-				}
-				mlhu_refresh_claims_effect = yes	# make the Declare War screen see the new claims
+			show_as_tooltip = {
+				add_stability = 5
+				add_political_influence = 50
+				custom_tooltip = mlhu_task_1_tt
 			}
+			trigger_event = { id = mlhu.15 }
 		}
 	}
 
@@ -246,19 +256,18 @@ mlhu_unify_homeland = {
 		allow = {
 			custom_tooltip = {
 				text = mlhu_task_6_req_tt
-				any_in_list = {
-					variable = mlhu_homeland
-					percent >= 0.75
-					owner = root
-				}
+				mlhu_owns_homeland_share_trigger = { PCT = 75 }
 			}
 		}
 
 		on_completion = {
-			add_country_modifier = {
-				name = mlhu_kin_under_one_roof
-				duration = 3650
+			show_as_tooltip = {
+				add_country_modifier = {
+					name = mlhu_kin_under_one_roof
+					duration = 3650
+				}
 			}
+			trigger_event = { id = mlhu.16 }
 		}
 	}
 
@@ -279,21 +288,22 @@ mlhu_unify_homeland = {
 			stability >= 40
 			custom_tooltip = {
 				text = mlhu_task_7_req_tt
-				any_in_list = {
-					variable = mlhu_homeland
-					percent >= 0.9
-					owner = root
-				}
+				mlhu_owns_homeland_share_trigger = { PCT = 90 }
 			}
 		}
 
 		on_completion = {
-			add_stability = 10
-			set_variable = mlhu_homeland_done
-			add_country_modifier = {
-				name = mlhu_homeland_united
-				duration = -1
+			show_as_tooltip = {
+				add_stability = 10
+				add_country_modifier = {
+					name = mlhu_homeland_united
+					duration = -1
+				}
 			}
+			hidden_effect = {
+				set_variable = mlhu_homeland_done
+			}
+			trigger_event = { id = mlhu.17 }
 		}
 	}
 }

@@ -1,0 +1,4 @@
+Version 1.11
+- Fixed: auto-trade no longer uses your capital's surplus. Your capital never sells to your other states through auto-trade; you can still set such routes by hand.
+- Fixed: auto-trade no longer reshuffles trade every month. It used to sell the same spare unit of a good to several of your states at once; the game then cancelled the extra routes and auto-trade added them again the next month, with a notification each time. Now each state sells at most one unit of a good per month, and if a route auto-trade created gets cancelled, that state waits a year before trying that good again.
+- Unchanged: auto-trade adds no messages of its own, still buys abroad first (allies, then great, good and neutral relations, nearest region first) and still never buys from other players or from AI nations at war with you or that dislike you. An AI nation's capital only sells if it keeps a spare unit for itself.

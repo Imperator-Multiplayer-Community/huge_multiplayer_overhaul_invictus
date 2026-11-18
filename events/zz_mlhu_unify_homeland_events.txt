@@ -1,0 +1,131 @@
+﻿# Unify Your Home Lands (MLHU) - events.
+# mlhu.1: monthly, hidden - measures how much of the homeland we own (the tasks read the result).
+# mlhu.11-17: one event per task, giving its reward. Rewards are given here and not inside the
+# mission tasks, because effects and list triggers inside mission tasks are unreliable in Imperator.
+namespace = mlhu
+
+mlhu.1 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		mlhu_mission_running_trigger = yes
+	}
+
+	immediate = {
+		mlhu_update_progress_effect = yes
+	}
+}
+
+# 1. Call of Kinship
+mlhu.11 = {
+	type = country_event
+	title = mlhu.11.t
+	desc = mlhu.11.desc
+	picture = council_country
+
+	option = {
+		name = mlhu.11.a
+		mlhu_claim_homeland_effect = yes
+	}
+}
+
+# 2. Secure the Heartland
+mlhu.12 = {
+	type = country_event
+	title = mlhu.12.t
+	desc = mlhu.12.desc
+	picture = greeks_marching
+
+	option = {
+		name = mlhu.12.a
+		add_stability = 5
+		add_country_modifier = {
+			name = mlhu_rallied_kin
+			duration = 3650
+		}
+	}
+}
+
+# 3. Bonds of Blood
+mlhu.13 = {
+	type = country_event
+	title = mlhu.13.t
+	desc = mlhu.13.desc
+	picture = greek_court
+
+	option = {
+		name = mlhu.13.a
+		add_country_modifier = {
+			name = mlhu_bonds_of_blood
+			duration = 3650
+		}
+	}
+}
+
+# 4. Heart of Our People
+mlhu.14 = {
+	type = country_event
+	title = mlhu.14.t
+	desc = mlhu.14.desc
+	picture = city_construction
+
+	option = {
+		name = mlhu.14.a
+		capital_scope = {
+			add_permanent_province_modifier = {
+				name = mlhu_heart_of_the_people
+				duration = -1
+			}
+		}
+	}
+}
+
+# 5. Half the Homeland
+mlhu.15 = {
+	type = country_event
+	title = mlhu.15.t
+	desc = mlhu.15.desc
+	picture = throneroom
+
+	option = {
+		name = mlhu.15.a
+		add_stability = 5
+		add_political_influence = 50
+		mlhu_claim_homeland_effect = yes
+	}
+}
+
+# 6. Kin Under One Roof
+mlhu.16 = {
+	type = country_event
+	title = mlhu.16.t
+	desc = mlhu.16.desc
+	picture = greek_city
+
+	option = {
+		name = mlhu.16.a
+		add_country_modifier = {
+			name = mlhu_kin_under_one_roof
+			duration = 3650
+		}
+	}
+}
+
+# 7. The Homeland United
+mlhu.17 = {
+	type = country_event
+	title = mlhu.17.t
+	desc = mlhu.17.desc
+	picture = diadochi_coronation
+
+	option = {
+		name = mlhu.17.a
+		add_stability = 10
+		set_variable = mlhu_homeland_done
+		add_country_modifier = {
+			name = mlhu_homeland_united
+			duration = -1
+		}
+	}
+}

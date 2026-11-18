@@ -8,6 +8,9 @@ mlat_wants_good_trigger = {
 	unused_trade_routes >= 1
 	root = { is_trade_goods_allowed = $GOOD$ }
 	NOT = { any_state_province = { trade_goods = $GOOD$ } }
+	# Cooldown: this state already got a route for this good from us in the last year. If that
+	# route was cancelled since, wait instead of re-adding it every month (one notification per try).
+	NOT = { has_variable = mlat_cd_$GOOD$ }
 	trade_good_imports = {
 		target = $GOOD$
 		value < 1
@@ -18,17 +21,13 @@ mlat_wants_good_trigger = {
 # would allow scope:mlat_importer to import it from here.
 mlat_exporter_base_trigger = {
 	NOT = { this = scope:mlat_importer }
+	# The game only recalculates surplus later, so a state with a surplus of 1 still shows 1 after
+	# it sold that unit. Without this flag the same unit was sold to several states in one pass,
+	# the game cancelled the extra routes and the script re-added them every month.
+	NOT = { has_variable = mlat_sold_$GOOD$ }
 	trade_good_surplus = {
 		target = $GOOD$
 		value >= 1
-	}
-	# Keep the capital bonus: a capital only exports if it still has a surplus afterwards.
-	OR = {
-		NOT = { has_capital_bonus_for_trade_good = $GOOD$ }
-		trade_good_surplus = {
-			target = $GOOD$
-			value >= 2
-		}
 	}
 	scope:mlat_importer = {
 		can_create_trade_route = {
@@ -38,8 +37,9 @@ mlat_exporter_base_trigger = {
 	}
 }
 
-# One of our own states.
+# One of our own states. Never our capital: its surplus feeds the capital bonus.
 mlat_own_exporter_trigger = {
+	is_capital_state = no
 	mlat_exporter_base_trigger = { GOOD = $GOOD$ }
 }
 
@@ -55,6 +55,14 @@ mlat_foreign_exporter_trigger = {
 			value >= 0
 		}
 		mlat_standing_$TIER$_trigger = yes
+	}
+	# An AI capital only sells if it keeps a surplus of its own afterwards.
+	OR = {
+		is_capital_state = no
+		trade_good_surplus = {
+			target = $GOOD$
+			value >= 2
+		}
 	}
 	mlat_exporter_base_trigger = { GOOD = $GOOD$ }
 }

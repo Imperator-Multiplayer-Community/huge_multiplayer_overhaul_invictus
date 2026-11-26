@@ -1,0 +1,9 @@
+[h2]Version 1.13[/h2]
+[list]
+[*][b]New:[/b] Auto-trade options, suggested by Pope. The import window has an "Exclude my goods from auto-trade" checkbox. While it is ticked, auto-trade only imports from other nations, imports from your own states into states with automated trading are removed every month (including ones the game's own auto-trade made), and the import window lists only other nations' states.
+[*][b]New:[/b] Reset Trade, suggested by Pope. In the diplomacy window of one of your AI subjects, Reset Trade removes all of its trade routes, imports and exports, so its goods are free to trade again. Once a month per subject.
+[*][b]Performance:[/b] auto-trade checks whether any AI state nearby has a good for sale before searching the four relations tiers, and checks the cheap things (spare goods) before the expensive ones (relations, war, opinion).
+[*][b]Performance:[/b] foreign tradition penalties refresh once a year for AI nations instead of every month (players are still refreshed monthly).
+[*][b]Performance:[/b] allied granaries only run for nations that have a player ally, subject or overlord, instead of for every nation at war.
+[*][b]Performance:[/b] Unify Your Home Lands: AI nations remember whether they started an Invictus mission tree (checked twice a year) instead of re-checking about 500 mission tasks every time the game looks at their missions, and the region scans run last. Bonds of Blood only looks at your own allies and subjects instead of every nation.
+[/list]

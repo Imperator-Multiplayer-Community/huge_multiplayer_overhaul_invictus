@@ -25,10 +25,72 @@
 #     we are at war with or that dislikes us;
 #   - the engine's own can_create_trade_route check (range, free route, access) must pass.
 # AI countries keep the engine's normal trade behaviour.
+#
+# v1.13 (Pope's suggestions):
+#   - "Exclude my goods from auto-trade" checkbox (country variable mlat_exclude_own, set from the
+#     import window): step 5 is skipped, and import routes from our own states into our automated
+#     states are removed every month (also routes the game's own auto-trade made).
+#   - "Reset Trade" button in the diplomacy window of an AI subject: removes all of its trade
+#     routes, imports and exports (mlat_reset_country_trade_effect below).
+# v1.13 performance: a cheap "is anything for sale nearby?" scan runs before the tier ladder, and
+# the cheap surplus checks come before the owner/opinion checks (see the triggers file).
 #####################################
 
 # Country scope (root = the player country). Called from mlat_auto_trade_pulse.
 mlat_auto_trade_effect = {
+	# "Exclude my goods from auto-trade": drop imports from our own states into automated states.
+	if = {
+		limit = { has_variable = mlat_exclude_own }
+		every_country_state = {
+			limit = {
+				is_automated_trading = yes
+				incoming_trade_routes >= 1
+			}
+			save_scope_as = mlat_importer
+			mlat_drop_own_import_effect = { GOOD = salt }
+			mlat_drop_own_import_effect = { GOOD = iron }
+			mlat_drop_own_import_effect = { GOOD = horses }
+			mlat_drop_own_import_effect = { GOOD = wine }
+			mlat_drop_own_import_effect = { GOOD = wood }
+			mlat_drop_own_import_effect = { GOOD = amber }
+			mlat_drop_own_import_effect = { GOOD = stone }
+			mlat_drop_own_import_effect = { GOOD = fish }
+			mlat_drop_own_import_effect = { GOOD = spices }
+			mlat_drop_own_import_effect = { GOOD = elephants }
+			mlat_drop_own_import_effect = { GOOD = papyrus }
+			mlat_drop_own_import_effect = { GOOD = cloth }
+			mlat_drop_own_import_effect = { GOOD = wild_game }
+			mlat_drop_own_import_effect = { GOOD = precious_metals }
+			mlat_drop_own_import_effect = { GOOD = steppe_horses }
+			mlat_drop_own_import_effect = { GOOD = cattle }
+			mlat_drop_own_import_effect = { GOOD = earthware }
+			mlat_drop_own_import_effect = { GOOD = dye }
+			mlat_drop_own_import_effect = { GOOD = fur }
+			mlat_drop_own_import_effect = { GOOD = olive }
+			mlat_drop_own_import_effect = { GOOD = leather }
+			mlat_drop_own_import_effect = { GOOD = base_metals }
+			mlat_drop_own_import_effect = { GOOD = woad }
+			mlat_drop_own_import_effect = { GOOD = marble }
+			mlat_drop_own_import_effect = { GOOD = honey }
+			mlat_drop_own_import_effect = { GOOD = incense }
+			mlat_drop_own_import_effect = { GOOD = hemp }
+			mlat_drop_own_import_effect = { GOOD = vegetables }
+			mlat_drop_own_import_effect = { GOOD = gems }
+			mlat_drop_own_import_effect = { GOOD = camel }
+			mlat_drop_own_import_effect = { GOOD = glass }
+			mlat_drop_own_import_effect = { GOOD = silk }
+			mlat_drop_own_import_effect = { GOOD = dates }
+			mlat_drop_own_import_effect = { GOOD = sugar }
+			mlat_drop_own_import_effect = { GOOD = cedar }
+			mlat_drop_own_import_effect = { GOOD = myrrh }
+			mlat_drop_own_import_effect = { GOOD = cinnabar }
+			mlat_drop_own_import_effect = { GOOD = lapis }
+			mlat_drop_own_import_effect = { GOOD = jade }
+			mlat_drop_own_import_effect = { GOOD = fruits }
+			mlat_drop_own_import_effect = { GOOD = silphium }
+			mlat_drop_own_import_effect = { GOOD = grain }
+		}
+	}
 	every_country_state = {
 		limit = {
 			is_automated_trading = yes
@@ -83,46 +145,56 @@ mlat_auto_trade_effect = {
 mlat_try_import_effect = {
 	if = {
 		limit = { mlat_wants_good_trigger = { GOOD = $GOOD$ } }
-		# 1. Allies, subjects, overlord
+		# Steps 1-4 only run if some AI state nearby has the good for sale at all
+		# (one cheap scan instead of eight full ones when nothing is for sale).
 		if = {
-			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = ally } }
-			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = ally }
+			limit = { mlat_nearby_foreign_surplus_trigger = { GOOD = $GOOD$ } }
+			# 1. Allies, subjects, overlord
+			if = {
+				limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = ally } }
+				mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = ally }
+			}
+			else_if = {
+				limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = ally } }
+				mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = ally }
+			}
+			# 2. Great relations
+			else_if = {
+				limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = great } }
+				mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = great }
+			}
+			else_if = {
+				limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = great } }
+				mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = great }
+			}
+			# 3. Good relations
+			else_if = {
+				limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = good } }
+				mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = good }
+			}
+			else_if = {
+				limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = good } }
+				mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = good }
+			}
+			# 4. Anyone who does not dislike us
+			else_if = {
+				limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = neutral } }
+				mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = neutral }
+			}
+			else_if = {
+				limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = neutral } }
+				mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = neutral }
+			}
 		}
-		else_if = {
-			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = ally } }
-			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = ally }
-		}
-		# 2. Great relations
-		else_if = {
-			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = great } }
-			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = great }
-		}
-		else_if = {
-			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = great } }
-			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = great }
-		}
-		# 3. Good relations
-		else_if = {
-			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = good } }
-			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = good }
-		}
-		else_if = {
-			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = good } }
-			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = good }
-		}
-		# 4. Anyone who does not dislike us
-		else_if = {
-			limit = { mlat_region_has_exporter_trigger = { GOOD = $GOOD$ TIER = neutral } }
-			mlat_import_from_region_effect = { GOOD = $GOOD$ TIER = neutral }
-		}
-		else_if = {
-			limit = { mlat_neighbor_has_exporter_trigger = { GOOD = $GOOD$ TIER = neutral } }
-			mlat_import_from_neighbor_effect = { GOOD = $GOOD$ TIER = neutral }
-		}
-		# 5. Our own states (no commerce, but the state still gets the good)
-		else_if = {
+		# 5. Our own states (no commerce, but the state still gets the good).
+		# Reached when no AI state nearby sells the good or none of them qualifies.
+		# Skipped when the player ticked "Exclude my goods from auto-trade".
+		if = {
 			limit = {
+				# no route was added above this month
+				NOT = { has_variable = mlat_cd_$GOOD$ }
 				root = {
+					NOT = { has_variable = mlat_exclude_own }
 					any_country_state = { mlat_own_exporter_trigger = { GOOD = $GOOD$ } }
 				}
 			}
@@ -180,5 +252,214 @@ mlat_add_route_effect = {
 	set_variable = {
 		name = mlat_sold_$GOOD$
 		days = 25
+	}
+}
+
+
+#####################################
+# v1.13 - Exclude my goods from auto-trade
+#####################################
+
+# State scope (scope:mlat_importer, an automated state of a player with mlat_exclude_own).
+# Removes the import routes of this good that come from our own states.
+mlat_drop_own_import_effect = {
+	if = {
+		limit = {
+			trade_good_imports = {
+				target = $GOOD$
+				value >= 1
+			}
+		}
+		root = {
+			every_country_state = {
+				limit = {
+					NOT = { this = scope:mlat_importer }
+					trade_good_exports = {
+						target = $GOOD$
+						value >= 1
+					}
+				}
+				scope:mlat_importer = {
+					remove_trade_route = {
+						target = prev
+						goods = $GOOD$
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#####################################
+# v1.13 - Reset Trade (overlord button on an AI subject)
+#####################################
+# There is no script list of a state's trade routes, so for every good a state imports
+# (exports) we look for its partners among the countries it imports from (exports to) and
+# remove the route for that good. A partner that sells the good to someone else may make the
+# game log a harmless "no such route" line in error.log. Runs only when the button is pressed.
+
+# Country scope = the subject.
+mlat_reset_country_trade_effect = {
+	save_scope_as = mlat_reset_country
+	every_country_state = {
+		limit = { trade_routes >= 1 }
+		save_scope_as = mlat_reset_state
+		if = {
+			limit = { incoming_trade_routes >= 1 }
+			mlat_reset_imports_effect = { GOOD = salt }
+			mlat_reset_imports_effect = { GOOD = iron }
+			mlat_reset_imports_effect = { GOOD = horses }
+			mlat_reset_imports_effect = { GOOD = wine }
+			mlat_reset_imports_effect = { GOOD = wood }
+			mlat_reset_imports_effect = { GOOD = amber }
+			mlat_reset_imports_effect = { GOOD = stone }
+			mlat_reset_imports_effect = { GOOD = fish }
+			mlat_reset_imports_effect = { GOOD = spices }
+			mlat_reset_imports_effect = { GOOD = elephants }
+			mlat_reset_imports_effect = { GOOD = papyrus }
+			mlat_reset_imports_effect = { GOOD = cloth }
+			mlat_reset_imports_effect = { GOOD = wild_game }
+			mlat_reset_imports_effect = { GOOD = precious_metals }
+			mlat_reset_imports_effect = { GOOD = steppe_horses }
+			mlat_reset_imports_effect = { GOOD = cattle }
+			mlat_reset_imports_effect = { GOOD = earthware }
+			mlat_reset_imports_effect = { GOOD = dye }
+			mlat_reset_imports_effect = { GOOD = fur }
+			mlat_reset_imports_effect = { GOOD = olive }
+			mlat_reset_imports_effect = { GOOD = leather }
+			mlat_reset_imports_effect = { GOOD = base_metals }
+			mlat_reset_imports_effect = { GOOD = woad }
+			mlat_reset_imports_effect = { GOOD = marble }
+			mlat_reset_imports_effect = { GOOD = honey }
+			mlat_reset_imports_effect = { GOOD = incense }
+			mlat_reset_imports_effect = { GOOD = hemp }
+			mlat_reset_imports_effect = { GOOD = vegetables }
+			mlat_reset_imports_effect = { GOOD = gems }
+			mlat_reset_imports_effect = { GOOD = camel }
+			mlat_reset_imports_effect = { GOOD = glass }
+			mlat_reset_imports_effect = { GOOD = silk }
+			mlat_reset_imports_effect = { GOOD = dates }
+			mlat_reset_imports_effect = { GOOD = sugar }
+			mlat_reset_imports_effect = { GOOD = cedar }
+			mlat_reset_imports_effect = { GOOD = myrrh }
+			mlat_reset_imports_effect = { GOOD = cinnabar }
+			mlat_reset_imports_effect = { GOOD = lapis }
+			mlat_reset_imports_effect = { GOOD = jade }
+			mlat_reset_imports_effect = { GOOD = fruits }
+			mlat_reset_imports_effect = { GOOD = silphium }
+			mlat_reset_imports_effect = { GOOD = grain }
+		}
+		if = {
+			limit = { outgoing_trade_routes >= 1 }
+			mlat_reset_exports_effect = { GOOD = salt }
+			mlat_reset_exports_effect = { GOOD = iron }
+			mlat_reset_exports_effect = { GOOD = horses }
+			mlat_reset_exports_effect = { GOOD = wine }
+			mlat_reset_exports_effect = { GOOD = wood }
+			mlat_reset_exports_effect = { GOOD = amber }
+			mlat_reset_exports_effect = { GOOD = stone }
+			mlat_reset_exports_effect = { GOOD = fish }
+			mlat_reset_exports_effect = { GOOD = spices }
+			mlat_reset_exports_effect = { GOOD = elephants }
+			mlat_reset_exports_effect = { GOOD = papyrus }
+			mlat_reset_exports_effect = { GOOD = cloth }
+			mlat_reset_exports_effect = { GOOD = wild_game }
+			mlat_reset_exports_effect = { GOOD = precious_metals }
+			mlat_reset_exports_effect = { GOOD = steppe_horses }
+			mlat_reset_exports_effect = { GOOD = cattle }
+			mlat_reset_exports_effect = { GOOD = earthware }
+			mlat_reset_exports_effect = { GOOD = dye }
+			mlat_reset_exports_effect = { GOOD = fur }
+			mlat_reset_exports_effect = { GOOD = olive }
+			mlat_reset_exports_effect = { GOOD = leather }
+			mlat_reset_exports_effect = { GOOD = base_metals }
+			mlat_reset_exports_effect = { GOOD = woad }
+			mlat_reset_exports_effect = { GOOD = marble }
+			mlat_reset_exports_effect = { GOOD = honey }
+			mlat_reset_exports_effect = { GOOD = incense }
+			mlat_reset_exports_effect = { GOOD = hemp }
+			mlat_reset_exports_effect = { GOOD = vegetables }
+			mlat_reset_exports_effect = { GOOD = gems }
+			mlat_reset_exports_effect = { GOOD = camel }
+			mlat_reset_exports_effect = { GOOD = glass }
+			mlat_reset_exports_effect = { GOOD = silk }
+			mlat_reset_exports_effect = { GOOD = dates }
+			mlat_reset_exports_effect = { GOOD = sugar }
+			mlat_reset_exports_effect = { GOOD = cedar }
+			mlat_reset_exports_effect = { GOOD = myrrh }
+			mlat_reset_exports_effect = { GOOD = cinnabar }
+			mlat_reset_exports_effect = { GOOD = lapis }
+			mlat_reset_exports_effect = { GOOD = jade }
+			mlat_reset_exports_effect = { GOOD = fruits }
+			mlat_reset_exports_effect = { GOOD = silphium }
+			mlat_reset_exports_effect = { GOOD = grain }
+		}
+	}
+}
+
+# State scope = scope:mlat_reset_state (a state of the subject). Its imports of one good.
+mlat_reset_imports_effect = {
+	if = {
+		limit = {
+			trade_good_imports = {
+				target = $GOOD$
+				value >= 1
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					this = scope:mlat_reset_country
+					scope:mlat_reset_country = { imports_from = prev }
+				}
+			}
+			every_country_state = {
+				limit = {
+					NOT = { this = scope:mlat_reset_state }
+					trade_good_exports = {
+						target = $GOOD$
+						value >= 1
+					}
+				}
+				scope:mlat_reset_state = {
+					remove_trade_route = {
+						target = prev
+						goods = $GOOD$
+					}
+				}
+			}
+		}
+	}
+}
+
+# State scope = scope:mlat_reset_state. Its exports of one good to other countries
+# (routes between the subject's own states were already removed by the imports pass).
+mlat_reset_exports_effect = {
+	if = {
+		limit = {
+			trade_good_exports = {
+				target = $GOOD$
+				value >= 1
+			}
+		}
+		every_country = {
+			limit = {
+				NOT = { this = scope:mlat_reset_country }
+				scope:mlat_reset_country = { exports_to = prev }
+			}
+			every_country_state = {
+				limit = {
+					trade_good_imports = {
+						target = $GOOD$
+						value >= 1
+					}
+				}
+				remove_trade_route = {
+					target = scope:mlat_reset_state
+					goods = $GOOD$
+				}
+			}
+		}
 	}
 }

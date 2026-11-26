@@ -1,7 +1,8 @@
 ﻿# Open granaries for allies - ported from HMO: Huge Multiplayer Overhaul (food_share.1).
 # While at war, armies of your allies, your subjects and your overlord that stand in
 # your provinces are fed from your province food stores every month.
-# AI armies are skipped (as in HMO) to keep it cheap with ~1,500 nations.
+# AI armies are skipped (as in HMO) to keep it cheap with ~1,500 nations, and nations
+# without a player ally, subject or overlord skip the whole event (v1.13).
 # MLFT fixes vs HMO: the overlord check compared you with yourself, and the province
 # scope was cleared after the first army, so only one army per province got food.
 namespace = mlft_food_share
@@ -12,6 +13,16 @@ mlft_food_share.1 = {
 
 	trigger = {
 		war = yes
+		# v1.13: only nations that can feed someone - a player ally, subject or overlord.
+		# Without this every AI nation at war scanned all its provinces and armies each month.
+		OR = {
+			any_allied_country = { is_ai = no }
+			any_subject = { is_ai = no }
+			AND = {
+				is_subject = yes
+				overlord = { is_ai = no }
+			}
+		}
 	}
 
 	immediate = {

@@ -30,15 +30,17 @@ mlhu_unify_homeland = {
 		NOT = { has_variable = mlhu_homeland_done }
 		is_subject = no
 		has_civil_war = no
+		# One tree or the other: hidden once the nation has started an Invictus mission tree.
+		# (Checked before the region scans below; cached for AI nations, see the trigger.)
+		mlhu_invictus_tree_blocks_trigger = no
 		# No invictus_mission_block_trigger here on purpose: after the one-province split many
 		# nations it blocks (Hellenic, Macedonian Diadochi fragments...) can no longer start their
 		# historical trees. Historical trees still win for the AI through the chance weights.
+		# Region scans last: they are the most expensive check.
 		OR = {
 			mlhu_capital_kin_nearby_trigger = yes
 			mlhu_primary_kin_nearby_trigger = yes
 		}
-		# One tree or the other: hidden once the nation has started an Invictus mission tree.
-		mlhu_invictus_tree_started_trigger = no
 	}
 
 	abort = {
@@ -165,13 +167,10 @@ mlhu_unify_homeland = {
 		allow = {
 			custom_tooltip = {
 				text = mlhu_task_3_req_tt
-				any_country = {
-					NOT = { this = root }
-					has_land = yes
-					OR = {
-						is_subject_of = root
-						alliance_with = root
-					}
+				# Only our own subjects and allies are looked at (not all ~1,500 nations).
+				OR = {
+					any_subject = { has_land = yes }
+					any_allied_country = { has_land = yes }
 				}
 			}
 		}

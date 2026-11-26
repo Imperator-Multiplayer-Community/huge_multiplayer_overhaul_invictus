@@ -1,0 +1,74 @@
+﻿# Auto-trade options (MLAT) - v1.13, suggested by Pope.
+
+# "Exclude my goods from auto-trade" checkbox in the import window (gui/select_trade_province.gui).
+# Root = the player country. While ticked:
+#   - the mod's auto-trade never imports from our own states, and removes import routes from
+#     our own states into our automated states (also the ones the game's own auto-trade made);
+#   - the import window lists only other nations' states.
+mlat_exclude_own_toggle = {
+	scope = country
+
+	ai_is_valid = {
+		always = no
+	}
+
+	is_shown = {	# drives the tick mark
+		has_variable = mlat_exclude_own
+	}
+
+	effect = {
+		if = {
+			limit = { has_variable = mlat_exclude_own }
+			remove_variable = mlat_exclude_own
+		}
+		else = {
+			set_variable = mlat_exclude_own
+		}
+	}
+}
+
+# "Reset Trade" button in the diplomacy window of one of our subjects.
+# Root = the player (overlord), scope:target = the subject.
+# Removes every trade route of the subject, imports and exports, so its goods are free again.
+# AI subjects only (players manage their own trade); once a month per subject.
+mlat_reset_subject_trade = {
+	scope = country
+
+	saved_scopes = {
+		target
+	}
+
+	ai_is_valid = {
+		always = no
+	}
+
+	is_shown = {
+		scope:target = { is_subject_of = root }
+	}
+
+	is_valid = {
+		custom_tooltip = {
+			text = mlat_reset_trade_ai_only_tt
+			scope:target = { is_ai = yes }
+		}
+		custom_tooltip = {
+			text = mlat_reset_trade_cooldown_tt
+			scope:target = {
+				NOT = { has_variable = mlat_reset_trade_cd }
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = mlat_reset_trade_effect_tt
+		hidden_effect = {
+			scope:target = {
+				mlat_reset_country_trade_effect = yes
+				set_variable = {
+					name = mlat_reset_trade_cd
+					days = 30
+				}
+			}
+		}
+	}
+}

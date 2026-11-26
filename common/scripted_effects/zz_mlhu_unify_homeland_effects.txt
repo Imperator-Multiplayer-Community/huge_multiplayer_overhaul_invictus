@@ -105,3 +105,19 @@ mlhu_claim_homeland_effect = {
 		mlhu_refresh_claims_effect = yes
 	}
 }
+
+# One tree or the other (v1.13): remembers whether an AI nation has started an Invictus
+# mission tree, so the mission's potential reads one variable instead of ~500 task checks.
+# Called twice a year by mlhu_tree_cache_pulse. Country scope.
+mlhu_refresh_tree_cache_effect = {
+	if = {
+		limit = { mlhu_invictus_tree_started_trigger = yes }
+		set_variable = mlhu_invictus_tree_started
+	}
+	else = {
+		set_variable = {
+			name = mlhu_tree_check_cd
+			days = 180
+		}
+	}
+}

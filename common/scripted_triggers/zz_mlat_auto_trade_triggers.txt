@@ -4,10 +4,9 @@
 #####################################
 
 # State scope (the importing state): it has a free route and does not have this good yet.
+# v1.13: cheapest checks first, the province scan last.
 mlat_wants_good_trigger = {
 	unused_trade_routes >= 1
-	root = { is_trade_goods_allowed = $GOOD$ }
-	NOT = { any_state_province = { trade_goods = $GOOD$ } }
 	# Cooldown: this state already got a route for this good from us in the last year. If that
 	# route was cancelled since, wait instead of re-adding it every month (one notification per try).
 	NOT = { has_variable = mlat_cd_$GOOD$ }
@@ -15,6 +14,8 @@ mlat_wants_good_trigger = {
 		target = $GOOD$
 		value < 1
 	}
+	root = { is_trade_goods_allowed = $GOOD$ }
+	NOT = { any_state_province = { trade_goods = $GOOD$ } }
 }
 
 # State scope (a candidate exporting state): has a spare unit of the good and the engine
@@ -45,7 +46,14 @@ mlat_own_exporter_trigger = {
 
 # A state of an AI country that is not at war with us, does not dislike us and is in the
 # given standing tier (ally / great / good / neutral). Cheap owner checks come first.
+# v1.13: the cheap state checks (spare unit, not sold this month) come first, so states with
+# nothing to sell are dropped before the owner, war and opinion checks.
 mlat_foreign_exporter_trigger = {
+	NOT = { has_variable = mlat_sold_$GOOD$ }
+	trade_good_surplus = {
+		target = $GOOD$
+		value >= 1
+	}
 	owner = {
 		is_ai = yes
 		NOT = { this = root }
@@ -65,6 +73,32 @@ mlat_foreign_exporter_trigger = {
 		}
 	}
 	mlat_exporter_base_trigger = { GOOD = $GOOD$ }
+}
+
+# v1.13. State scope (scope:mlat_importer): does any AI state in our region or a neighbouring
+# region have a spare unit of this good at all? Cheap checks only - if not, the eight tier
+# scans are skipped.
+mlat_cheap_foreign_surplus_trigger = {
+	NOT = { has_variable = mlat_sold_$GOOD$ }
+	trade_good_surplus = {
+		target = $GOOD$
+		value >= 1
+	}
+	owner = {
+		is_ai = yes
+		NOT = { this = root }
+	}
+}
+
+mlat_nearby_foreign_surplus_trigger = {
+	region = {
+		OR = {
+			any_region_state = { mlat_cheap_foreign_surplus_trigger = { GOOD = $GOOD$ } }
+			any_neighbor_region = {
+				any_region_state = { mlat_cheap_foreign_surplus_trigger = { GOOD = $GOOD$ } }
+			}
+		}
+	}
 }
 
 # State scope (scope:mlat_importer): is there such an exporter in our region / a neighbouring region?
@@ -88,7 +122,7 @@ mlat_standing_ally_trigger = {
 	OR = {
 		alliance_with = root
 		is_subject_of = root
-		any_subject = { this = root }
+		root = { is_subject_of = prev }	# our overlord (v1.13: no loop over its subjects)
 	}
 }
 

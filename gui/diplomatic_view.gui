@@ -1182,6 +1182,30 @@ base_window = {
 								}
 							}
 
+							# MLAT (v1.13, suggested by Pope): Reset Trade on one of our AI subjects
+							margin_widget = {
+								size = { 0 28 }
+								layoutpolicy_horizontal = expanding
+								margin = { 14 0 }
+								margin_right = 7
+								datacontext = "[GetScriptedGui('mlat_reset_subject_trade')]"
+								visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( Player.MakeScope ).AddScope('target', DiplomaticView.GetTargetCountry.MakeScope ).End)]"
+
+								text_button_square = {
+									size = { 100% 28 }
+									layoutpolicy_horizontal = expanding
+									enabled = "[ScriptedGui.IsValid(GuiScope.SetRoot( Player.MakeScope ).AddScope('target', DiplomaticView.GetTargetCountry.MakeScope ).End)]"
+									tooltip = "[ScriptedGui.BuildTooltip(GuiScope.SetRoot( Player.MakeScope ).AddScope('target', DiplomaticView.GetTargetCountry.MakeScope ).End)]"
+									blockoverride "On_click" {
+										onclick = "[ScriptedGui.Execute(GuiScope.SetRoot( Player.MakeScope ).AddScope('target', DiplomaticView.GetTargetCountry.MakeScope ).End)]"
+									}
+									blockoverride "Center_text"
+									{
+										text = "mlat_reset_trade"
+									}
+								}
+							}
+
 
 							vbox = {
 								layoutpolicy_vertical = expanding

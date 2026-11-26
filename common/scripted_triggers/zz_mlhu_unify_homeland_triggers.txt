@@ -48,3 +48,16 @@ mlhu_mission_running_trigger = {
 		always = yes
 	}
 }
+
+# One tree or the other (v1.13). Players: checked live. AI: the answer cached by
+# mlhu_tree_cache_pulse (up to half a year old), so AI nations don't run ~500 task checks
+# every time the game looks at their available missions.
+mlhu_invictus_tree_blocks_trigger = {
+	trigger_if = {
+		limit = { is_ai = no }
+		mlhu_invictus_tree_started_trigger = yes
+	}
+	trigger_else = {
+		has_variable = mlhu_invictus_tree_started
+	}
+}

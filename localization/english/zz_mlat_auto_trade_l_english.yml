@@ -1,0 +1,8 @@
+﻿l_english:
+ # Auto-trade options (v1.13, suggested by Pope)
+ mlat_exclude_own:0 "Exclude my goods from auto-trade"
+ mlat_exclude_own_tt:0 "#T Exclude my goods from auto-trade#!\nWhile ticked:\n• Auto-trade only imports from other nations, never from your own states.\n• Every month, imports from your own states into states with automated trading are removed, including ones the game's own auto-trade made.\n• This list only shows other nations' states.\nForeign imports earn commerce; trading with yourself does not."
+ mlat_reset_trade:0 "Reset Trade"
+ mlat_reset_trade_effect_tt:0 "All trade routes of this subject are removed, imports and exports, so its goods are free to trade again."
+ mlat_reset_trade_ai_only_tt:0 "This subject is not run by a player"
+ mlat_reset_trade_cooldown_tt:0 "This subject's trade was not reset in the last 30 days"

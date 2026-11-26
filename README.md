@@ -6,7 +6,7 @@ Published on Steam as **Molon Labe Invictus SubMod – Foreign Traditions** ([Wo
 
 A submod for **Imperator: Invictus** that rebalances the military and reshapes the map. Foreign military traditions are easier and cheaper to reach but much weaker than your own, so borrowing from your neighbours becomes a flavour choice rather than the best build. Military tech no longer inflates morale. Every nation starts independent, with at most one province and without legions, and a new mission tree lets each people fight to unite its homeland.
 
-**Current version: 1.12**
+**Current version: 1.13**
 
 Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you don't need to run both.
 
@@ -30,11 +30,12 @@ Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you d
 - **Levy experience.** Ported from **HMO: Huge Multiplayer Overhaul** (by x8). A levy remembers its experience when it is raised. Disband it with a governorship's disband button or the *Disband All Levies* button and you get military experience for what it gained since: 7.5% of the gain in experience points, up to 10 per levy. Only levies led by a governor or the ruler pay out. The game itself decides which armies are levies, so armies granted by missions or events are never disbanded. The vanilla flat disband experience is gone.
 - **Levy veterans.** While your military law does not allow legions, experience decay drops from 4.5% to about 0.5% a month, so starting experience sticks and levies are much stronger. The trade-off: since only experience gained above the starting value counts, these levies give less military experience when disbanded. Enacting a legion law removes the bonus.
 - **Faster auto-trade.** Once a month, every state of a player that has automated trading switched on fills its free trade routes with goods it does not have yet. Foreign imports earn commerce and trading with yourself does not, so it buys abroad first, from the AI nations that like you best: allies, subjects and your overlord, then nations with great relations (opinion 80+), then good relations (40+), then anyone who does not dislike you, nearest region first. Only if no foreign seller is found does it import from your own states. It never uses your capital's surplus, sells each spare unit only once a month, waits a year before retrying a good whose route was cancelled (so trade doesn't reshuffle every month), adds no notifications of its own, never imports from other players (they decide their own exports) and never from AI nations at war with you or that dislike you. AI nations keep the normal game behaviour.
+- **Auto-trade options (suggested by Pope).** The import window has an *Exclude my goods from auto-trade* checkbox. While it is ticked, auto-trade only imports from other nations, imports from your own states into states with automated trading are removed every month (including ones the game's own auto-trade made), and the import window lists only other nations' states. In the diplomacy window of one of your AI subjects, *Reset Trade* removes all of its trade routes, imports and exports, so its goods are free again (once a month per subject).
 - **Molon Labe changes by Pope:** his reworked integrated-culture decisions.
 
 ## Good to know
 - Unify Your Home Lands claims now count for declaring war straight away. The game has an old bug where claims given by a script show up on the map but the Declare War screen still says "War without Casus Belli" until you queue and cancel a building; the mission now does that refresh for you. Older claims from other missions or events may still need the manual trick.
-- Tradition penalties refresh once a month, so after picking a tradition or changing culture it can take up to 30 days for them to update.
+- Tradition penalties refresh once a month for players and once a year for AI nations, so after picking a tradition or changing culture it can take up to 30 days (a year for the AI) for them to update.
 - Only numbers are reduced. Unit unlocks (octeres, mega galleys and so on) and combat tactics from foreign traditions still work in full.
 - A tree counts as "your own" under the same rules Invictus uses to give you it at game start, including its special cases (e.g. Carthage, Cyrene, Bosporan heritages). Trees unlocked through missions count as foreign.
 - Works with AI countries too.
@@ -49,6 +50,7 @@ Built on the **Molon Labe Invictus SubMod by Pope**, which is included, so you d
 - Also replaces Invictus's *events/dhe/dhe_diadochi.txt* to switch off the Wars of the Diadochi start event. Mods that change the Diadochi events will conflict.
 - Also replaces Invictus's *gui/military_view.gui* (adds the levy-experience hooks to the Raise / Disband Levies buttons). UI mods that change the military window will conflict.
 - Also replaces Invictus's *gui/diplomatic_view.gui* (hides the Threaten War button) and *common/ai_diplochance/00_default.txt* (AI always refuses Threaten War), and sets the Threaten War title to the same text in all languages. UI mods that change the diplomacy window will conflict.
+- Also replaces the base game's *gui/select_trade_province.gui* (the import window, for the *Exclude my goods from auto-trade* checkbox). UI mods that change the import window will conflict.
 - Also replaces Invictus's *events/mission_events/me_cyr_magas_events.txt* (Cyrene no longer becomes Egypt's feudatory). Mods that change the Cyrene Magas events will conflict.
 - Also overrides the *vegetables* trade good (in *common/trade_goods/zz_mltg_trade_goods.txt*; the rest of Invictus's trade goods file is untouched). Mods that change the vegetables trade good will conflict.
 - Also overrides the Major and Great Power rank modifiers (*nation_rank_4/5* in *common/modifiers/zz_mlrk_rank_modifiers.txt*). Mods that change rank modifiers will conflict.
